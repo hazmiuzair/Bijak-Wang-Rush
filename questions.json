@@ -1,0 +1,101 @@
+[
+  {
+    "category": "easy",
+    "question": "RM5 + RM7 = ?",
+    "options": [
+      "RM10",
+      "RM11",
+      "RM12",
+      "RM13"
+    ],
+    "answer": 2
+  },
+  {
+    "category": "easy",
+    "question": "Antara berikut, yang manakah keperluan?",
+    "options": [
+      "Air minuman",
+      "Mainan baharu",
+      "Game top-up",
+      "Jajan"
+    ],
+    "answer": 0
+  },
+  {
+    "category": "easy",
+    "question": "Jika anda ada RM10 dan simpan RM3, berapa baki?",
+    "options": [
+      "RM3",
+      "RM7",
+      "RM10",
+      "RM13"
+    ],
+    "answer": 1
+  },
+  {
+    "category": "medium",
+    "question": "Jika gaji RM2,000 dan anda simpan 10%, berapa disimpan?",
+    "options": [
+      "RM20",
+      "RM100",
+      "RM200",
+      "RM300"
+    ],
+    "answer": 2
+  },
+  {
+    "category": "medium",
+    "question": "Apakah tujuan bajet?",
+    "options": [
+      "Berbelanja tanpa had",
+      "Merancang pendapatan dan perbelanjaan",
+      "Tambah hutang",
+      "Elak semua perbelanjaan"
+    ],
+    "answer": 1
+  },
+  {
+    "category": "medium",
+    "question": "Faedah kompaun ialah...",
+    "options": [
+      "Faedah atas prinsipal sahaja",
+      "Faedah atas prinsipal dan faedah terkumpul",
+      "Diskaun tunai",
+      "Cukai"
+    ],
+    "answer": 1
+  },
+  {
+    "category": "hard",
+    "question": "Jika inflasi meningkat lebih cepat daripada pulangan simpanan, kuasa beli wang biasanya...",
+    "options": [
+      "Meningkat",
+      "Menurun",
+      "Tidak berubah",
+      "Berganda"
+    ],
+    "answer": 1
+  },
+  {
+    "category": "hard",
+    "question": "Apakah risiko utama memegang hanya satu jenis aset?",
+    "options": [
+      "Diversifikasi",
+      "Concentration risk",
+      "Liquidity",
+      "Budgeting"
+    ],
+    "answer": 1
+  },
+  {
+    "category": "hard",
+    "question": "RM10,000 dilabur pada 5% setahun secara kompaun selama 2 tahun. Anggaran nilai akhir?",
+    "options": [
+      "RM10,500",
+      "RM11,000",
+      "RM11,025",
+      "RM12,000"
+    ],
+    "answer": 2
+  }
+]
