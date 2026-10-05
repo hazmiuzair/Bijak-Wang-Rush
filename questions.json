@@ -2,100 +2,363 @@
   {
     "category": "easy",
     "question": "RM5 + RM7 = ?",
-    "options": [
-      "RM10",
-      "RM11",
-      "RM12",
-      "RM13"
-    ],
+    "options": ["RM10", "RM11", "RM12", "RM13"],
+    "answer": 2
+  },
+  {
+    "category": "easy",
+    "question": "Jika anda ada RM10 dan belanja RM4, berapa baki?",
+    "options": ["RM4", "RM5", "RM6", "RM7"],
     "answer": 2
   },
   {
     "category": "easy",
     "question": "Antara berikut, yang manakah keperluan?",
-    "options": [
-      "Air minuman",
-      "Mainan baharu",
-      "Game top-up",
-      "Jajan"
-    ],
+    "options": ["Air minuman", "Mainan", "Jajan", "Game top-up"],
     "answer": 0
   },
   {
     "category": "easy",
-    "question": "Jika anda ada RM10 dan simpan RM3, berapa baki?",
-    "options": [
-      "RM3",
-      "RM7",
-      "RM10",
-      "RM13"
-    ],
+    "question": "Apakah maksud menabung?",
+    "options": ["Menghabiskan duit", "Menyimpan duit", "Meminjam duit", "Membeli barang"],
     "answer": 1
   },
   {
+    "category": "easy",
+    "question": "Anda menerima RM20 duit belanja dan simpan RM5. Berapa boleh dibelanjakan?",
+    "options": ["RM10", "RM15", "RM20", "RM25"],
+    "answer": 1
+  },
+  {
+    "category": "easy",
+    "question": "Apakah yang patut dilakukan sebelum membeli sesuatu?",
+    "options": ["Terus beli", "Bandingkan harga", "Pinjam duit", "Beli yang paling mahal"],
+    "answer": 1
+  },
+  {
+    "category": "easy",
+    "question": "RM50 - RM18 = ?",
+    "options": ["RM28", "RM30", "RM32", "RM38"],
+    "answer": 2
+  },
+  {
+    "category": "easy",
+    "question": "Apakah fungsi bank?",
+    "options": ["Menyimpan wang", "Menjual makanan", "Menjual pakaian", "Mengajar di sekolah"],
+    "answer": 0
+  },
+  {
+    "category": "easy",
+    "question": "Jika harga sebatang pensel RM2, berapa harga 3 batang?",
+    "options": ["RM4", "RM5", "RM6", "RM8"],
+    "answer": 2
+  },
+  {
+    "category": "easy",
+    "question": "Apakah contoh kehendak?",
+    "options": ["Makanan", "Air", "Tempat tinggal", "Mainan baharu"],
+    "answer": 3
+  },
+  {
+    "category": "easy",
+    "question": "Kenapa kita perlu berjimat?",
+    "options": ["Supaya duit cepat habis", "Supaya boleh menyimpan", "Supaya banyak berhutang", "Supaya membeli semua benda"],
+    "answer": 1
+  },
+  {
+    "category": "easy",
+    "question": "RM10 × 3 = ?",
+    "options": ["RM20", "RM25", "RM30", "RM40"],
+    "answer": 2
+  },
+  {
+    "category": "easy",
+    "question": "Duit yang kita simpan untuk kegunaan masa depan dipanggil...",
+    "options": ["Simpanan", "Hutang", "Belanja", "Diskaun"],
+    "answer": 0
+  },
+  {
+    "category": "easy",
+    "question": "Jika anda mahu membeli basikal, apakah tindakan yang baik?",
+    "options": ["Belanja semua duit", "Buat sasaran simpanan", "Pinjam daripada semua kawan", "Beli tanpa melihat harga"],
+    "answer": 1
+  },
+  {
+    "category": "easy",
+    "question": "Apakah maksud harga?",
+    "options": ["Nilai yang perlu dibayar untuk sesuatu barang", "Jumlah duit yang disimpan", "Duit pinjaman", "Hadiah"],
+    "answer": 0
+  },
+  {
+    "category": "easy",
+    "question": "Jika anda mempunyai RM100 dan simpan RM20, berapa baki selepas simpanan?",
+    "options": ["RM60", "RM70", "RM80", "RM90"],
+    "answer": 2
+  },
+  {
+    "category": "easy",
+    "question": "Apakah yang dimaksudkan dengan bajet?",
+    "options": ["Pelan penggunaan wang", "Duit hadiah", "Kad bank", "Pinjaman"],
+    "answer": 0
+  },
+  {
+    "category": "easy",
+    "question": "Jika harga buku RM15 dan anda mempunyai RM20, baki ialah...",
+    "options": ["RM3", "RM5", "RM7", "RM10"],
+    "answer": 1
+  },
+  {
+    "category": "easy",
+    "question": "Apakah tindakan yang bijak jika duit belanja tidak mencukupi?",
+    "options": ["Berhutang setiap hari", "Kurangkan perbelanjaan", "Belanja lebih banyak", "Beli semua kehendak"],
+    "answer": 1
+  },
+  {
+    "category": "easy",
+    "question": "Mengapa kita perlu menjaga wang dengan baik?",
+    "options": ["Wang mempunyai nilai", "Wang tidak berguna", "Supaya cepat habis", "Supaya boleh membazir"],
+    "answer": 0
+  },
+
+  {
     "category": "medium",
-    "question": "Jika gaji RM2,000 dan anda simpan 10%, berapa disimpan?",
-    "options": [
-      "RM20",
-      "RM100",
-      "RM200",
-      "RM300"
-    ],
+    "question": "Jika gaji RM2,000 dan anda simpan 10%, berapa jumlah simpanan?",
+    "options": ["RM100", "RM150", "RM200", "RM300"],
     "answer": 2
   },
   {
     "category": "medium",
-    "question": "Apakah tujuan bajet?",
-    "options": [
-      "Berbelanja tanpa had",
-      "Merancang pendapatan dan perbelanjaan",
-      "Tambah hutang",
-      "Elak semua perbelanjaan"
-    ],
+    "question": "Apakah tujuan utama bajet?",
+    "options": ["Menggalakkan perbelanjaan", "Merancang pendapatan dan perbelanjaan", "Menambah hutang", "Menghabiskan wang"],
     "answer": 1
   },
   {
     "category": "medium",
-    "question": "Faedah kompaun ialah...",
-    "options": [
-      "Faedah atas prinsipal sahaja",
-      "Faedah atas prinsipal dan faedah terkumpul",
-      "Diskaun tunai",
-      "Cukai"
-    ],
+    "question": "Apakah contoh perbelanjaan tetap?",
+    "options": ["Sewa rumah", "Makan di restoran", "Wayang", "Membeli pakaian"],
+    "answer": 0
+  },
+  {
+    "category": "medium",
+    "question": "Apakah dana kecemasan?",
+    "options": ["Duit untuk bercuti", "Simpanan untuk perkara tidak dijangka", "Duit untuk membeli gajet", "Duit untuk hiburan"],
     "answer": 1
   },
   {
-    "category": "hard",
-    "question": "Jika inflasi meningkat lebih cepat daripada pulangan simpanan, kuasa beli wang biasanya...",
-    "options": [
-      "Meningkat",
-      "Menurun",
-      "Tidak berubah",
-      "Berganda"
-    ],
+    "category": "medium",
+    "question": "Apakah maksud keperluan?",
+    "options": ["Perkara yang penting untuk kehidupan", "Barang yang sedang trending", "Barang mahal", "Barang yang diingini"],
+    "answer": 0
+  },
+  {
+    "category": "medium",
+    "question": "Apakah maksud kehendak?",
+    "options": ["Perkara asas", "Perkara yang diperlukan untuk hidup", "Perkara yang diingini tetapi tidak semestinya diperlukan", "Bayaran wajib"],
+    "answer": 2
+  },
+  {
+    "category": "medium",
+    "question": "Jika harga barang RM100 dan diskaun 20%, berapa harga selepas diskaun?",
+    "options": ["RM70", "RM80", "RM85", "RM90"],
     "answer": 1
   },
   {
-    "category": "hard",
-    "question": "Apakah risiko utama memegang hanya satu jenis aset?",
-    "options": [
-      "Diversifikasi",
-      "Concentration risk",
-      "Liquidity",
-      "Budgeting"
-    ],
+    "category": "medium",
+    "question": "Apakah kesan jika menggunakan kad kredit tanpa kawalan?",
+    "options": ["Hutang boleh meningkat", "Simpanan automatik meningkat", "Harga barang turun", "Gaji bertambah"],
+    "answer": 0
+  },
+  {
+    "category": "medium",
+    "question": "Apakah faedah kompaun?",
+    "options": ["Faedah atas prinsipal sahaja", "Faedah atas prinsipal dan faedah terkumpul", "Diskaun pembelian", "Cukai pendapatan"],
     "answer": 1
+  },
+  {
+    "category": "medium",
+    "question": "Apakah langkah yang baik sebelum mengambil pinjaman?",
+    "options": ["Semak kemampuan membayar balik", "Ambil jumlah maksimum", "Tidak perlu semak kadar", "Pinjam untuk semua kehendak"],
+    "answer": 0
+  },
+  {
+    "category": "medium",
+    "question": "Jika pendapatan RM3,000 dan perbelanjaan RM2,500, lebihan ialah...",
+    "options": ["RM300", "RM400", "RM500", "RM600"],
+    "answer": 2
+  },
+  {
+    "category": "medium",
+    "question": "Apakah maksud inflasi?",
+    "options": ["Harga barang secara umum meningkat", "Gaji semua orang turun", "Harga semua barang turun", "Nilai wang sentiasa meningkat"],
+    "answer": 0
+  },
+  {
+    "category": "medium",
+    "question": "Apakah tujuan membandingkan produk kewangan?",
+    "options": ["Mencari pilihan yang sesuai", "Memilih yang paling mahal", "Menambah hutang", "Mengelakkan semua simpanan"],
+    "answer": 0
+  },
+  {
+    "category": "medium",
+    "question": "Apakah risiko membeli barang menggunakan pinjaman untuk kehendak?",
+    "options": ["Bayaran balik dan faedah", "Pendapatan meningkat", "Harga barang percuma", "Hutang hilang"],
+    "answer": 0
+  },
+  {
+    "category": "medium",
+    "question": "Jika anda menerima bonus, apakah tindakan yang lebih bijak?",
+    "options": ["Habiskan semuanya", "Gunakan sebahagian untuk simpanan", "Pinjam lebih banyak", "Beli semua kehendak"],
+    "answer": 1
+  },
+  {
+    "category": "medium",
+    "question": "Apakah maksud rekod perbelanjaan?",
+    "options": ["Catatan duit yang dibelanjakan", "Senarai rakan", "Senarai barang percuma", "Jumlah gaji sahaja"],
+    "answer": 0
+  },
+  {
+    "category": "medium",
+    "question": "Mengapa penting menyemak penyata bank?",
+    "options": ["Untuk mengesan transaksi dan kesilapan", "Untuk menambah hutang", "Untuk menaikkan gaji", "Untuk mendapatkan diskaun"],
+    "answer": 0
+  },
+  {
+    "category": "medium",
+    "question": "Apakah maksud simpan dahulu sebelum berbelanja?",
+    "options": ["Pay yourself first", "Berhutang dahulu", "Belanja dahulu", "Pinjam dahulu"],
+    "answer": 0
+  },
+  {
+    "category": "medium",
+    "question": "Apakah contoh matlamat kewangan jangka sederhana?",
+    "options": ["Membeli rumah dalam 10 tahun", "Membeli makan tengah hari", "Membayar tambang hari ini", "Membeli air"],
+    "answer": 0
+  },
+  {
+    "category": "medium",
+    "question": "Jika anda mempunyai banyak hutang, apakah tindakan yang wajar?",
+    "options": ["Tambah hutang baharu", "Susun dan utamakan bayaran hutang", "Berhenti membayar", "Gunakan semua simpanan untuk kehendak"],
+    "answer": 1
+  },
+
+  {
+    "category": "hard",
+    "question": "Apakah kesan inflasi terhadap kuasa beli wang?",
+    "options": ["Biasanya menurun", "Sentiasa meningkat", "Tidak berubah", "Berganda"],
+    "answer": 0
   },
   {
     "category": "hard",
     "question": "RM10,000 dilabur pada 5% setahun secara kompaun selama 2 tahun. Anggaran nilai akhir?",
-    "options": [
-      "RM10,500",
-      "RM11,000",
-      "RM11,025",
-      "RM12,000"
-    ],
+    "options": ["RM10,500", "RM11,000", "RM11,025", "RM12,000"],
     "answer": 2
+  },
+  {
+    "category": "hard",
+    "question": "Apakah tujuan utama diversifikasi pelaburan?",
+    "options": ["Menghapuskan semua risiko", "Mengurangkan risiko tumpuan", "Menjamin keuntungan", "Mengelakkan cukai"],
+    "answer": 1
+  },
+  {
+    "category": "hard",
+    "question": "Apakah maksud risiko pelaburan?",
+    "options": ["Kemungkinan nilai pelaburan berubah atau mengalami kerugian", "Jaminan keuntungan", "Kadar gaji", "Jumlah cukai"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah hubungan umum antara risiko dan potensi pulangan?",
+    "options": ["Risiko lebih tinggi boleh datang dengan potensi pulangan lebih tinggi", "Risiko tinggi menjamin untung", "Risiko tidak pernah penting", "Semua pelaburan sama"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah maksud kadar faedah efektif?",
+    "options": ["Kadar sebenar yang mengambil kira kesan pengkompaunan", "Harga barang", "Jumlah gaji", "Jumlah prinsipal sahaja"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Jika kadar faedah pinjaman meningkat, bayaran faedah biasanya...",
+    "options": ["Meningkat", "Menurun", "Menjadi sifar", "Tidak pernah berubah"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah maksud nisbah hutang kepada pendapatan?",
+    "options": ["Ukuran bayaran hutang berbanding pendapatan", "Jumlah simpanan", "Nilai rumah", "Jumlah pelaburan"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah risiko utama menggunakan kad kredit untuk membayar hutang kad kredit lain?",
+    "options": ["Hutang boleh menjadi semakin besar", "Hutang terus hilang", "Faedah menjadi sifar", "Pendapatan meningkat"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah tujuan insurans atau takaful?",
+    "options": ["Memindahkan atau mengurus risiko kewangan tertentu", "Menjamin semua pelaburan untung", "Menghapuskan semua perbelanjaan", "Menggandakan gaji"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah maksud premium dalam insurans?",
+    "options": ["Bayaran untuk perlindungan", "Jumlah tuntutan", "Keuntungan pelaburan", "Cukai pendapatan"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah maksud deductible atau excess?",
+    "options": ["Jumlah yang perlu ditanggung sebelum perlindungan tertentu dibayar", "Jumlah gaji", "Jumlah simpanan", "Jumlah bonus"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah risiko concentration dalam pelaburan?",
+    "options": ["Terlalu banyak wang tertumpu pada satu aset atau sektor", "Pelaburan terlalu pelbagai", "Simpanan terlalu tinggi", "Cukai terlalu rendah"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah maksud liquidity?",
+    "options": ["Keupayaan menukar aset kepada tunai dengan mudah", "Kadar keuntungan", "Jumlah hutang", "Jumlah cukai"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Aset manakah biasanya lebih liquid?",
+    "options": ["Tunai", "Rumah", "Tanah", "Barang kemas koleksi"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah kesan compounding dalam jangka panjang?",
+    "options": ["Pulangan boleh berkembang atas pulangan terdahulu", "Pulangan sentiasa berkurang", "Pelaburan menjadi percuma", "Risiko menjadi sifar"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Jika pulangan pelaburan 4% dan inflasi 3%, pulangan sebenar secara kasar ialah...",
+    "options": ["1%", "3%", "4%", "7%"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah tindakan terbaik sebelum melabur dalam produk yang tidak difahami?",
+    "options": ["Fahami risiko dan ciri produk dahulu", "Terus melabur jumlah maksimum", "Ikut semua orang", "Pinjam duit untuk melabur"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah emergency fund biasanya digunakan untuk?",
+    "options": ["Kecemasan kewangan yang tidak dijangka", "Percutian mewah", "Gajet baharu", "Pelaburan spekulatif"],
+    "answer": 0
+  },
+  {
+    "category": "hard",
+    "question": "Apakah maksud opportunity cost?",
+    "options": ["Nilai pilihan terbaik yang dilepaskan apabila memilih sesuatu", "Jumlah cukai", "Jumlah faedah bank", "Kos transaksi sahaja"],
+    "answer": 0
   }
 ]
