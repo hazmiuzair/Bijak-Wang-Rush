@@ -1,4 +1,985 @@
-body {
-  background: red !important;
-  color: white !important;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #031f1b;
+  color: #f4f7f6;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+  padding: 16px 14px 28px;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+
+/* ========================================
+   HOME
+======================================== */
+
+.hero {
+  padding: 8px 0 16px;
+}
+
+
+/* BIJAKWANG RUSH */
+
+.eyebrow {
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  margin-bottom: 22px;
+}
+
+
+/* MAIN HEADLINE */
+
+.hero h1 {
+  font-size: 40px;
+  line-height: 1.05;
+  letter-spacing: -1.4px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: #a8c0bb;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 19px;
+}
+
+
+/* ========================================
+   CATEGORY CARDS
+======================================== */
+
+.level-card {
+  width: 100%;
+  height: 90px;
+  min-height: 90px;
+
+  background: #103c34;
+
+  border: 1px solid #285d53;
+  border-radius: 18px;
+
+  padding: 13px 18px;
+  margin-bottom: 9px;
+
+  color: white;
+  text-align: left;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.level-card:hover {
+  background: #14483f;
+  border-color: #3a7569;
+  transform: translateY(-2px);
+}
+
+.level-card:active {
+  transform: scale(0.99);
+}
+
+.level-icon {
+  font-size: 25px;
+  line-height: 1;
+  margin-bottom: 7px;
+}
+
+.level-title {
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+
+/* ========================================
+   LEADERBOARD HOME BUTTON
+======================================== */
+
+.leaderboard-button {
+  width: 100%;
+
+  border: 1px solid #285d53;
+  border-radius: 18px;
+
+  padding: 15px;
+
+  background: #103c34;
+  color: white;
+
+  font-size: 18px;
+  line-height: 1;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  margin-top: 2px;
+}
+
+.leaderboard-button:hover {
+  background: #14483f;
+}
+
+.home-note {
+  margin-top: 14px;
+
+  color: #91aca6;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+
+/* ========================================
+   GENERAL PANEL
+======================================== */
+
+.panel {
+  background: #082b25;
+
+  border: 1px solid #285d53;
+  border-radius: 22px;
+
+  padding: 22px;
+
+  margin-top: 12px;
+}
+
+.panel h2 {
+  font-size: 30px;
+  line-height: 1.1;
+
+  margin-bottom: 10px;
+}
+
+.panel p {
+  color: #9db6b0;
+
+  font-size: 15px;
+  line-height: 1.4;
+
+  margin-bottom: 18px;
+}
+
+
+/* ========================================
+   LEVEL BADGE
+======================================== */
+
+.selected-level {
+  display: inline-block;
+
+  background: #16483f;
+
+  border-radius: 999px;
+
+  padding: 8px 14px;
+
+  font-size: 12px;
+  line-height: 1;
+
+  font-weight: 900;
+
+  margin-bottom: 16px;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   NAME SCREEN
+======================================== */
+
+.name-input {
+  width: 100%;
+
+  border: 1px solid #37685f;
+
+  background: #06241f;
+  color: white;
+
+  border-radius: 14px;
+
+  padding: 14px;
+
+  font-size: 17px;
+
+  outline: none;
+
+  margin-bottom: 10px;
+}
+
+.name-input:focus {
+  border-color: #66d6bd;
+}
+
+.primary {
+  width: 100%;
+
+  border: 0;
+  border-radius: 14px;
+
+  padding: 15px;
+
+  background: #ffd447;
+  color: #172018;
+
+  font-size: 18px;
+  line-height: 1;
+
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+.primary:hover {
+  filter: brightness(1.04);
+}
+
+.secondary {
+  width: 100%;
+
+  border: 1px solid #37685f;
+  border-radius: 14px;
+
+  padding: 14px;
+
+  background: transparent;
+  color: #d6e3e0;
+
+  font-size: 15px;
+  line-height: 1;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  margin-top: 9px;
+}
+
+
+/* ========================================
+   GAME TOP
+======================================== */
+
+.game-top {
+  background: #082b25;
+
+  border: 1px solid #285d53;
+  border-radius: 21px;
+
+  padding: 17px;
+
+  margin-top: 2px;
+}
+
+.game-row {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.level-badge {
+  display: inline-block;
+
+  background: #16483f;
+  color: #c9dcd8;
+
+  border-radius: 999px;
+
+  padding: 7px 12px;
+
+  font-size: 11px;
+  line-height: 1;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+}
+
+.game-score {
+  font-size: 19px;
+  line-height: 1;
+
+  font-weight: 900;
+
+  margin-top: 11px;
+}
+
+.main-timer {
+  font-size: 46px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  color: #ffd447;
+}
+
+.timer-bar {
+  height: 8px;
+
+  background: #123e36;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  margin-top: 13px;
+}
+
+.timer-fill {
+  height: 100%;
+
+  width: 100%;
+
+  background: #ffd447;
+
+  transition: width 0.05s linear;
+}
+
+
+/* ========================================
+   QUESTION CARD
+======================================== */
+
+.question-card {
+  background: #06241f;
+
+  border: 1px solid #285d53;
+  border-radius: 21px;
+
+  padding: 18px;
+
+  margin-top: 11px;
+}
+
+.question-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 13px;
+}
+
+.question-number {
+  color: #9bb4ae;
+
+  font-size: 15px;
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+.question-points {
+  color: #ffd447;
+
+  font-size: 26px;
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+.question-score-bar {
+  width: 100%;
+
+  height: 8px;
+
+  background: #123e36;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  margin-bottom: 17px;
+}
+
+.question-score-fill {
+  width: 100%;
+
+  height: 100%;
+
+  background: #ffd447;
+}
+
+
+/* ========================================
+   QUESTION TEXT
+======================================== */
+
+.question-text {
+  font-size: 25px;
+
+  line-height: 1.24;
+
+  font-weight: 900;
+
+  margin-bottom: 17px;
+}
+
+
+/* ========================================
+   ANSWERS
+======================================== */
+
+.answers {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.answer-button {
+  width: 100%;
+
+  border: 1px solid #285d53;
+
+  background: #103c34;
+  color: white;
+
+  border-radius: 14px;
+
+  padding: 13px 14px;
+
+  text-align: left;
+
+  font-size: 16px;
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.answer-button:hover {
+  background: #16483f;
+}
+
+.answer-button:active {
+  transform: scale(0.99);
+}
+
+.answer-button.correct {
+  background: #176b4f;
+
+  border-color: #4de0aa;
+}
+
+.answer-button.wrong {
+  background: #6c2632;
+
+  border-color: #ff7082;
+}
+
+.answer-button.disabled {
+  pointer-events: none;
+}
+
+.feedback {
+  min-height: 24px;
+
+  margin-top: 11px;
+
+  font-size: 14px;
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  color: #b9d2cc;
+}
+
+
+/* ========================================
+   RESULT
+======================================== */
+
+.result-score {
+  font-size: 54px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  color: #ffd447;
+
+  margin: 16px 0;
+}
+
+.result-stats {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 8px;
+
+  margin: 18px 0;
+}
+
+.stat {
+  background: #103c34;
+
+  border: 1px solid #285d53;
+
+  border-radius: 15px;
+
+  padding: 14px;
+}
+
+.stat-label {
+  color: #94afa9;
+
+  font-size: 12px;
+
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 23px;
+
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+
+/* ========================================
+   LEADERBOARD
+======================================== */
+
+.leaderboard-list {
+  margin-top: 15px;
+}
+
+.leaderboard-row {
+  display: grid;
+
+  grid-template-columns: 34px 1fr 68px;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background: #103c34;
+
+  border: 1px solid #285d53;
+
+  border-radius: 13px;
+
+  padding: 12px;
+
+  margin-bottom: 8px;
+}
+
+.rank {
+  font-size: 18px;
+
+  font-weight: 900;
+}
+
+.player-name {
+  font-weight: 900;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.player-level {
+  color: #8fa9a3;
+
+  font-size: 10px;
+
+  margin-top: 3px;
+
+  text-transform: uppercase;
+}
+
+.player-score {
+  text-align: right;
+
+  color: #ffd447;
+
+  font-size: 17px;
+
+  font-weight: 900;
+}
+
+.empty {
+  color: #91aaa4;
+
+  text-align: center;
+
+  padding: 22px 10px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+  .container {
+    padding: 15px 13px 25px;
+  }
+
+
+  /* HOME */
+
+  .hero {
+    padding-top: 7px;
+  }
+
+  .eyebrow {
+    font-size: 29px;
+    line-height: 1;
+    letter-spacing: 1.3px;
+    margin-bottom: 21px;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+    line-height: 1.05;
+    letter-spacing: -1.4px;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.35;
+    margin-bottom: 18px;
+  }
+
+
+  /* CATEGORY */
+
+  .level-card {
+    height: 90px;
+    min-height: 90px;
+
+    border-radius: 18px;
+
+    padding: 13px 18px;
+
+    margin-bottom: 9px;
+  }
+
+  .level-icon {
+    font-size: 25px;
+
+    margin-bottom: 7px;
+  }
+
+  .level-title {
+    font-size: 23px;
+  }
+
+
+  /* LEADERBOARD BUTTON */
+
+  .leaderboard-button {
+    border-radius: 18px;
+
+    padding: 15px;
+
+    font-size: 18px;
+  }
+
+  .home-note {
+    font-size: 13px;
+
+    margin-top: 14px;
+  }
+
+
+  /* PANEL */
+
+  .panel {
+    border-radius: 22px;
+
+    padding: 21px;
+
+    margin-top: 12px;
+  }
+
+  .panel h2 {
+    font-size: 29px;
+  }
+
+  .panel p {
+    font-size: 15px;
+
+    margin-bottom: 18px;
+  }
+
+
+  /* NAME */
+
+  .selected-level {
+    padding: 8px 13px;
+
+    font-size: 12px;
+
+    margin-bottom: 16px;
+  }
+
+  .name-input {
+    padding: 14px;
+
+    font-size: 17px;
+  }
+
+  .primary {
+    padding: 15px;
+
+    font-size: 18px;
+  }
+
+  .secondary {
+    padding: 14px;
+
+    font-size: 15px;
+  }
+
+
+  /* GAME */
+
+  .game-top {
+    border-radius: 21px;
+
+    padding: 17px;
+
+    margin-top: 2px;
+  }
+
+  .level-badge {
+    font-size: 11px;
+
+    padding: 7px 12px;
+  }
+
+  .game-score {
+    font-size: 19px;
+
+    margin-top: 11px;
+  }
+
+  .main-timer {
+    font-size: 46px;
+  }
+
+  .timer-bar {
+    height: 8px;
+
+    margin-top: 13px;
+  }
+
+
+  /* QUESTION */
+
+  .question-card {
+    border-radius: 21px;
+
+    padding: 18px;
+
+    margin-top: 11px;
+  }
+
+  .question-header {
+    margin-bottom: 13px;
+  }
+
+  .question-number {
+    font-size: 15px;
+  }
+
+  .question-points {
+    font-size: 26px;
+  }
+
+  .question-score-bar {
+    height: 8px;
+
+    margin-bottom: 17px;
+  }
+
+  .question-text {
+    font-size: 25px;
+
+    line-height: 1.24;
+
+    margin-bottom: 17px;
+  }
+
+  .answers {
+    gap: 8px;
+  }
+
+  .answer-button {
+    border-radius: 14px;
+
+    padding: 13px 14px;
+
+    font-size: 16px;
+  }
+
+  .feedback {
+    font-size: 14px;
+
+    margin-top: 11px;
+  }
+
+
+  /* RESULT */
+
+  .result-score {
+    font-size: 54px;
+  }
+
+  .result-stats {
+    gap: 8px;
+
+    margin: 18px 0;
+  }
+
+  .stat {
+    padding: 14px;
+  }
+
+  .stat-value {
+    font-size: 23px;
+  }
+
+
+  /* LEADERBOARD */
+
+  .leaderboard-row {
+    grid-template-columns: 34px 1fr 68px;
+
+    padding: 12px;
+
+    border-radius: 13px;
+  }
+
+  .player-score {
+    font-size: 17px;
+  }
+}
+
+
+/* ========================================
+   EXTRA SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+  .container {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .eyebrow {
+    font-size: 26px;
+
+    letter-spacing: 1.1px;
+
+    margin-bottom: 19px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .level-card {
+    height: 85px;
+    min-height: 85px;
+
+    padding: 12px 16px;
+
+    margin-bottom: 8px;
+  }
+
+  .level-icon {
+    font-size: 23px;
+
+    margin-bottom: 6px;
+  }
+
+  .level-title {
+    font-size: 22px;
+  }
+
+  .leaderboard-button {
+    padding: 14px;
+
+    font-size: 17px;
+  }
+
+  .question-text {
+    font-size: 23px;
+  }
+
+  .main-timer {
+    font-size: 43px;
+  }
+  }
