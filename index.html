@@ -1,65 +1,115 @@
 <!doctype html>
 <html lang="ms">
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta
+  name="viewport"
+  content="width=device-width,initial-scale=1"
+>
 
 <title>BijakWang Rush</title>
 
 <style>
+
+/* =========================================
+   GLOBAL
+========================================= */
+
 *{
-  box-sizing:border-box
+  box-sizing:border-box;
 }
 
 body{
   margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
   background:#071a17;
   color:#f5f7f2;
-  min-height:100vh
+  min-height:100vh;
 }
 
 .wrap{
   max-width:720px;
   margin:auto;
-  padding:20px
+  padding:20px;
 }
+
+button,
+input{
+  font-family:inherit;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
 
 .brand{
   font-size:28px;
-  font-weight:900
+  font-weight:900;
+  letter-spacing:-.5px;
 }
 
 .brand span{
-  color:#ffd447
+  color:#ffd447;
 }
+
+
+/* =========================================
+   CARD
+========================================= */
 
 .card{
   background:#0d2924;
   border:1px solid #1d4a41;
   border-radius:24px;
   padding:24px;
-  margin-top:18px
+  margin-top:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
 }
+
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
 
 h1{
   font-size:40px;
   line-height:1.05;
-  margin:12px 0
+  margin:12px 0;
+  letter-spacing:-1px;
 }
 
 h2{
-  margin-top:0
+  margin-top:0;
 }
 
 .muted{
-  color:#a9c0b9
+  color:#a9c0b9;
 }
+
+.note{
+  font-size:13px;
+  color:#86a39b;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
 
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:12px
+  gap:12px;
 }
 
 button{
@@ -68,35 +118,65 @@ button{
   padding:15px;
   font-size:16px;
   font-weight:800;
-  cursor:pointer
+  cursor:pointer;
+  transition:
+    transform .12s ease,
+    opacity .12s ease,
+    background .12s ease;
+}
+
+button:active{
+  transform:scale(.98);
 }
 
 .cat{
   background:#123a33;
   color:#fff;
   text-align:left;
-  border:1px solid #28574e
+  border:1px solid #28574e;
+}
+
+.cat:hover{
+  background:#18483f;
 }
 
 .cat b{
   display:block;
   font-size:18px;
-  margin-bottom:5px
+  margin-bottom:5px;
 }
 
 .cat small{
-  color:#a9c0b9
+  color:#a9c0b9;
 }
+
+
+/* =========================================
+   BUTTONS
+========================================= */
 
 .primary{
   background:#ffd447;
-  color:#17200e
+  color:#17200e;
+}
+
+.primary:hover{
+  background:#ffe071;
 }
 
 .secondary{
   background:#173c35;
-  color:#fff
+  color:#fff;
 }
+
+.secondary:hover{
+  background:#205047;
+}
+
+
+/* =========================================
+   PILL
+========================================= */
 
 .pill{
   display:inline-block;
@@ -105,100 +185,147 @@ button{
   padding:7px 11px;
   border-radius:999px;
   font-size:12px;
-  font-weight:800
+  font-weight:800;
 }
+
+
+/* =========================================
+   TOP GAME BAR
+========================================= */
 
 .top{
   display:flex;
   justify-content:space-between;
-  align-items:center
+  align-items:center;
+  gap:15px;
 }
 
 .timer{
   font-size:48px;
   font-weight:900;
-  color:#ffd447
+  color:#ffd447;
+  min-width:80px;
+  text-align:right;
 }
 
 .score{
   font-size:20px;
-  font-weight:800
+  font-weight:800;
+  margin-top:6px;
 }
+
+.streak{
+  color:#ffd447;
+  font-size:14px;
+  font-weight:800;
+  margin-top:4px;
+}
+
+
+/* =========================================
+   TIMER BAR
+========================================= */
 
 .bar{
   height:8px;
   background:#173c35;
   border-radius:99px;
   overflow:hidden;
-  margin-top:10px
+  margin-top:14px;
 }
 
 .bar i{
   display:block;
   height:100%;
   width:100%;
-  background:#ffd447
+  background:#ffd447;
+  transition:width .05s linear;
+}
+
+
+/* =========================================
+   QUESTION
+========================================= */
+
+.question-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:20px;
+  color:#86a39b;
+  font-size:13px;
+  font-weight:700;
 }
 
 .q{
   font-size:25px;
-  line-height:1.25;
-  margin:28px 0
+  line-height:1.3;
+  margin:18px 0 24px;
+  font-weight:800;
 }
+
+
+/* =========================================
+   ANSWERS
+========================================= */
 
 .answers{
   display:grid;
-  gap:11px
+  gap:11px;
 }
 
 .answer{
   background:#143a33;
   color:#fff;
   text-align:left;
-  border:1px solid #28574e
+  border:1px solid #28574e;
+  min-height:58px;
+  font-weight:700;
+}
+
+.answer:hover:not(:disabled){
+  background:#1a4a41;
+  border-color:#3c7569;
 }
 
 .answer:disabled{
-  opacity:.95
+  cursor:default;
+  opacity:.95;
 }
 
 .correct{
-  background:#18583f!important
+  background:#18583f!important;
+  border-color:#2c8b66!important;
 }
 
 .wrong{
-  background:#632f35!important
+  background:#632f35!important;
+  border-color:#8c4a52!important;
 }
 
-.hidden{
-  display:none
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+.feedback{
+  min-height:24px;
+  margin:15px 0 0;
+  font-weight:800;
 }
 
-.center{
-  text-align:center
+.feedback.good{
+  color:#6ee7a8;
 }
 
-.big{
-  font-size:60px;
-  font-weight:900;
-  color:#ffd447
+.feedback.bad{
+  color:#ff8f99;
 }
 
-table{
-  width:100%;
-  border-collapse:collapse
-}
 
-td,th{
-  padding:10px;
-  border-bottom:1px solid #21483f;
-  text-align:left
-}
-
-.note{
-  font-size:13px;
-  color:#86a39b
-}
+/* =========================================
+   NAME INPUT
+========================================= */
 
 .namebox{
   width:100%;
@@ -208,47 +335,180 @@ td,th{
   background:#09211d;
   color:#fff;
   font-size:17px;
-  margin:10px 0 14px
+  margin:10px 0 14px;
+  outline:none;
 }
+
+.namebox:focus{
+  border-color:#ffd447;
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.center{
+  text-align:center;
+}
+
+.big{
+  font-size:60px;
+  font-weight:900;
+  color:#ffd447;
+  margin:12px 0;
+}
+
+.result-message{
+  font-size:20px;
+  font-weight:800;
+  margin-bottom:5px;
+}
+
+.result-details{
+  color:#a9c0b9;
+  margin-bottom:22px;
+}
+
+
+/* =========================================
+   LEADERBOARD
+========================================= */
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+td,
+th{
+  padding:10px;
+  border-bottom:1px solid #21483f;
+  text-align:left;
+}
+
+th{
+  color:#86a39b;
+  font-size:13px;
+}
+
+.rank{
+  font-weight:900;
+  color:#ffd447;
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden{
+  display:none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media(max-width:600px){
 
+  .wrap{
+    padding:14px;
+  }
+
+  .card{
+    padding:19px;
+    border-radius:20px;
+  }
+
   .grid{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   h1{
-    font-size:34px
+    font-size:34px;
   }
 
   .q{
-    font-size:22px
+    font-size:22px;
+  }
+
+  .timer{
+    font-size:40px;
+  }
+
+  .top{
+    align-items:flex-start;
+  }
+
+  table{
+    font-size:14px;
   }
 
 }
+
+
+/* =========================================
+   VERY SMALL SCREEN
+========================================= */
+
+@media(max-width:380px){
+
+  .timer{
+    font-size:34px;
+  }
+
+  .score{
+    font-size:18px;
+  }
+
+  .q{
+    font-size:20px;
+  }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="wrap">
+
+
+<!-- ======================================
+     BRAND
+======================================= -->
 
 <div class="brand">
   BijakWang <span>RUSH</span>
 </div>
 
 
-<!-- HOME -->
-<section id="home" class="card">
+
+<!-- ======================================
+     HOME
+======================================= -->
+
+<section
+  id="home"
+  class="card"
+>
 
 <span class="pill">
   60 SECOND SPEED QUIZ
 </span>
 
+
 <h1>
   Jawab cepat.<br>
   Score tinggi. 🔥
 </h1>
+
 
 <p class="muted">
   Betul + cepat = lebih banyak mata.
@@ -257,25 +517,60 @@ td,th{
 
 <div class="grid">
 
-<button class="cat" onclick="chooseLevel('easy')">
+
+<button
+  class="cat"
+  onclick="chooseLevel('easy')"
+>
+
   🟢
-  <b>Easy</b>
-  <small>Sekolah Rendah</small>
+
+  <b>
+    Easy
+  </b>
+
+  <small>
+    Sekolah Rendah
+  </small>
+
 </button>
 
 
-<button class="cat" onclick="chooseLevel('medium')">
+<button
+  class="cat"
+  onclick="chooseLevel('medium')"
+>
+
   🟡
-  <b>Medium</b>
-  <small>Sekolah Menengah</small>
+
+  <b>
+    Medium
+  </b>
+
+  <small>
+    Sekolah Menengah
+  </small>
+
 </button>
 
 
-<button class="cat" onclick="chooseLevel('hard')">
+<button
+  class="cat"
+  onclick="chooseLevel('hard')"
+>
+
   🔴
-  <b>Hard</b>
-  <small>Dewasa</small>
+
+  <b>
+    Hard
+  </b>
+
+  <small>
+    Dewasa
+  </small>
+
 </button>
+
 
 </div>
 
@@ -285,28 +580,38 @@ td,th{
   style="margin-top:14px;width:100%"
   onclick="showLeaderboard()"
 >
-🏆 Leaderboard
+
+  🏆 Leaderboard
+
 </button>
 
 
 <p class="note">
-  60 saat • Lagi cepat jawab, lagi tinggi score.
+  60 saat • Jawab betul • Jawab pantas • Kumpul score tertinggi
 </p>
 
 </section>
 
 
 
-<!-- NAME -->
-<section id="name" class="card hidden">
+<!-- ======================================
+     NAME
+======================================= -->
+
+<section
+  id="name"
+  class="card hidden"
+>
 
 <span class="pill">
   PLAYER
 </span>
 
+
 <h2>
   Masukkan nama
 </h2>
+
 
 <p class="muted">
   Nama ini akan digunakan untuk leaderboard.
@@ -317,6 +622,7 @@ td,th{
   id="playerName"
   class="namebox"
   maxlength="30"
+  autocomplete="off"
   placeholder="Nama anda"
 >
 
@@ -326,7 +632,9 @@ td,th{
   style="width:100%"
   onclick="beginGame()"
 >
+
   START RUSH 🚀
+
 </button>
 
 
@@ -335,44 +643,97 @@ td,th{
   style="width:100%;margin-top:10px"
   onclick="goHome()"
 >
+
   Back
+
 </button>
 
 </section>
 
 
 
-<!-- GAME -->
-<section id="game" class="card hidden">
+<!-- ======================================
+     GAME
+======================================= -->
+
+<section
+  id="game"
+  class="card hidden"
+>
+
 
 <div class="top">
 
+
 <div>
 
-<span id="level" class="pill"></span>
+<span
+  id="level"
+  class="pill"
+>
+</span>
+
 
 <div class="score">
+
   Score:
-  <span id="score">0</span>
-</div>
+  <span id="score">
+    0
+  </span>
 
 </div>
 
 
 <div
-  class="timer"
-  id="timer"
+  id="streak"
+  class="streak"
 >
-60
+  🔥 Streak: 0
 </div>
+
 
 </div>
 
+
+<div
+  id="timer"
+  class="timer"
+>
+  60
+</div>
+
+
+</div>
+
+
+
+<!-- TOTAL GAME TIMER -->
 
 <div class="bar">
-  <i id="bar"></i>
+
+<i id="bar"></i>
+
 </div>
 
+
+
+<!-- QUESTION META -->
+
+<div class="question-meta">
+
+<span id="questionNumber">
+  Soalan 1
+</span>
+
+<span id="questionTime">
+  0.0s
+</span>
+
+</div>
+
+
+
+<!-- QUESTION -->
 
 <div
   id="question"
@@ -381,6 +742,9 @@ td,th{
 </div>
 
 
+
+<!-- ANSWERS -->
+
 <div
   id="answers"
   class="answers"
@@ -388,21 +752,29 @@ td,th{
 </div>
 
 
+
+<!-- FEEDBACK -->
+
 <p
   id="feedback"
-  class="muted"
+  class="feedback"
 >
 </p>
+
 
 </section>
 
 
 
-<!-- RESULT -->
+<!-- ======================================
+     RESULT
+======================================= -->
+
 <section
   id="result"
   class="card hidden center"
 >
+
 
 <span class="pill">
   RUSH COMPLETE
@@ -413,43 +785,67 @@ td,th{
   id="finalScore"
   class="big"
 >
-0
+  0
 </div>
 
 
-<p id="stats"></p>
+<div
+  id="resultMessage"
+  class="result-message"
+>
+  Nice!
+</div>
+
+
+<p
+  id="stats"
+  class="result-details"
+>
+</p>
 
 
 <button
   class="primary"
+  style="width:100%"
   onclick="goHome()"
 >
+
   Main Lagi
+
 </button>
 
 
 <button
   class="secondary"
+  style="width:100%;margin-top:10px"
   onclick="showLeaderboard()"
 >
-  Leaderboard
+
+  🏆 Leaderboard
+
 </button>
+
 
 </section>
 
 
 
-<!-- LEADERBOARD -->
+<!-- ======================================
+     LEADERBOARD
+======================================= -->
+
 <section
   id="leaderboard"
   class="card hidden"
 >
+
 
 <div class="top">
 
 <h2>
   🏆 Leaderboard
 </h2>
+
 
 <button
   class="secondary"
@@ -466,10 +862,23 @@ td,th{
 <thead>
 
 <tr>
-  <th>#</th>
-  <th>Nama</th>
-  <th>Level</th>
-  <th>Score</th>
+
+<th>
+  #
+</th>
+
+<th>
+  Nama
+</th>
+
+<th>
+  Level
+</th>
+
+<th>
+  Score
+</th>
+
 </tr>
 
 </thead>
@@ -478,15 +887,24 @@ td,th{
 <tbody id="board">
 </tbody>
 
+
 </table>
 
+
+<p class="note">
+  Leaderboard ini disimpan pada browser/peranti ini sahaja.
+</p>
+
+
 </section>
+
 
 </div>
 
 
 
 <script>
+
 
 /* =========================================
    BANK SOALAN
@@ -520,6 +938,29 @@ let endAt = 0;
 let timerId = null;
 
 
+/*
+   MASA SOALAN SEMASA
+*/
+
+let questionStartAt = 0;
+
+let questionTimerId = null;
+
+
+/*
+   STREAK
+*/
+
+let streak = 0;
+
+
+/*
+   ELAK GAME FINISH BERULANG
+*/
+
+let gameFinished = false;
+
+
 
 /* =========================================
    LOAD QUESTIONS.JSON
@@ -543,7 +984,17 @@ fetch("questions.json")
 
 .then(data => {
 
+  if(!Array.isArray(data)){
+
+    throw new Error(
+      "Format questions.json tidak sah"
+    );
+
+  }
+
+
   BANK = data;
+
 
   console.log(
     "Bank soalan berjaya dimuatkan:",
@@ -556,8 +1007,9 @@ fetch("questions.json")
 
   console.error(error);
 
+
   alert(
-    "Bank soalan gagal dimuatkan. " +
+    "Bank soalan gagal dimuatkan.\n\n" +
     "Pastikan questions.json berada " +
     "dalam folder yang sama dengan index.html."
   );
@@ -580,6 +1032,7 @@ function show(id){
     "leaderboard"
   ];
 
+
   screens.forEach(screen => {
 
     document
@@ -598,12 +1051,18 @@ function show(id){
 
 
 /* =========================================
-   HOME
+   GO HOME
 ========================================= */
 
 function goHome(){
 
   clearInterval(timerId);
+
+  clearInterval(questionTimerId);
+
+
+  gameFinished = true;
+
 
   show("home");
 
@@ -617,9 +1076,10 @@ function goHome(){
 
 function chooseLevel(selectedLevel){
 
-  const pool = BANK.filter(
-    q => q.category === selectedLevel
-  );
+  const pool =
+    BANK.filter(
+      q => q.category === selectedLevel
+    );
 
 
   if(pool.length === 0){
@@ -676,15 +1136,36 @@ function beginGame(){
   }
 
 
-  const pool = BANK.filter(
-    q => q.category === level
-  );
+  const pool =
+    BANK.filter(
+      q => q.category === level
+    );
 
 
-  questions = [...pool].sort(
-    () => Math.random() - 0.5
-  );
+  if(pool.length === 0){
 
+    alert(
+      "Tiada soalan untuk kategori ini."
+    );
+
+    return;
+
+  }
+
+
+  /*
+     SHUFFLE SOALAN
+  */
+
+  questions =
+    [...pool].sort(
+      () => Math.random() - 0.5
+    );
+
+
+  /*
+     RESET GAME
+  */
 
   qIndex = 0;
 
@@ -694,8 +1175,16 @@ function beginGame(){
 
   attempts = 0;
 
+  streak = 0;
+
   locked = false;
 
+  gameFinished = false;
+
+
+  /*
+     SET LEVEL
+  */
 
   document
     .getElementById("level")
@@ -713,16 +1202,38 @@ function beginGame(){
     }[level];
 
 
+  /*
+     RESET UI
+  */
+
+  document
+    .getElementById("score")
+    .textContent = "0";
+
+
+  document
+    .getElementById("streak")
+    .textContent =
+    "🔥 Streak: 0";
+
+
+  /*
+     SHOW GAME
+  */
+
   show("game");
 
 
   /*
-    PENTING:
-    TIMER START DAHULU
-    BARU RENDER SOALAN
+     START 60 SEC TIMER
   */
 
   startTimer();
+
+
+  /*
+     DISPLAY FIRST QUESTION
+  */
 
   renderQuestion();
 
@@ -731,7 +1242,7 @@ function beginGame(){
 
 
 /* =========================================
-   TIMER 60 SECONDS
+   60 SECOND GAME TIMER
 ========================================= */
 
 function startTimer(){
@@ -753,36 +1264,57 @@ function startTimer(){
     .style.width = "100%";
 
 
-  timerId = setInterval(() => {
+  timerId =
+    setInterval(() => {
 
-    const left =
-      Math.max(
-        0,
-        endAt - Date.now()
-      );
-
-
-    document
-      .getElementById("timer")
-      .textContent =
-      Math.ceil(left / 1000);
+      const left =
+        Math.max(
+          0,
+          endAt - Date.now()
+        );
 
 
-    document
-      .getElementById("bar")
-      .style.width =
-      (left / 600) + "%";
+      /*
+         TIMER
+      */
+
+      document
+        .getElementById("timer")
+        .textContent =
+        Math.ceil(
+          left / 1000
+        );
 
 
-    if(left <= 0){
+      /*
+         PROGRESS BAR
+      */
 
-      clearInterval(timerId);
+      document
+        .getElementById("bar")
+        .style.width =
+        Math.max(
+          0,
+          Math.min(
+            100,
+            (left / 600)
+          )
+        ) + "%";
 
-      finishGame();
 
-    }
+      /*
+         MASA HABIS
+      */
 
-  },50);
+      if(left <= 0){
+
+        clearInterval(timerId);
+
+        finishGame();
+
+      }
+
+    },50);
 
 }
 
@@ -794,7 +1326,13 @@ function startTimer(){
 
 function renderQuestion(){
 
-  if(Date.now() >= endAt){
+  /*
+     CHECK MASA
+  */
+
+  if(
+    Date.now() >= endAt
+  ){
 
     finishGame();
 
@@ -803,14 +1341,99 @@ function renderQuestion(){
   }
 
 
+  /*
+     RESET LOCK
+  */
+
   locked = false;
 
 
-  const question =
-    questions[
-      qIndex % questions.length
-    ];
+  /*
+     CLEAR QUESTION TIMER
+  */
 
+  clearInterval(questionTimerId);
+
+
+  /*
+     KALAU HABIS BANK SOALAN
+     SHUFFLE SEMULA
+  */
+
+  if(
+    qIndex >= questions.length
+  ){
+
+    questions =
+      [...questions].sort(
+        () => Math.random() - 0.5
+      );
+
+    qIndex = 0;
+
+  }
+
+
+  const question =
+    questions[qIndex];
+
+
+  /*
+     START QUESTION TIMER
+  */
+
+  questionStartAt =
+    Date.now();
+
+
+  document
+    .getElementById("questionTime")
+    .textContent =
+    "0.0s";
+
+
+  questionTimerId =
+    setInterval(() => {
+
+      if(locked){
+
+        return;
+
+      }
+
+
+      const elapsed =
+        (
+          Date.now() -
+          questionStartAt
+        ) / 1000;
+
+
+      document
+        .getElementById("questionTime")
+        .textContent =
+        elapsed.toFixed(1) + "s";
+
+
+    },100);
+
+
+
+  /*
+     QUESTION NUMBER
+  */
+
+  document
+    .getElementById("questionNumber")
+    .textContent =
+    "Soalan " +
+    (qIndex + 1);
+
+
+
+  /*
+     QUESTION TEXT
+  */
 
   document
     .getElementById("question")
@@ -818,19 +1441,41 @@ function renderQuestion(){
     question.question;
 
 
+
+  /*
+     SCORE
+  */
+
   document
     .getElementById("score")
     .textContent =
     score.toLocaleString();
 
 
+
+  /*
+     FEEDBACK
+  */
+
   document
     .getElementById("feedback")
     .textContent = "";
 
 
+  document
+    .getElementById("feedback")
+    .className =
+    "feedback";
+
+
+  /*
+     ANSWERS
+  */
+
   const answerBox =
-    document.getElementById("answers");
+    document.getElementById(
+      "answers"
+    );
 
 
   answerBox.innerHTML = "";
@@ -840,7 +1485,9 @@ function renderQuestion(){
     (option,index) => {
 
       const button =
-        document.createElement("button");
+        document.createElement(
+          "button"
+        );
 
 
       button.className =
@@ -852,10 +1499,11 @@ function renderQuestion(){
 
 
       button.onclick =
-        () => answerQuestion(
-          index,
-          button
-        );
+        () =>
+          answerQuestion(
+            index,
+            button
+          );
 
 
       answerBox.appendChild(
@@ -870,13 +1518,17 @@ function renderQuestion(){
 
 
 /* =========================================
-   ANSWER
+   ANSWER QUESTION
 ========================================= */
 
 function answerQuestion(
   selectedAnswer,
   button
 ){
+
+  /*
+     ELAK DOUBLE CLICK
+  */
 
   if(locked){
 
@@ -885,28 +1537,58 @@ function answerQuestion(
   }
 
 
+  /*
+     LOCK
+  */
+
   locked = true;
+
+
+  clearInterval(
+    questionTimerId
+  );
+
 
   attempts++;
 
 
   const question =
-    questions[
-      qIndex % questions.length
-    ];
+    questions[qIndex];
 
+
+  /*
+     DISABLE SEMUA BUTTON
+  */
 
   document
     .querySelectorAll(".answer")
-    .forEach(button => {
+    .forEach(answerButton => {
 
-      button.disabled = true;
+      answerButton.disabled =
+        true;
 
     });
 
 
   /*
-    CHECK BETUL
+     MASA JAWAP
+  */
+
+  const elapsed =
+    (
+      Date.now() -
+      questionStartAt
+    ) / 1000;
+
+
+  document
+    .getElementById("questionTime")
+    .textContent =
+    elapsed.toFixed(1) + "s";
+
+
+  /*
+     CHECK BETUL
   */
 
   if(
@@ -923,18 +1605,21 @@ function answerQuestion(
 
 
     /*
-      KIRA MASA YANG TELAH DIGUNAKAN
+       STREAK
     */
 
-    const elapsed =
-      (Date.now() -
-      (endAt - 60000)) / 1000;
+    streak++;
 
 
     /*
-      SPEED BONUS:
-      0 saat = 100 bonus
-      10 saat atau lebih = 0 bonus
+       SPEED BONUS
+
+       <= 1 sec = 100 bonus
+       2 sec = 80 bonus
+       3 sec = 60 bonus
+       4 sec = 40 bonus
+       5 sec = 20 bonus
+       >= 6 sec = 0 bonus
     */
 
     const speedBonus =
@@ -943,30 +1628,114 @@ function answerQuestion(
         Math.min(
           100,
           Math.round(
-            100 *
-            (1 - elapsed / 10)
+            120 -
+            (elapsed * 20)
           )
         )
       );
 
 
+    /*
+       STREAK BONUS
+
+       3 berturut = +10
+       5 berturut = +20
+       10 berturut = +30
+    */
+
+    let streakBonus = 0;
+
+
+    if(streak >= 10){
+
+      streakBonus = 30;
+
+    }
+
+    else if(streak >= 5){
+
+      streakBonus = 20;
+
+    }
+
+    else if(streak >= 3){
+
+      streakBonus = 10;
+
+    }
+
+
+    /*
+       BASE SCORE
+    */
+
+    const baseScore = 100;
+
+
+    /*
+       TOTAL
+    */
+
     const gained =
-      100 + speedBonus;
+      baseScore +
+      speedBonus +
+      streakBonus;
 
 
     score += gained;
 
 
+    /*
+       UPDATE STREAK
+    */
+
+    document
+      .getElementById("streak")
+      .textContent =
+      "🔥 Streak: " +
+      streak;
+
+
+    /*
+       FEEDBACK
+    */
+
+    let feedbackText =
+      `✅ +${gained} points`;
+
+
+    if(speedBonus > 0){
+
+      feedbackText +=
+        ` • Speed +${speedBonus}`;
+
+    }
+
+
+    if(streakBonus > 0){
+
+      feedbackText +=
+        ` • Streak +${streakBonus}`;
+
+    }
+
+
     document
       .getElementById("feedback")
       .textContent =
-      `+${gained} points`;
+      feedbackText;
+
+
+    document
+      .getElementById("feedback")
+      .className =
+      "feedback good";
 
   }
 
 
   /*
-    JAWAPAN SALAH
+     JAWAPAN SALAH
   */
 
   else{
@@ -976,21 +1745,85 @@ function answerQuestion(
     );
 
 
+    /*
+       RESET STREAK
+    */
+
+    streak = 0;
+
+
+    document
+      .getElementById("streak")
+      .textContent =
+      "🔥 Streak: 0";
+
+
+    /*
+       FEEDBACK
+    */
+
     document
       .getElementById("feedback")
       .textContent =
       "❌ Salah — 0 points";
 
+
+    document
+      .getElementById("feedback")
+      .className =
+      "feedback bad";
+
+
+    /*
+       HIGHLIGHT JAWAPAN BETUL
+    */
+
+    const answerButtons =
+      document.querySelectorAll(
+        ".answer"
+      );
+
+
+    answerButtons.forEach(
+      (answerButton,index) => {
+
+        if(
+          index ===
+          question.answer
+        ){
+
+          answerButton.classList.add(
+            "correct"
+          );
+
+        }
+
+      }
+    );
+
   }
 
 
   /*
-    NEXT QUESTION
+     UPDATE SCORE
+  */
+
+  document
+    .getElementById("score")
+    .textContent =
+    score.toLocaleString();
+
+
+  /*
+     NEXT QUESTION
   */
 
   setTimeout(() => {
 
-    if(Date.now() < endAt){
+    if(
+      Date.now() < endAt &&
+      !gameFinished
+    ){
 
       qIndex++;
 
@@ -998,7 +1831,7 @@ function answerQuestion(
 
     }
 
-  },150);
+  },350);
 
 }
 
@@ -1010,95 +1843,175 @@ function answerQuestion(
 
 function finishGame(){
 
+  /*
+     ELAK DOUBLE FINISH
+  */
+
+  if(gameFinished){
+
+    return;
+
+  }
+
+
+  gameFinished = true;
+
+
   clearInterval(timerId);
+
+  clearInterval(questionTimerId);
 
 
   /*
-    Elak finishGame dipanggil
-    banyak kali
+     ACCURACY
   */
 
-  if(
-    !document
-      .getElementById("game")
-      .classList
-      .contains("hidden")
-  ){
-
-    const accuracy =
-      attempts > 0
-      ? Math.round(
-          correct /
-          attempts *
-          100
-        )
-      : 0;
-
-
-    document
-      .getElementById("finalScore")
-      .textContent =
-      score.toLocaleString();
-
-
-    document
-      .getElementById("stats")
-      .textContent =
-      `${correct} betul • ` +
-      `${accuracy}% accuracy • ` +
-      `${attempts} soalan`;
-
-
-    /*
-      SIMPAN SCORE
-    */
-
-    let leaderboard =
-      JSON.parse(
-        localStorage.getItem(
-          "bwr_leaderboard"
-        ) || "[]"
-      );
-
-
-    leaderboard.push({
-
-      name:
-        playerName,
-
-      level:
-        level,
-
-      score:
-        score
-
-    });
-
-
-    leaderboard.sort(
-      (a,b) =>
-        b.score - a.score
-    );
-
-
-    leaderboard =
-      leaderboard.slice(
-        0,
+  const accuracy =
+    attempts > 0
+    ? Math.round(
+        correct /
+        attempts *
         100
-      );
-
-
-    localStorage.setItem(
-      "bwr_leaderboard",
-      JSON.stringify(
-        leaderboard
       )
-    );
+    : 0;
 
 
-    show("result");
+  /*
+     FINAL SCORE
+  */
+
+  document
+    .getElementById("finalScore")
+    .textContent =
+    score.toLocaleString();
+
+
+  /*
+     RESULT MESSAGE
+  */
+
+  let message = "";
+
+
+  if(score >= 2500){
+
+    message =
+      "🔥 Luar biasa! Speed demon!";
 
   }
+
+  else if(score >= 1800){
+
+    message =
+      "💪 Mantap! Prestasi hebat!";
+
+  }
+
+  else if(score >= 1000){
+
+    message =
+      "👏 Nice! Boleh cuba lagi.";
+
+  }
+
+  else if(score > 0){
+
+    message =
+      "🚀 Good try! Cuba lebih laju.";
+
+  }
+
+  else{
+
+    message =
+      "😎 Jom cuba sekali lagi!";
+
+  }
+
+
+  document
+    .getElementById("resultMessage")
+    .textContent =
+    message;
+
+
+  /*
+     STATS
+  */
+
+  document
+    .getElementById("stats")
+    .textContent =
+    `${correct} betul • ` +
+    `${accuracy}% accuracy • ` +
+    `${attempts} soalan • ` +
+    `${level.toUpperCase()}`;
+
+
+  /*
+     SAVE LEADERBOARD
+  */
+
+  let leaderboard =
+    JSON.parse(
+      localStorage.getItem(
+        "bwr_leaderboard"
+      ) || "[]"
+    );
+
+
+  leaderboard.push({
+
+    name:
+      playerName,
+
+    level:
+      level,
+
+    score:
+      score
+
+  });
+
+
+  /*
+     SORT SCORE
+  */
+
+  leaderboard.sort(
+    (a,b) =>
+      b.score - a.score
+  );
+
+
+  /*
+     TOP 100
+  */
+
+  leaderboard =
+    leaderboard.slice(
+      0,
+      100
+    );
+
+
+  /*
+     SAVE
+  */
+
+  localStorage.setItem(
+    "bwr_leaderboard",
+    JSON.stringify(
+      leaderboard
+    )
+  );
+
+
+  /*
+     SHOW RESULT
+  */
+
+  show("result");
 
 }
 
@@ -1109,6 +2022,11 @@ function finishGame(){
 ========================================= */
 
 function showLeaderboard(){
+
+  clearInterval(timerId);
+
+  clearInterval(questionTimerId);
+
 
   show("leaderboard");
 
@@ -1127,6 +2045,10 @@ function showLeaderboard(){
     );
 
 
+  /*
+     EMPTY
+  */
+
   if(
     leaderboard.length === 0
   ){
@@ -1134,9 +2056,13 @@ function showLeaderboard(){
     board.innerHTML =
       `
       <tr>
+
         <td colspan="4">
+
           Belum ada score.
+
         </td>
+
       </tr>
       `;
 
@@ -1145,34 +2071,54 @@ function showLeaderboard(){
   }
 
 
+  /*
+     DISPLAY
+  */
+
   board.innerHTML =
     leaderboard
       .map(
-        (player,index) => `
+        (player,index) => {
 
-        <tr>
+          let rankIcon =
+            index === 0
+            ? "🥇"
+            : index === 1
+            ? "🥈"
+            : index === 2
+            ? "🥉"
+            : index + 1;
 
-          <td>
-            ${index + 1}
-          </td>
 
-          <td>
-            ${escapeHTML(
-              player.name
-            )}
-          </td>
+          return `
 
-          <td>
-            ${player.level}
-          </td>
+          <tr>
 
-          <td>
-            ${player.score.toLocaleString()}
-          </td>
+            <td class="rank">
+              ${rankIcon}
+            </td>
 
-        </tr>
+            <td>
+              ${escapeHTML(
+                player.name
+              )}
+            </td>
 
-        `
+            <td>
+              ${player.level.toUpperCase()}
+            </td>
+
+            <td>
+              ${Number(
+                player.score
+              ).toLocaleString()}
+            </td>
+
+          </tr>
+
+          `;
+
+        }
       )
       .join("");
 
@@ -1193,13 +2139,23 @@ function escapeHTML(text){
 
         const map = {
 
-          "&":"&amp;",
-          "<":"&lt;",
-          ">":"&gt;",
-          '"':"&quot;",
-          "'":"&#039;"
+          "&":
+            "&amp;",
+
+          "<":
+            "&lt;",
+
+          ">":
+            "&gt;",
+
+          '"':
+            "&quot;",
+
+          "'":
+            "&#039;"
 
         };
+
 
         return map[
           character
@@ -1209,6 +2165,29 @@ function escapeHTML(text){
     );
 
 }
+
+
+/* =========================================
+   ENTER KEY UNTUK START
+========================================= */
+
+document
+  .getElementById("playerName")
+  .addEventListener(
+    "keydown",
+    function(event){
+
+      if(
+        event.key === "Enter"
+      ){
+
+        beginGame();
+
+      }
+
+    }
+  );
+
 
 </script>
 
