@@ -1,102 +1,65 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-body {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #031f1b;
-  color: #f4f7f6;
-  min-height: 100vh;
-}
-
-button,
-input {
-  font-family: inherit;
-}
-
-button {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.container {
-  width: 100%;
-  max-width: 720px;
-  margin: auto;
-  padding: 20px 16px 35px;
-}
-
-.screen {
-  display: none;
-}
-
-.screen.active {
-  display: block;
-}
-
-
 /* =========================
    HOME
 ========================= */
 
 .hero {
-  padding: 12px 0 20px;
+  padding: 8px 0 18px;
 }
 
+/* BIJAKWANG RUSH */
 .eyebrow {
-  color: #a9c3bd;
-  font-size: 16px;
-  line-height: 1.2;
-  font-weight: 800;
-  letter-spacing: 1px;
-  margin-bottom: 18px;
+  color: #d8ebe6;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
 }
 
+/* Hide 60 SECOND SPEED QUIZ */
 .second-eyebrow {
-  margin-top: -7px;
-  margin-bottom: 28px;
+  display: none;
 }
 
 .hero h1 {
-  font-size: 48px;
-  line-height: 1.02;
-  letter-spacing: -1.8px;
-  margin-bottom: 22px;
+  font-size: 42px;
+  line-height: 1.04;
+  letter-spacing: -1.5px;
+  margin-bottom: 17px;
 }
 
 .hero p {
   color: #a8c0bb;
-  font-size: 18px;
-  line-height: 1.4;
-  margin-bottom: 25px;
+  font-size: 17px;
+  line-height: 1.35;
+  margin-bottom: 20px;
 }
 
 
-/* LEVEL CARDS */
+/* =========================
+   CATEGORY CARDS
+========================= */
 
 .level-card {
   width: 100%;
-  min-height: 150px;
+  height: 105px;
+  min-height: 105px;
 
   background: #103c34;
   border: 1px solid #285d53;
-  border-radius: 24px;
+  border-radius: 20px;
 
-  padding: 23px 26px;
-  margin-bottom: 14px;
+  padding: 15px 20px;
+  margin-bottom: 11px;
 
   color: white;
   text-align: left;
 
   cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   transition:
     transform 0.15s ease,
@@ -115,32 +78,34 @@ button {
 }
 
 .level-icon {
-  font-size: 32px;
+  font-size: 27px;
   line-height: 1;
-  margin-bottom: 17px;
+  margin-bottom: 9px;
 }
 
 .level-title {
-  font-size: 28px;
+  font-size: 25px;
   line-height: 1;
   font-weight: 900;
 }
 
 
-/* LEADERBOARD HOME BUTTON */
+/* =========================
+   LEADERBOARD HOME BUTTON
+========================= */
 
 .leaderboard-button {
   width: 100%;
 
   border: 0;
-  border-radius: 22px;
+  border-radius: 20px;
 
-  padding: 19px;
+  padding: 17px;
 
   background: #103c34;
   color: white;
 
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 900;
 
   cursor: pointer;
@@ -153,728 +118,10 @@ button {
 }
 
 .home-note {
-  margin-top: 20px;
+  margin-top: 17px;
 
   color: #91aca6;
 
-  font-size: 15px;
-  line-height: 1.4;
-}
-
-
-/* =========================
-   GENERAL PANEL
-========================= */
-
-.panel {
-  background: #082b25;
-
-  border: 1px solid #285d53;
-  border-radius: 26px;
-
-  padding: 25px;
-
-  margin-top: 18px;
-}
-
-.panel h2 {
-  font-size: 34px;
-  line-height: 1.1;
-  margin-bottom: 12px;
-}
-
-.panel p {
-  color: #9db6b0;
-
-  font-size: 17px;
-  line-height: 1.4;
-
-  margin-bottom: 22px;
-}
-
-
-/* LEVEL BADGE */
-
-.selected-level {
-  display: inline-block;
-
-  background: #16483f;
-
-  border-radius: 999px;
-
-  padding: 9px 15px;
-
   font-size: 14px;
-  line-height: 1;
-
-  font-weight: 900;
-
-  margin-bottom: 20px;
-
-  text-transform: uppercase;
+  line-height: 1.4;
 }
-
-
-/* =========================
-   NAME SCREEN
-========================= */
-
-.name-input {
-  width: 100%;
-
-  border: 1px solid #37685f;
-
-  background: #06241f;
-  color: white;
-
-  border-radius: 15px;
-
-  padding: 17px;
-
-  font-size: 19px;
-
-  outline: none;
-
-  margin-bottom: 13px;
-}
-
-.name-input:focus {
-  border-color: #66d6bd;
-}
-
-.primary {
-  width: 100%;
-
-  border: 0;
-  border-radius: 15px;
-
-  padding: 17px;
-
-  background: #ffd447;
-  color: #172018;
-
-  font-size: 20px;
-  line-height: 1;
-
-  font-weight: 900;
-
-  cursor: pointer;
-}
-
-.primary:hover {
-  filter: brightness(1.04);
-}
-
-.secondary {
-  width: 100%;
-
-  border: 1px solid #37685f;
-  border-radius: 15px;
-
-  padding: 15px;
-
-  background: transparent;
-  color: #d6e3e0;
-
-  font-size: 17px;
-  line-height: 1;
-
-  font-weight: 800;
-
-  cursor: pointer;
-
-  margin-top: 11px;
-}
-
-
-/* =========================
-   GAME TOP
-========================= */
-
-.game-top {
-  background: #082b25;
-
-  border: 1px solid #285d53;
-  border-radius: 25px;
-
-  padding: 22px;
-
-  margin-top: 5px;
-}
-
-.game-row {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: center;
-
-  gap: 15px;
-}
-
-.level-badge {
-  display: inline-block;
-
-  background: #16483f;
-  color: #c9dcd8;
-
-  border-radius: 999px;
-
-  padding: 9px 15px;
-
-  font-size: 13px;
-  line-height: 1;
-
-  font-weight: 900;
-
-  text-transform: uppercase;
-}
-
-.game-score {
-  font-size: 23px;
-  line-height: 1;
-
-  font-weight: 900;
-
-  margin-top: 14px;
-}
-
-.main-timer {
-  font-size: 58px;
-
-  line-height: 1;
-
-  font-weight: 900;
-
-  color: #ffd447;
-}
-
-.timer-bar {
-  height: 12px;
-
-  background: #123e36;
-
-  border-radius: 999px;
-
-  overflow: hidden;
-
-  margin-top: 18px;
-}
-
-.timer-fill {
-  height: 100%;
-
-  width: 100%;
-
-  background: #ffd447;
-
-  transition: width 0.05s linear;
-}
-
-
-/* =========================
-   QUESTION
-========================= */
-
-.question-card {
-  background: #06241f;
-
-  border: 1px solid #285d53;
-  border-radius: 25px;
-
-  padding: 23px;
-
-  margin-top: 15px;
-}
-
-.question-header {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: center;
-
-  margin-bottom: 18px;
-}
-
-.question-number {
-  color: #9bb4ae;
-
-  font-size: 18px;
-  line-height: 1;
-
-  font-weight: 800;
-}
-
-.question-points {
-  color: #ffd447;
-
-  font-size: 31px;
-  line-height: 1;
-
-  font-weight: 900;
-}
-
-.question-score-bar {
-  width: 100%;
-
-  height: 10px;
-
-  background: #123e36;
-
-  border-radius: 999px;
-
-  overflow: hidden;
-
-  margin-bottom: 23px;
-}
-
-.question-score-fill {
-  width: 100%;
-  height: 100%;
-
-  background: #ffd447;
-}
-
-
-/* QUESTION TEXT */
-
-.question-text {
-  font-size: 31px;
-
-  line-height: 1.22;
-
-  font-weight: 900;
-
-  margin-bottom: 24px;
-}
-
-
-/* ANSWERS */
-
-.answers {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 11px;
-}
-
-.answer-button {
-  width: 100%;
-
-  border: 1px solid #285d53;
-
-  background: #103c34;
-  color: white;
-
-  border-radius: 17px;
-
-  padding: 17px 18px;
-
-  text-align: left;
-
-  font-size: 18px;
-  line-height: 1.2;
-
-  font-weight: 800;
-
-  cursor: pointer;
-
-  transition:
-    background 0.15s ease,
-    transform 0.1s ease;
-}
-
-.answer-button:hover {
-  background: #16483f;
-}
-
-.answer-button:active {
-  transform: scale(0.99);
-}
-
-.answer-button.correct {
-  background: #176b4f;
-  border-color: #4de0aa;
-}
-
-.answer-button.wrong {
-  background: #6c2632;
-  border-color: #ff7082;
-}
-
-.answer-button.disabled {
-  pointer-events: none;
-}
-
-.feedback {
-  min-height: 27px;
-
-  margin-top: 16px;
-
-  font-size: 17px;
-  line-height: 1.2;
-
-  font-weight: 800;
-
-  color: #b9d2cc;
-}
-
-
-/* =========================
-   RESULT
-========================= */
-
-.result-score {
-  font-size: 64px;
-
-  line-height: 1;
-
-  font-weight: 900;
-
-  color: #ffd447;
-
-  margin: 18px 0;
-}
-
-.result-stats {
-  display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 10px;
-
-  margin: 22px 0;
-}
-
-.stat {
-  background: #103c34;
-
-  border: 1px solid #285d53;
-
-  border-radius: 17px;
-
-  padding: 17px;
-}
-
-.stat-label {
-  color: #94afa9;
-
-  font-size: 13px;
-
-  margin-bottom: 7px;
-}
-
-.stat-value {
-  font-size: 26px;
-
-  line-height: 1;
-
-  font-weight: 900;
-}
-
-
-/* =========================
-   LEADERBOARD
-========================= */
-
-.leaderboard-list {
-  margin-top: 17px;
-}
-
-.leaderboard-row {
-  display: grid;
-
-  grid-template-columns: 42px 1fr 75px;
-
-  align-items: center;
-
-  gap: 9px;
-
-  background: #103c34;
-
-  border: 1px solid #285d53;
-
-  border-radius: 15px;
-
-  padding: 14px;
-
-  margin-bottom: 9px;
-}
-
-.rank {
-  font-size: 19px;
-  font-weight: 900;
-}
-
-.player-name {
-  font-weight: 900;
-
-  overflow: hidden;
-
-  text-overflow: ellipsis;
-
-  white-space: nowrap;
-}
-
-.player-level {
-  color: #8fa9a3;
-
-  font-size: 11px;
-
-  margin-top: 3px;
-
-  text-transform: uppercase;
-}
-
-.player-score {
-  text-align: right;
-
-  color: #ffd447;
-
-  font-size: 19px;
-
-  font-weight: 900;
-}
-
-.empty {
-  color: #91aaa4;
-
-  text-align: center;
-
-  padding: 25px 10px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 500px) {
-
-  .container {
-    padding: 16px 14px 28px;
-  }
-
-  /* HOME */
-
-  .hero {
-    padding-top: 8px;
-  }
-
-  .eyebrow {
-    font-size: 15px;
-    margin-bottom: 15px;
-  }
-
-  .second-eyebrow {
-    margin-top: -4px;
-    margin-bottom: 24px;
-  }
-
-  .hero h1 {
-    font-size: 43px;
-    line-height: 1.03;
-    letter-spacing: -1.5px;
-    margin-bottom: 19px;
-  }
-
-  .hero p {
-    font-size: 17px;
-    line-height: 1.4;
-    margin-bottom: 21px;
-  }
-
-  .level-card {
-    min-height: 128px;
-
-    border-radius: 22px;
-
-    padding: 20px 23px;
-
-    margin-bottom: 12px;
-  }
-
-  .level-icon {
-    font-size: 29px;
-    margin-bottom: 15px;
-  }
-
-  .level-title {
-    font-size: 26px;
-  }
-
-  .leaderboard-button {
-    border-radius: 20px;
-
-    padding: 18px;
-
-    font-size: 20px;
-  }
-
-  .home-note {
-    font-size: 14px;
-    margin-top: 17px;
-  }
-
-
-  /* PANEL */
-
-  .panel {
-    border-radius: 24px;
-
-    padding: 22px;
-
-    margin-top: 15px;
-  }
-
-  .panel h2 {
-    font-size: 31px;
-  }
-
-  .panel p {
-    font-size: 16px;
-    margin-bottom: 19px;
-  }
-
-
-  /* NAME */
-
-  .selected-level {
-    padding: 9px 14px;
-    font-size: 13px;
-    margin-bottom: 18px;
-  }
-
-  .name-input {
-    padding: 16px;
-    font-size: 18px;
-  }
-
-  .primary {
-    padding: 16px;
-    font-size: 19px;
-  }
-
-  .secondary {
-    padding: 15px;
-    font-size: 16px;
-  }
-
-
-  /* GAME */
-
-  .game-top {
-    border-radius: 23px;
-
-    padding: 20px;
-
-    margin-top: 3px;
-  }
-
-  .level-badge {
-    font-size: 12px;
-    padding: 8px 13px;
-  }
-
-  .game-score {
-    font-size: 21px;
-    margin-top: 13px;
-  }
-
-  .main-timer {
-    font-size: 52px;
-  }
-
-  .timer-bar {
-    height: 10px;
-    margin-top: 16px;
-  }
-
-
-  /* QUESTION */
-
-  .question-card {
-    border-radius: 23px;
-
-    padding: 20px;
-
-    margin-top: 13px;
-  }
-
-  .question-header {
-    margin-bottom: 16px;
-  }
-
-  .question-number {
-    font-size: 17px;
-  }
-
-  .question-points {
-    font-size: 29px;
-  }
-
-  .question-score-bar {
-    height: 9px;
-    margin-bottom: 20px;
-  }
-
-  .question-text {
-    font-size: 28px;
-
-    line-height: 1.22;
-
-    margin-bottom: 21px;
-  }
-
-  .answers {
-    gap: 9px;
-  }
-
-  .answer-button {
-    border-radius: 15px;
-
-    padding: 15px 16px;
-
-    font-size: 17px;
-  }
-
-  .feedback {
-    font-size: 16px;
-    margin-top: 14px;
-  }
-
-
-  /* RESULT */
-
-  .result-score {
-    font-size: 58px;
-  }
-
-  .result-stats {
-    gap: 9px;
-    margin: 20px 0;
-  }
-
-  .stat {
-    padding: 15px;
-  }
-
-  .stat-value {
-    font-size: 24px;
-  }
-
-
-  /* LEADERBOARD */
-
-  .leaderboard-row {
-    grid-template-columns: 38px 1fr 70px;
-
-    padding: 13px;
-
-    border-radius: 14px;
-  }
-
-  .player-score {
-    font-size: 18px;
-  }
-  }
