@@ -63,7 +63,7 @@ table{width:100%;border-collapse:collapse}td,th{padding:10px;border-bottom:1px s
 let BANK=[];
 let level="",questions=[],qIndex=0,score=0,correct=0,attempts=0,locked=false,endAt=0,timerId=null;
 
-fetch("data/questions.json").then(r=>r.json()).then(data=>BANK=data).catch(()=>alert("Bank soalan gagal dimuatkan. Pastikan folder data/questions.json turut di-upload."));
+fetch("questions.json").then(r=>r.json()).then(data=>BANK=data).catch(()=>alert("Bank soalan gagal dimuatkan. Pastikan folder data/questions.json turut di-upload."));
 
 function show(id){["home","game","result","leaderboard"].forEach(x=>document.getElementById(x).classList.add("hidden"));document.getElementById(id).classList.remove("hidden")}
 function goHome(){clearInterval(timerId);show("home")}
