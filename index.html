@@ -12,12 +12,7 @@
 
 <title>BijakWang Rush</title>
 
-
 <style>
-
-/* =========================================
-   GLOBAL
-========================================= */
 
 *{
   box-sizing:border-box;
@@ -25,6 +20,7 @@
 
 body{
   margin:0;
+  min-height:100vh;
 
   font-family:
     Inter,
@@ -36,8 +32,6 @@ body{
 
   background:#071a17;
   color:#f5f7f2;
-
-  min-height:100vh;
 }
 
 button,
@@ -50,25 +44,25 @@ button{
 }
 
 
-/* =========================================
-   MAIN WRAPPER
-========================================= */
+/* =====================================
+   WRAPPER
+===================================== */
 
 .wrap{
+  width:100%;
   max-width:720px;
   margin:auto;
   padding:20px;
 }
 
 
-/* =========================================
+/* =====================================
    BRAND
-========================================= */
+===================================== */
 
 .brand{
   font-size:28px;
   font-weight:900;
-  letter-spacing:-.5px;
 }
 
 .brand span{
@@ -76,9 +70,9 @@ button{
 }
 
 
-/* =========================================
+/* =====================================
    CARD
-========================================= */
+===================================== */
 
 .card{
   background:#0d2924;
@@ -90,24 +84,17 @@ button{
   padding:24px;
 
   margin-top:18px;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.12);
 }
 
 
-/* =========================================
+/* =====================================
    TEXT
-========================================= */
+===================================== */
 
 h1{
   font-size:40px;
-
   line-height:1.05;
-
-  margin:12px 0;
-
-  letter-spacing:-1px;
+  margin:14px 0;
 }
 
 h2{
@@ -124,9 +111,28 @@ h2{
 }
 
 
-/* =========================================
+/* =====================================
+   PILL
+===================================== */
+
+.pill{
+  display:inline-block;
+
+  background:#173c35;
+  color:#b7ccc6;
+
+  padding:7px 11px;
+
+  border-radius:999px;
+
+  font-size:12px;
+  font-weight:800;
+}
+
+
+/* =====================================
    CATEGORY
-========================================= */
+===================================== */
 
 .grid{
   display:grid;
@@ -138,8 +144,9 @@ h2{
 }
 
 .cat{
-  background:#123a33;
+  width:100%;
 
+  background:#123a33;
   color:#fff;
 
   text-align:left;
@@ -148,15 +155,14 @@ h2{
 
   border-radius:14px;
 
-  padding:15px;
+  padding:16px;
 
   font-size:16px;
-
   font-weight:800;
 }
 
 .cat:hover{
-  background:#18483f;
+  background:#19483f;
 }
 
 .cat b{
@@ -164,19 +170,28 @@ h2{
 
   font-size:18px;
 
-  margin-bottom:5px;
+  margin-top:5px;
 }
 
 .cat small{
+  display:block;
+
   color:#a9c0b9;
+
+  margin-top:4px;
 }
 
 
-/* =========================================
+/* =====================================
    BUTTONS
-========================================= */
+===================================== */
 
-button{
+.primary{
+  width:100%;
+
+  background:#ffd447;
+  color:#17200e;
+
   border:0;
 
   border-radius:14px;
@@ -184,22 +199,7 @@ button{
   padding:15px;
 
   font-size:16px;
-
-  font-weight:800;
-
-  transition:
-    transform .1s ease,
-    opacity .1s ease;
-}
-
-button:active{
-  transform:scale(.98);
-}
-
-.primary{
-  background:#ffd447;
-
-  color:#17200e;
+  font-weight:900;
 }
 
 .primary:hover{
@@ -207,9 +207,19 @@ button:active{
 }
 
 .secondary{
-  background:#173c35;
+  width:100%;
 
+  background:#173c35;
   color:#fff;
+
+  border:0;
+
+  border-radius:14px;
+
+  padding:15px;
+
+  font-size:16px;
+  font-weight:800;
 }
 
 .secondary:hover{
@@ -217,30 +227,38 @@ button:active{
 }
 
 
-/* =========================================
-   PILL
-========================================= */
+/* =====================================
+   NAME
+===================================== */
 
-.pill{
-  display:inline-block;
+.namebox{
+  width:100%;
 
-  background:#173c35;
+  padding:15px;
 
-  color:#b7ccc6;
+  margin:12px 0 15px;
 
-  padding:7px 11px;
+  border-radius:12px;
 
-  border-radius:999px;
+  border:1px solid #28574e;
 
-  font-size:12px;
+  background:#09211d;
 
-  font-weight:800;
+  color:#fff;
+
+  font-size:17px;
+
+  outline:none;
+}
+
+.namebox:focus{
+  border-color:#ffd447;
 }
 
 
-/* =========================================
+/* =====================================
    GAME TOP
-========================================= */
+===================================== */
 
 .top{
   display:flex;
@@ -252,91 +270,137 @@ button:active{
   gap:15px;
 }
 
-.timer{
-  font-size:48px;
+.score{
+  font-size:20px;
+
+  font-weight:900;
+
+  margin-top:7px;
+}
+
+.game-timer{
+  font-size:44px;
 
   font-weight:900;
 
   color:#ffd447;
 
-  min-width:80px;
-
   text-align:right;
 }
 
-.score{
-  font-size:20px;
 
-  font-weight:800;
-
-  margin-top:6px;
-}
-
-
-/* =========================================
-   TIMER BAR
-========================================= */
+/* =====================================
+   TOTAL TIMER
+===================================== */
 
 .bar{
+  width:100%;
+
   height:8px;
 
   background:#173c35;
 
-  border-radius:99px;
+  border-radius:999px;
 
   overflow:hidden;
 
-  margin-top:14px;
+  margin-top:15px;
 }
 
 .bar i{
   display:block;
 
-  height:100%;
-
   width:100%;
 
-  background:#ffd447;
+  height:100%;
 
-  transition:
-    width .05s linear;
+  background:#ffd447;
 }
 
 
-/* =========================================
-   QUESTION
-========================================= */
+/* =====================================
+   QUESTION TIMER / SCORE
+===================================== */
 
-.question-meta{
+.question-panel{
+  margin-top:20px;
+
+  padding:15px;
+
+  background:#09211d;
+
+  border:1px solid #1d4a41;
+
+  border-radius:16px;
+}
+
+.question-top{
   display:flex;
 
   justify-content:space-between;
 
   align-items:center;
 
-  margin-top:22px;
+  gap:10px;
+}
 
+.question-label{
   color:#86a39b;
 
   font-size:13px;
 
-  font-weight:700;
+  font-weight:800;
 }
+
+.question-score{
+  font-size:24px;
+
+  font-weight:900;
+
+  color:#ffd447;
+}
+
+.question-timer{
+  margin-top:10px;
+
+  height:7px;
+
+  background:#173c35;
+
+  border-radius:99px;
+
+  overflow:hidden;
+}
+
+.question-timer i{
+  display:block;
+
+  width:100%;
+
+  height:100%;
+
+  background:#ffd447;
+}
+
+
+/* =====================================
+   QUESTION
+===================================== */
 
 .q{
   font-size:25px;
 
   line-height:1.3;
 
-  margin:18px 0 24px;
-
   font-weight:800;
+
+  margin:22px 0 24px;
 }
 
 
-/* =========================================
+/* =====================================
    ANSWERS
-========================================= */
+===================================== */
 
 .answers{
   display:grid;
@@ -345,6 +409,8 @@ button:active{
 }
 
 .answer{
+  width:100%;
+
   background:#143a33;
 
   color:#fff;
@@ -353,21 +419,23 @@ button:active{
 
   border:1px solid #28574e;
 
+  border-radius:14px;
+
+  padding:16px;
+
   min-height:58px;
+
+  font-size:16px;
 
   font-weight:700;
 }
 
 .answer:hover:not(:disabled){
-  background:#1a4a41;
-
-  border-color:#3c7569;
+  background:#1b4b42;
 }
 
 .answer:disabled{
   cursor:default;
-
-  opacity:.95;
 }
 
 .correct{
@@ -383,80 +451,49 @@ button:active{
 }
 
 
-/* =========================================
+/* =====================================
    FEEDBACK
-========================================= */
+===================================== */
 
 .feedback{
   min-height:25px;
 
-  margin:15px 0 0;
+  margin-top:15px;
 
-  font-weight:800;
+  font-weight:900;
 }
 
-.feedback.good{
+.good{
   color:#6ee7a8;
 }
 
-.feedback.bad{
+.bad{
   color:#ff8f99;
 }
 
 
-/* =========================================
-   NAME INPUT
-========================================= */
-
-.namebox{
-  width:100%;
-
-  padding:14px;
-
-  border-radius:12px;
-
-  border:1px solid #28574e;
-
-  background:#09211d;
-
-  color:#fff;
-
-  font-size:17px;
-
-  margin:10px 0 14px;
-
-  outline:none;
-}
-
-.namebox:focus{
-  border-color:#ffd447;
-}
-
-
-/* =========================================
+/* =====================================
    RESULT
-========================================= */
+===================================== */
 
 .center{
   text-align:center;
 }
 
 .big{
-  font-size:60px;
+  font-size:64px;
 
   font-weight:900;
 
   color:#ffd447;
 
-  margin:12px 0;
+  margin:15px 0;
 }
 
 .result-message{
-  font-size:20px;
+  font-size:21px;
 
-  font-weight:800;
-
-  margin-bottom:5px;
+  font-weight:900;
 }
 
 .result-details{
@@ -466,9 +503,9 @@ button:active{
 }
 
 
-/* =========================================
+/* =====================================
    LEADERBOARD
-========================================= */
+===================================== */
 
 table{
   width:100%;
@@ -476,13 +513,13 @@ table{
   border-collapse:collapse;
 }
 
-td,
-th{
-  padding:10px;
-
-  border-bottom:1px solid #21483f;
+th,
+td{
+  padding:11px 7px;
 
   text-align:left;
+
+  border-bottom:1px solid #21483f;
 }
 
 th{
@@ -492,24 +529,45 @@ th{
 }
 
 .rank{
-  font-weight:900;
-
   color:#ffd447;
+
+  font-weight:900;
 }
 
 
-/* =========================================
+/* =====================================
+   STATUS
+===================================== */
+
+.status{
+  margin-top:15px;
+
+  padding:12px;
+
+  border-radius:12px;
+
+  background:#09211d;
+
+  color:#86a39b;
+
+  font-size:13px;
+
+  text-align:center;
+}
+
+
+/* =====================================
    HIDDEN
-========================================= */
+===================================== */
 
 .hidden{
-  display:none;
+  display:none !important;
 }
 
 
-/* =========================================
+/* =====================================
    MOBILE
-========================================= */
+===================================== */
 
 @media(max-width:600px){
 
@@ -535,37 +593,12 @@ th{
     font-size:22px;
   }
 
-  .timer{
-    font-size:40px;
+  .game-timer{
+    font-size:38px;
   }
 
-  .top{
-    align-items:flex-start;
-  }
-
-  table{
-    font-size:14px;
-  }
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media(max-width:380px){
-
-  .timer{
-    font-size:34px;
-  }
-
-  .score{
-    font-size:18px;
-  }
-
-  .q{
-    font-size:20px;
+  .question-score{
+    font-size:22px;
   }
 
 }
@@ -581,9 +614,9 @@ th{
 <div class="wrap">
 
 
-<!-- ======================================
+<!-- =====================================
      BRAND
-======================================= -->
+===================================== -->
 
 <div class="brand">
 
@@ -593,9 +626,9 @@ th{
 
 
 
-<!-- ======================================
+<!-- =====================================
      HOME
-======================================= -->
+===================================== -->
 
 <section
   id="home"
@@ -617,17 +650,17 @@ th{
 
 <p class="muted">
 
-  Jawab sebanyak mungkin dalam
-  masa 60 saat.
+  Lagi cepat jawab dengan betul,
+  lagi tinggi markah kau.
 
 </p>
-
 
 
 <div class="grid">
 
 
 <button
+  type="button"
   class="cat"
   onclick="chooseLevel('easy')"
 >
@@ -647,6 +680,7 @@ th{
 
 
 <button
+  type="button"
   class="cat"
   onclick="chooseLevel('medium')"
 >
@@ -666,6 +700,7 @@ th{
 
 
 <button
+  type="button"
   class="cat"
   onclick="chooseLevel('hard')"
 >
@@ -686,10 +721,10 @@ th{
 </div>
 
 
-
 <button
+  type="button"
   class="secondary"
-  style="margin-top:14px;width:100%"
+  style="margin-top:14px"
   onclick="showLeaderboard()"
 >
 
@@ -698,11 +733,20 @@ th{
 </button>
 
 
+<div
+  id="bankStatus"
+  class="status"
+>
+
+  ⏳ Loading question bank...
+
+</div>
+
 
 <p class="note">
 
-  60 saat • Betul = +100 points •
-  Salah = 0 points
+  Setiap soalan maksimum 100 points.
+  Markah berkurang setiap saat.
 
 </p>
 
@@ -710,22 +754,26 @@ th{
 
 
 
-<!-- ======================================
+<!-- =====================================
      NAME
-======================================= -->
+===================================== -->
 
 <section
   id="name"
   class="card hidden"
 >
 
-<span class="pill">
-  PLAYER
+<span
+  id="selectedLevel"
+  class="pill"
+>
 </span>
 
 
-<h2>
+<h2 style="margin-top:15px">
+
   Masukkan nama
+
 </h2>
 
 
@@ -740,16 +788,16 @@ th{
 <input
   id="playerName"
   class="namebox"
+  type="text"
   maxlength="30"
   autocomplete="off"
   placeholder="Nama anda"
 >
 
 
-
 <button
+  type="button"
   class="primary"
-  style="width:100%"
   onclick="beginGame()"
 >
 
@@ -758,10 +806,10 @@ th{
 </button>
 
 
-
 <button
+  type="button"
   class="secondary"
-  style="width:100%;margin-top:10px"
+  style="margin-top:10px"
   onclick="goHome()"
 >
 
@@ -773,9 +821,9 @@ th{
 
 
 
-<!-- ======================================
+<!-- =====================================
      GAME
-======================================= -->
+===================================== -->
 
 <section
   id="game"
@@ -787,7 +835,6 @@ th{
 
 
 <div>
-
 
 <span
   id="level"
@@ -805,14 +852,12 @@ th{
 
 </div>
 
-
 </div>
 
 
-
 <div
-  id="timer"
-  class="timer"
+  id="gameTimer"
+  class="game-timer"
 >
 
   60
@@ -823,8 +868,7 @@ th{
 </div>
 
 
-
-<!-- TIMER BAR -->
+<!-- TOTAL 60 SECOND BAR -->
 
 <div class="bar">
 
@@ -834,17 +878,43 @@ th{
 
 
 
-<!-- QUESTION NUMBER -->
+<!-- QUESTION TIMER + SCORE -->
 
-<div class="question-meta">
+<div class="question-panel">
 
-<span id="questionNumber">
+
+<div class="question-top">
+
+
+<span
+  id="questionNumber"
+  class="question-label"
+>
+
   Soalan
+
 </span>
 
-<span>
-  +100 correct
+
+<span
+  id="questionScore"
+  class="question-score"
+>
+
+  100
+
 </span>
+
+
+</div>
+
+
+<div class="question-timer">
+
+  <i id="questionBar"></i>
+
+</div>
+
 
 </div>
 
@@ -883,20 +953,18 @@ th{
 
 
 
-<!-- ======================================
+<!-- =====================================
      RESULT
-======================================= -->
+===================================== -->
 
 <section
   id="result"
   class="card hidden center"
 >
 
-
 <span class="pill">
   RUSH COMPLETE
 </span>
-
 
 
 <div
@@ -909,7 +977,6 @@ th{
 </div>
 
 
-
 <div
   id="resultMessage"
   class="result-message"
@@ -920,7 +987,6 @@ th{
 </div>
 
 
-
 <p
   id="stats"
   class="result-details"
@@ -928,10 +994,9 @@ th{
 </p>
 
 
-
 <button
+  type="button"
   class="primary"
-  style="width:100%"
   onclick="goHome()"
 >
 
@@ -940,10 +1005,10 @@ th{
 </button>
 
 
-
 <button
+  type="button"
   class="secondary"
-  style="width:100%;margin-top:10px"
+  style="margin-top:10px"
   onclick="showLeaderboard()"
 >
 
@@ -951,14 +1016,13 @@ th{
 
 </button>
 
-
 </section>
 
 
 
-<!-- ======================================
+<!-- =====================================
      LEADERBOARD
-======================================= -->
+===================================== -->
 
 <section
   id="leaderboard"
@@ -974,7 +1038,9 @@ th{
 
 
 <button
+  type="button"
   class="secondary"
+  style="width:auto;padding:10px 14px"
   onclick="goHome()"
 >
 
@@ -985,33 +1051,23 @@ th{
 </div>
 
 
-
 <table>
 
 <thead>
 
 <tr>
 
-<th>
-  #
-</th>
+<th>#</th>
 
-<th>
-  Nama
-</th>
+<th>Nama</th>
 
-<th>
-  Level
-</th>
+<th>Level</th>
 
-<th>
-  Score
-</th>
+<th>Score</th>
 
 </tr>
 
 </thead>
-
 
 
 <tbody id="board">
@@ -1021,14 +1077,12 @@ th{
 </table>
 
 
-
 <p class="note">
 
-  Leaderboard ini disimpan pada
-  browser/peranti ini sahaja.
+  Leaderboard ini disimpan
+  pada browser/peranti ini sahaja.
 
 </p>
-
 
 </section>
 
@@ -1040,25 +1094,21 @@ th{
 <script>
 
 
-/* =========================================
-   BANK SOALAN
-========================================= */
+/* ==================================================
+   GAME VARIABLES
+================================================== */
 
 let BANK = [];
 
+let bankLoaded = false;
 
-
-/* =========================================
-   GAME VARIABLES
-========================================= */
-
-let level = "";
+let selectedLevel = "";
 
 let playerName = "";
 
 let questions = [];
 
-let qIndex = 0;
+let questionIndex = 0;
 
 let score = 0;
 
@@ -1068,79 +1118,32 @@ let attempts = 0;
 
 let locked = false;
 
-let endAt = 0;
-
-let timerId = null;
-
 let gameFinished = false;
 
 
+/*
+   60 SECOND GAME TIMER
+*/
 
-/* =========================================
-   LOAD QUESTIONS.JSON
-========================================= */
+let gameTimerId = null;
 
-fetch("questions.json")
-
-.then(response => {
-
-  if(!response.ok){
-
-    throw new Error(
-      "questions.json tidak dijumpai"
-    );
-
-  }
-
-  return response.json();
-
-})
-
-.then(data => {
-
-  if(!Array.isArray(data)){
-
-    throw new Error(
-      "Format questions.json tidak sah"
-    );
-
-  }
+let gameEndTime = 0;
 
 
-  BANK = data;
+/*
+   10 SECOND QUESTION TIMER
+*/
+
+let questionTimerId = null;
+
+let questionEndTime = 0;
 
 
-  console.log(
-    "Bank soalan berjaya dimuatkan:",
-    BANK.length
-  );
+/* ==================================================
+   SCREEN
+================================================== */
 
-})
-
-.catch(error => {
-
-  console.error(error);
-
-
-  alert(
-    "Bank soalan gagal dimuatkan.\n\n" +
-
-    "Pastikan questions.json berada " +
-
-    "dalam folder yang sama dengan " +
-
-    "index.html."
-  );
-
-});
-
-
-
-/* =========================================
-   SHOW SCREEN
-========================================= */
-
-function show(id){
+function showScreen(id){
 
   const screens = [
     "home",
@@ -1151,7 +1154,7 @@ function show(id){
   ];
 
 
-  screens.forEach(screen => {
+  screens.forEach(function(screen){
 
     document
       .getElementById(screen)
@@ -1168,67 +1171,148 @@ function show(id){
 
 
 
-/* =========================================
-   HOME
-========================================= */
+/* ==================================================
+   LOAD QUESTIONS
+================================================== */
 
-function goHome(){
+function loadQuestions(){
 
-  clearInterval(timerId);
+  fetch("questions.json")
+
+  .then(function(response){
+
+    if(!response.ok){
+
+      throw new Error(
+        "questions.json HTTP " +
+        response.status
+      );
+
+    }
+
+    return response.json();
+
+  })
+
+  .then(function(data){
+
+    if(!Array.isArray(data)){
+
+      throw new Error(
+        "questions.json bukan array"
+      );
+
+    }
 
 
-  gameFinished = true;
+    BANK = data;
+
+    bankLoaded = true;
 
 
-  show("home");
+    document
+      .getElementById(
+        "bankStatus"
+      )
+      .textContent =
+      "✅ " +
+      BANK.length +
+      " soalan berjaya dimuatkan";
+
+
+    console.log(
+      "Question bank loaded:",
+      BANK.length
+    );
+
+  })
+
+  .catch(function(error){
+
+    console.error(
+      "Question bank error:",
+      error
+    );
+
+
+    bankLoaded = false;
+
+
+    document
+      .getElementById(
+        "bankStatus"
+      )
+      .textContent =
+      "❌ Question bank gagal dimuatkan";
+
+  });
 
 }
 
 
 
-/* =========================================
-   SELECT CATEGORY
-========================================= */
+/* ==================================================
+   CATEGORY
+================================================== */
 
-function chooseLevel(
-  selectedLevel
-){
+function chooseLevel(level){
 
-  const pool =
-    BANK.filter(
-      q =>
-        q.category ===
-        selectedLevel
-    );
+  /*
+     TERUS BUKA NAME SCREEN
+  */
+
+  selectedLevel = level;
 
 
-  if(pool.length === 0){
+  let label = "";
 
-    alert(
-      "Tiada soalan untuk kategori ini."
-    );
 
-    return;
+  if(level === "easy"){
+
+    label =
+      "🟢 EASY • SEKOLAH RENDAH";
+
+  }
+
+  else if(level === "medium"){
+
+    label =
+      "🟡 MEDIUM • SEKOLAH MENENGAH";
+
+  }
+
+  else{
+
+    label =
+      "🔴 HARD • DEWASA";
 
   }
 
 
-  level =
-    selectedLevel;
+  document
+    .getElementById(
+      "selectedLevel"
+    )
+    .textContent =
+    label;
 
 
   document
-    .getElementById("playerName")
+    .getElementById(
+      "playerName"
+    )
     .value = "";
 
 
-  show("name");
+  showScreen("name");
 
 
-  setTimeout(() => {
+  setTimeout(function(){
 
     document
-      .getElementById("playerName")
+      .getElementById(
+        "playerName"
+      )
       .focus();
 
   },100);
@@ -1237,15 +1321,37 @@ function chooseLevel(
 
 
 
-/* =========================================
+/* ==================================================
    START GAME
-========================================= */
+================================================== */
 
 function beginGame(){
 
+  /*
+     CHECK BANK
+  */
+
+  if(!bankLoaded){
+
+    alert(
+      "Soalan masih belum siap dimuatkan.\n\n" +
+      "Sila tunggu sekejap dan cuba lagi."
+    );
+
+    return;
+
+  }
+
+
+  /*
+     NAME
+  */
+
   playerName =
     document
-      .getElementById("playerName")
+      .getElementById(
+        "playerName"
+      )
       .value
       .trim();
 
@@ -1259,21 +1365,27 @@ function beginGame(){
 
 
   /*
-     AMBIL SOALAN MENGIKUT CATEGORY
+     FILTER CATEGORY
   */
 
   const pool =
-    BANK.filter(
-      q =>
-        q.category ===
-        level
-    );
+    BANK.filter(function(question){
+
+      return String(
+        question.category
+      ).toLowerCase()
+      ===
+      selectedLevel;
+
+    });
 
 
   if(pool.length === 0){
 
     alert(
-      "Tiada soalan untuk kategori ini."
+      "Tiada soalan untuk kategori " +
+      selectedLevel +
+      "."
     );
 
     return;
@@ -1282,20 +1394,20 @@ function beginGame(){
 
 
   /*
-     RANDOMIZE SOALAN
+     RANDOMIZE
   */
 
   questions =
     shuffle(
-      [...pool]
+      pool.slice()
     );
 
 
   /*
-     RESET GAME
+     RESET
   */
 
-  qIndex = 0;
+  questionIndex = 0;
 
   score = 0;
 
@@ -1312,20 +1424,37 @@ function beginGame(){
      LEVEL LABEL
   */
 
+  let levelLabel;
+
+
+  if(selectedLevel === "easy"){
+
+    levelLabel =
+      "EASY • SEKOLAH RENDAH";
+
+  }
+
+  else if(selectedLevel === "medium"){
+
+    levelLabel =
+      "MEDIUM • SEKOLAH MENENGAH";
+
+  }
+
+  else{
+
+    levelLabel =
+      "HARD • DEWASA";
+
+  }
+
+
   document
-    .getElementById("level")
+    .getElementById(
+      "level"
+    )
     .textContent =
-    {
-      easy:
-        "EASY • SEKOLAH RENDAH",
-
-      medium:
-        "MEDIUM • SEKOLAH MENENGAH",
-
-      hard:
-        "HARD • DEWASA"
-
-    }[level];
+    levelLabel;
 
 
   /*
@@ -1333,7 +1462,9 @@ function beginGame(){
   */
 
   document
-    .getElementById("score")
+    .getElementById(
+      "score"
+    )
     .textContent =
     "0";
 
@@ -1342,35 +1473,31 @@ function beginGame(){
      SHOW GAME
   */
 
-  show("game");
+  showScreen("game");
 
 
   /*
-     START TIMER
+     START 60 SECOND TIMER
   */
 
-  startTimer();
+  startGameTimer();
 
 
   /*
      FIRST QUESTION
   */
 
-  renderQuestion();
+  showQuestion();
 
 }
 
 
 
-/* =========================================
-   RANDOM SHUFFLE
-========================================= */
+/* ==================================================
+   SHUFFLE
+================================================== */
 
 function shuffle(array){
-
-  /*
-     Fisher-Yates Shuffle
-  */
 
   for(
     let i = array.length - 1;
@@ -1385,14 +1512,14 @@ function shuffle(array){
       );
 
 
-    [
-      array[i],
-      array[j]
-    ] =
-    [
-      array[j],
-      array[i]
-    ];
+    const temp =
+      array[i];
+
+    array[i] =
+      array[j];
+
+    array[j] =
+      temp;
 
   }
 
@@ -1403,76 +1530,93 @@ function shuffle(array){
 
 
 
-/* =========================================
-   TIMER 60 SECOND
-========================================= */
+/* ==================================================
+   START GAME TIMER
+================================================== */
 
-function startTimer(){
+function startGameTimer(){
 
-  clearInterval(timerId);
+  clearInterval(
+    gameTimerId
+  );
 
 
-  endAt =
+  gameEndTime =
     Date.now() +
     60000;
 
 
   document
-    .getElementById("timer")
+    .getElementById(
+      "gameTimer"
+    )
     .textContent =
     "60";
 
 
   document
-    .getElementById("bar")
+    .getElementById(
+      "bar"
+    )
     .style.width =
     "100%";
 
 
-  timerId =
-    setInterval(() => {
+  gameTimerId =
+    setInterval(function(){
 
-      const left =
+      const remaining =
         Math.max(
           0,
-          endAt -
+          gameEndTime -
           Date.now()
         );
 
 
       /*
-         TIMER TEXT
+         GAME TIMER
       */
 
       document
-        .getElementById("timer")
+        .getElementById(
+          "gameTimer"
+        )
         .textContent =
         Math.ceil(
-          left / 1000
+          remaining /
+          1000
         );
 
 
       /*
-         PROGRESS BAR
+         GAME BAR
       */
 
       document
-        .getElementById("bar")
+        .getElementById(
+          "bar"
+        )
         .style.width =
         (
-          left /
+          remaining /
           600
-        ) + "%";
+        ) +
+        "%";
 
 
       /*
          TIME UP
       */
 
-      if(left <= 0){
+      if(remaining <= 0){
 
         clearInterval(
-          timerId
+          gameTimerId
+        );
+
+
+        clearInterval(
+          questionTimerId
         );
 
 
@@ -1486,19 +1630,19 @@ function startTimer(){
 
 
 
-/* =========================================
-   DISPLAY QUESTION
-========================================= */
+/* ==================================================
+   SHOW QUESTION
+================================================== */
 
-function renderQuestion(){
+function showQuestion(){
 
   /*
-     CHECK TIME
+     CHECK GAME TIME
   */
 
   if(
     Date.now() >=
-    endAt
+    gameEndTime
   ){
 
     finishGame();
@@ -1509,6 +1653,15 @@ function renderQuestion(){
 
 
   /*
+     CLEAR OLD QUESTION TIMER
+  */
+
+  clearInterval(
+    questionTimerId
+  );
+
+
+  /*
      UNLOCK
   */
 
@@ -1516,31 +1669,29 @@ function renderQuestion(){
 
 
   /*
-     SEMUA SOALAN SUDAH DIGUNAKAN
+     IF ALL QUESTIONS USED
+     SHUFFLE AGAIN
   */
 
   if(
-    qIndex >=
+    questionIndex >=
     questions.length
   ){
 
-    /*
-       SHUFFLE SEMULA
-    */
-
     questions =
       shuffle(
-        [...questions]
+        questions.slice()
       );
 
-
-    qIndex = 0;
+    questionIndex = 0;
 
   }
 
 
-  const question =
-    questions[qIndex];
+  const currentQuestion =
+    questions[
+      questionIndex
+    ];
 
 
   /*
@@ -1553,13 +1704,15 @@ function renderQuestion(){
     )
     .textContent =
     "Soalan " +
-    (qIndex + 1) +
+    (
+      questionIndex + 1
+    ) +
     " / " +
     questions.length;
 
 
   /*
-     QUESTION TEXT
+     QUESTION
   */
 
   document
@@ -1567,19 +1720,31 @@ function renderQuestion(){
       "question"
     )
     .textContent =
-    question.question;
+    currentQuestion.question;
 
 
   /*
-     SCORE
+     RESET SCORE DISPLAY
   */
 
   document
     .getElementById(
-      "score"
+      "questionScore"
     )
     .textContent =
-    score.toLocaleString();
+    "100";
+
+
+  /*
+     RESET QUESTION BAR
+  */
+
+  document
+    .getElementById(
+      "questionBar"
+    )
+    .style.width =
+    "100%";
 
 
   /*
@@ -1593,7 +1758,6 @@ function renderQuestion(){
 
 
   feedback.textContent = "";
-
 
   feedback.className =
     "feedback";
@@ -1616,13 +1780,17 @@ function renderQuestion(){
      CREATE ANSWERS
   */
 
-  question.options.forEach(
-    (option,index) => {
+  currentQuestion.options.forEach(
+    function(option,index){
 
       const button =
         document.createElement(
           "button"
         );
+
+
+      button.type =
+        "button";
 
 
       button.className =
@@ -1651,21 +1819,179 @@ function renderQuestion(){
     }
   );
 
+
+  /*
+     START 10 SECOND QUESTION TIMER
+  */
+
+  startQuestionTimer();
+
 }
 
 
 
-/* =========================================
-   ANSWER QUESTION
-========================================= */
+/* ==================================================
+   QUESTION TIMER
+================================================== */
+
+function startQuestionTimer(){
+
+  clearInterval(
+    questionTimerId
+  );
+
+
+  questionEndTime =
+    Date.now() +
+    10000;
+
+
+  /*
+     INITIAL
+  */
+
+  updateQuestionScore();
+
+
+  questionTimerId =
+    setInterval(function(){
+
+      /*
+         GAME FINISHED
+      */
+
+      if(gameFinished){
+
+        clearInterval(
+          questionTimerId
+        );
+
+        return;
+
+      }
+
+
+      /*
+         TIME LEFT
+      */
+
+      const remaining =
+        Math.max(
+          0,
+          questionEndTime -
+          Date.now()
+        );
+
+
+      /*
+         UPDATE SCORE
+      */
+
+      updateQuestionScore();
+
+
+      /*
+         TIME UP
+      */
+
+      if(remaining <= 0){
+
+        clearInterval(
+          questionTimerId
+        );
+
+
+        timeOutQuestion();
+
+      }
+
+    },50);
+
+}
+
+
+
+/* ==================================================
+   CALCULATE CURRENT SCORE
+================================================== */
+
+function getCurrentQuestionScore(){
+
+  const remaining =
+    Math.max(
+      0,
+      questionEndTime -
+      Date.now()
+    );
+
+
+  /*
+     10 SEC = 100 POINTS
+     0 SEC = 0 POINTS
+
+     Linear countdown.
+  */
+
+  const points =
+    Math.ceil(
+      remaining /
+      100
+    );
+
+
+  return Math.max(
+    0,
+    Math.min(
+      100,
+      points
+    )
+  );
+
+}
+
+
+
+/* ==================================================
+   UPDATE QUESTION SCORE
+================================================== */
+
+function updateQuestionScore(){
+
+  const points =
+    getCurrentQuestionScore();
+
+
+  document
+    .getElementById(
+      "questionScore"
+    )
+    .textContent =
+    points;
+
+
+  document
+    .getElementById(
+      "questionBar"
+    )
+    .style.width =
+    points +
+    "%";
+
+}
+
+
+
+/* ==================================================
+   ANSWER
+================================================== */
 
 function answerQuestion(
   selectedAnswer,
-  button
+  clickedButton
 ){
 
   /*
-     ELAK DOUBLE CLICK
+     DOUBLE CLICK
   */
 
   if(locked){
@@ -1675,80 +2001,79 @@ function answerQuestion(
   }
 
 
-  /*
-     LOCK
-  */
-
   locked = true;
+
+
+  clearInterval(
+    questionTimerId
+  );
 
 
   attempts++;
 
 
-  const question =
-    questions[qIndex];
+  const currentQuestion =
+    questions[
+      questionIndex
+    ];
 
 
   /*
-     DISABLE SEMUA BUTTON
+     GET CURRENT SCORE
+     SEBELUM CLICK
+  */
+
+  const points =
+    getCurrentQuestionScore();
+
+
+  /*
+     DISABLE ANSWERS
   */
 
   document
     .querySelectorAll(
       ".answer"
     )
-    .forEach(
-      answerButton => {
+    .forEach(function(button){
 
-        answerButton.disabled =
-          true;
+      button.disabled =
+        true;
 
-      }
-    );
+    });
 
 
   /*
-     BETUL
+     CORRECT
   */
 
   if(
     selectedAnswer ===
-    question.answer
+    currentQuestion.answer
   ){
 
-    /*
-       GREEN
-    */
-
-    button.classList.add(
-      "correct"
-    );
+    clickedButton
+      .classList
+      .add("correct");
 
 
     /*
-       SCORE +100
+       ADD SCORE
     */
 
-    score += 100;
-
-
-    /*
-       COUNT CORRECT
-    */
+    score += points;
 
     correct++;
 
-
-    /*
-       FEEDBACK
-    */
 
     document
       .getElementById(
         "feedback"
       )
       .textContent =
-      "+100 points ✅";
+      "✅ Betul! +" +
+      points +
+      " points";
 
 
     document
@@ -1762,51 +2087,43 @@ function answerQuestion(
 
 
   /*
-     SALAH
+     WRONG
   */
 
   else{
 
-    /*
-       RED
-    */
-
-    button.classList.add(
-      "wrong"
-    );
+    clickedButton
+      .classList
+      .add("wrong");
 
 
     /*
-       HIGHLIGHT JAWAPAN BETUL
+       HIGHLIGHT CORRECT
     */
 
-    const answerButtons =
+    const buttons =
       document.querySelectorAll(
         ".answer"
       );
 
 
-    answerButtons.forEach(
-      (answerButton,index) => {
+    buttons.forEach(
+      function(button,index){
 
         if(
           index ===
-          question.answer
+          currentQuestion.answer
         ){
 
-          answerButton.classList.add(
-            "correct"
-          );
+          button
+            .classList
+            .add("correct");
 
         }
 
       }
     );
 
-
-    /*
-       FEEDBACK
-    */
 
     document
       .getElementById(
@@ -1827,7 +2144,7 @@ function answerQuestion(
 
 
   /*
-     UPDATE SCORE
+     UPDATE TOTAL SCORE
   */
 
   document
@@ -1839,38 +2156,151 @@ function answerQuestion(
 
 
   /*
-     NEXT QUESTION
+     NEXT
   */
 
-  setTimeout(() => {
+  setTimeout(function(){
 
     if(
+      !gameFinished &&
       Date.now() <
-      endAt &&
-      !gameFinished
+      gameEndTime
     ){
 
-      qIndex++;
+      questionIndex++;
 
-      renderQuestion();
+      showQuestion();
 
     }
 
-  },350);
+  },450);
 
 }
 
 
 
-/* =========================================
-   FINISH GAME
-========================================= */
+/* ==================================================
+   TIME OUT QUESTION
+================================================== */
 
-function finishGame(){
+function timeOutQuestion(){
 
   /*
-     ELAK DOUBLE FINISH
+     LOCK
   */
+
+  if(locked){
+
+    return;
+
+  }
+
+
+  locked = true;
+
+
+  attempts++;
+
+
+  const currentQuestion =
+    questions[
+      questionIndex
+    ];
+
+
+  /*
+     DISABLE BUTTONS
+  */
+
+  document
+    .querySelectorAll(
+      ".answer"
+    )
+    .forEach(function(button){
+
+      button.disabled =
+        true;
+
+    });
+
+
+  /*
+     SHOW CORRECT ANSWER
+  */
+
+  const buttons =
+    document.querySelectorAll(
+      ".answer"
+    );
+
+
+  buttons.forEach(
+    function(button,index){
+
+      if(
+        index ===
+        currentQuestion.answer
+      ){
+
+        button
+          .classList
+          .add("correct");
+
+      }
+
+    }
+  );
+
+
+  /*
+     FEEDBACK
+  */
+
+  document
+    .getElementById(
+      "feedback"
+    )
+    .textContent =
+    "⏰ Masa habis — 0 points";
+
+
+  document
+    .getElementById(
+      "feedback"
+    )
+    .className =
+    "feedback bad";
+
+
+  /*
+     NEXT QUESTION
+  */
+
+  setTimeout(function(){
+
+    if(
+      !gameFinished &&
+      Date.now() <
+      gameEndTime
+    ){
+
+      questionIndex++;
+
+      showQuestion();
+
+    }
+
+  },450);
+
+}
+
+
+
+/* ==================================================
+   FINISH GAME
+================================================== */
+
+function finishGame(){
 
   if(gameFinished){
 
@@ -1883,7 +2313,12 @@ function finishGame(){
 
 
   clearInterval(
-    timerId
+    gameTimerId
+  );
+
+
+  clearInterval(
+    questionTimerId
   );
 
 
@@ -1894,8 +2329,10 @@ function finishGame(){
   const accuracy =
     attempts > 0
     ? Math.round(
-        correct /
-        attempts *
+        (
+          correct /
+          attempts
+        ) *
         100
       )
     : 0;
@@ -1923,14 +2360,14 @@ function finishGame(){
   if(score >= 2000){
 
     message =
-      "🔥 Hebat!";
+      "🔥 Luar biasa!";
 
   }
 
   else if(score >= 1000){
 
     message =
-      "👏 Nice!";
+      "👏 Mantap!";
 
   }
 
@@ -1966,9 +2403,12 @@ function finishGame(){
       "stats"
     )
     .textContent =
-    `${correct} betul • ` +
-    `${accuracy}% accuracy • ` +
-    `${attempts} soalan`;
+    correct +
+    " betul • " +
+    accuracy +
+    "% accuracy • " +
+    attempts +
+    " soalan";
 
 
   /*
@@ -1985,7 +2425,7 @@ function finishGame(){
 
 
   /*
-     ADD SCORE
+     SAVE RESULT
   */
 
   leaderboard.push({
@@ -1994,7 +2434,7 @@ function finishGame(){
       playerName,
 
     level:
-      level,
+      selectedLevel,
 
     score:
       score
@@ -2003,13 +2443,18 @@ function finishGame(){
 
 
   /*
-     SORT SCORE
+     SORT
   */
 
   leaderboard.sort(
-    (a,b) =>
-      b.score -
-      a.score
+    function(a,b){
+
+      return (
+        b.score -
+        a.score
+      );
+
+    }
   );
 
 
@@ -2040,17 +2485,256 @@ function finishGame(){
      SHOW RESULT
   */
 
-  show("result");
+  showScreen(
+    "result"
+  );
 
 }
 
 
 
-/* =========================================
+/* ==================================================
    LEADERBOARD
-========================================= */
+================================================== */
 
 function showLeaderboard(){
 
   clearInterval(
-    timerId
+    gameTimerId
+  );
+
+
+  clearInterval(
+    questionTimerId
+  );
+
+
+  showScreen(
+    "leaderboard"
+  );
+
+
+  const leaderboard =
+    JSON.parse(
+      localStorage.getItem(
+        "bwr_leaderboard"
+      ) ||
+      "[]"
+    );
+
+
+  const board =
+    document.getElementById(
+      "board"
+    );
+
+
+  /*
+     EMPTY
+  */
+
+  if(
+    leaderboard.length === 0
+  ){
+
+    board.innerHTML = `
+
+      <tr>
+
+        <td colspan="4">
+
+          Belum ada score.
+
+        </td>
+
+      </tr>
+
+    `;
+
+    return;
+
+  }
+
+
+  /*
+     DISPLAY
+  */
+
+  board.innerHTML =
+    leaderboard
+      .map(
+        function(player,index){
+
+          let rank;
+
+
+          if(index === 0){
+
+            rank = "🥇";
+
+          }
+
+          else if(index === 1){
+
+            rank = "🥈";
+
+          }
+
+          else if(index === 2){
+
+            rank = "🥉";
+
+          }
+
+          else{
+
+            rank =
+              index + 1;
+
+          }
+
+
+          return `
+
+            <tr>
+
+              <td class="rank">
+                ${rank}
+              </td>
+
+              <td>
+                ${escapeHTML(
+                  player.name
+                )}
+              </td>
+
+              <td>
+                ${String(
+                  player.level
+                ).toUpperCase()}
+              </td>
+
+              <td>
+                ${Number(
+                  player.score
+                ).toLocaleString()}
+              </td>
+
+            </tr>
+
+          `;
+
+        }
+      )
+      .join("");
+
+}
+
+
+
+/* ==================================================
+   GO HOME
+================================================== */
+
+function goHome(){
+
+  clearInterval(
+    gameTimerId
+  );
+
+  clearInterval(
+    questionTimerId
+  );
+
+
+  gameFinished = true;
+
+
+  showScreen(
+    "home"
+  );
+
+}
+
+
+
+/* ==================================================
+   SECURITY
+================================================== */
+
+function escapeHTML(text){
+
+  return String(text)
+    .replace(
+      /[&<>"']/g,
+      function(character){
+
+        const map = {
+
+          "&":
+            "&amp;",
+
+          "<":
+            "&lt;",
+
+          ">":
+            "&gt;",
+
+          '"':
+            "&quot;",
+
+          "'":
+            "&#039;"
+
+        };
+
+
+        return map[
+          character
+        ];
+
+      }
+    );
+
+}
+
+
+
+/* ==================================================
+   ENTER KEY
+================================================== */
+
+document
+  .getElementById(
+    "playerName"
+  )
+  .addEventListener(
+    "keydown",
+    function(event){
+
+      if(
+        event.key ===
+        "Enter"
+      ){
+
+        beginGame();
+
+      }
+
+    }
+  );
+
+
+
+/* ==================================================
+   LOAD BANK
+================================================== */
+
+loadQuestions();
+
+</script>
+
+
+</body>
+
+  </html>
