@@ -3,123 +3,1214 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>BijakWang Rush</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:#071a17;color:#f5f7f2;min-height:100vh}
-.wrap{max-width:720px;margin:auto;padding:20px}.brand{font-size:28px;font-weight:900}.brand span{color:#ffd447}
-.card{background:#0d2924;border:1px solid #1d4a41;border-radius:24px;padding:24px;margin-top:18px}
-h1{font-size:40px;line-height:1.05;margin:12px 0}.muted{color:#a9c0b9}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-button{border:0;border-radius:14px;padding:15px;font-size:16px;font-weight:800;cursor:pointer}.cat{background:#123a33;color:#fff;text-align:left;border:1px solid #28574e}.cat b{display:block;font-size:18px;margin-bottom:5px}
-.primary{background:#ffd447;color:#17200e}.secondary{background:#173c35;color:#fff}.pill{display:inline-block;background:#173c35;color:#b7ccc6;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:800}
-.top{display:flex;justify-content:space-between;align-items:center}.timer{font-size:48px;font-weight:900;color:#ffd447}.score{font-size:20px;font-weight:800}.bar{height:8px;background:#173c35;border-radius:99px;overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;width:100%;background:#ffd447}
-.q{font-size:25px;line-height:1.25;margin:28px 0}.answers{display:grid;gap:11px}.answer{background:#143a33;color:#fff;text-align:left;border:1px solid #28574e}.correct{background:#18583f!important}.wrong{background:#632f35!important}.hidden{display:none}.center{text-align:center}.big{font-size:60px;font-weight:900;color:#ffd447}
-table{width:100%;border-collapse:collapse}td,th{padding:10px;border-bottom:1px solid #21483f;text-align:left}.note{font-size:13px;color:#86a39b}
-@media(max-width:600px){.grid{grid-template-columns:1fr}h1{font-size:34px}.q{font-size:22px}}
+*{
+  box-sizing:border-box
+}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+  background:#071a17;
+  color:#f5f7f2;
+  min-height:100vh
+}
+
+.wrap{
+  max-width:720px;
+  margin:auto;
+  padding:20px
+}
+
+.brand{
+  font-size:28px;
+  font-weight:900
+}
+
+.brand span{
+  color:#ffd447
+}
+
+.card{
+  background:#0d2924;
+  border:1px solid #1d4a41;
+  border-radius:24px;
+  padding:24px;
+  margin-top:18px
+}
+
+h1{
+  font-size:40px;
+  line-height:1.05;
+  margin:12px 0
+}
+
+h2{
+  margin-top:0
+}
+
+.muted{
+  color:#a9c0b9
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px
+}
+
+button{
+  border:0;
+  border-radius:14px;
+  padding:15px;
+  font-size:16px;
+  font-weight:800;
+  cursor:pointer
+}
+
+.cat{
+  background:#123a33;
+  color:#fff;
+  text-align:left;
+  border:1px solid #28574e
+}
+
+.cat b{
+  display:block;
+  font-size:18px;
+  margin-bottom:5px
+}
+
+.cat small{
+  color:#a9c0b9
+}
+
+.primary{
+  background:#ffd447;
+  color:#17200e
+}
+
+.secondary{
+  background:#173c35;
+  color:#fff
+}
+
+.pill{
+  display:inline-block;
+  background:#173c35;
+  color:#b7ccc6;
+  padding:7px 11px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+
+.timer{
+  font-size:48px;
+  font-weight:900;
+  color:#ffd447
+}
+
+.score{
+  font-size:20px;
+  font-weight:800
+}
+
+.bar{
+  height:8px;
+  background:#173c35;
+  border-radius:99px;
+  overflow:hidden;
+  margin-top:10px
+}
+
+.bar i{
+  display:block;
+  height:100%;
+  width:100%;
+  background:#ffd447
+}
+
+.q{
+  font-size:25px;
+  line-height:1.25;
+  margin:28px 0
+}
+
+.answers{
+  display:grid;
+  gap:11px
+}
+
+.answer{
+  background:#143a33;
+  color:#fff;
+  text-align:left;
+  border:1px solid #28574e
+}
+
+.answer:disabled{
+  opacity:.95
+}
+
+.correct{
+  background:#18583f!important
+}
+
+.wrong{
+  background:#632f35!important
+}
+
+.hidden{
+  display:none
+}
+
+.center{
+  text-align:center
+}
+
+.big{
+  font-size:60px;
+  font-weight:900;
+  color:#ffd447
+}
+
+table{
+  width:100%;
+  border-collapse:collapse
+}
+
+td,th{
+  padding:10px;
+  border-bottom:1px solid #21483f;
+  text-align:left
+}
+
+.note{
+  font-size:13px;
+  color:#86a39b
+}
+
+.namebox{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid #28574e;
+  background:#09211d;
+  color:#fff;
+  font-size:17px;
+  margin:10px 0 14px
+}
+
+@media(max-width:600px){
+
+  .grid{
+    grid-template-columns:1fr
+  }
+
+  h1{
+    font-size:34px
+  }
+
+  .q{
+    font-size:22px
+  }
+
+}
 </style>
 </head>
+
 <body>
+
 <div class="wrap">
-<div class="brand">BijakWang <span>RUSH</span></div>
 
+<div class="brand">
+  BijakWang <span>RUSH</span>
+</div>
+
+
+<!-- HOME -->
 <section id="home" class="card">
-<span class="pill">60 SECOND SPEED QUIZ</span>
-<h1>Jawab cepat.<br>Score tinggi. 🔥</h1>
-<p class="muted">Betul + cepat = lebih banyak mata.</p>
+
+<span class="pill">
+  60 SECOND SPEED QUIZ
+</span>
+
+<h1>
+  Jawab cepat.<br>
+  Score tinggi. 🔥
+</h1>
+
+<p class="muted">
+  Betul + cepat = lebih banyak mata.
+</p>
+
+
 <div class="grid">
-<button class="cat" onclick="startGame('easy')">🟢 <b>Easy</b><small>Sekolah Rendah</small></button>
-<button class="cat" onclick="startGame('medium')">🟡 <b>Medium</b><small>Sekolah Menengah</small></button>
-<button class="cat" onclick="startGame('hard')">🔴 <b>Hard</b><small>Dewasa</small></button>
+
+<button class="cat" onclick="chooseLevel('easy')">
+  🟢
+  <b>Easy</b>
+  <small>Sekolah Rendah</small>
+</button>
+
+
+<button class="cat" onclick="chooseLevel('medium')">
+  🟡
+  <b>Medium</b>
+  <small>Sekolah Menengah</small>
+</button>
+
+
+<button class="cat" onclick="chooseLevel('hard')">
+  🔴
+  <b>Hard</b>
+  <small>Dewasa</small>
+</button>
+
 </div>
-<button class="secondary" style="margin-top:14px;width:100%" onclick="showLeaderboard()">🏆 Leaderboard</button>
-<p class="note">Prototype static — score leaderboard disimpan pada browser ini.</p>
+
+
+<button
+  class="secondary"
+  style="margin-top:14px;width:100%"
+  onclick="showLeaderboard()"
+>
+🏆 Leaderboard
+</button>
+
+
+<p class="note">
+  60 saat • Lagi cepat jawab, lagi tinggi score.
+</p>
+
 </section>
 
+
+
+<!-- NAME -->
+<section id="name" class="card hidden">
+
+<span class="pill">
+  PLAYER
+</span>
+
+<h2>
+  Masukkan nama
+</h2>
+
+<p class="muted">
+  Nama ini akan digunakan untuk leaderboard.
+</p>
+
+
+<input
+  id="playerName"
+  class="namebox"
+  maxlength="30"
+  placeholder="Nama anda"
+>
+
+
+<button
+  class="primary"
+  style="width:100%"
+  onclick="beginGame()"
+>
+  START RUSH 🚀
+</button>
+
+
+<button
+  class="secondary"
+  style="width:100%;margin-top:10px"
+  onclick="goHome()"
+>
+  Back
+</button>
+
+</section>
+
+
+
+<!-- GAME -->
 <section id="game" class="card hidden">
+
 <div class="top">
-<div><span id="level" class="pill"></span><div class="score">Score: <span id="score">0</span></div></div>
-<div class="timer" id="timer">60</div>
+
+<div>
+
+<span id="level" class="pill"></span>
+
+<div class="score">
+  Score:
+  <span id="score">0</span>
 </div>
-<div class="bar"><i id="bar"></i></div>
-<div id="question" class="q"></div>
-<div id="answers" class="answers"></div>
-<p id="feedback" class="muted"></p>
+
+</div>
+
+
+<div
+  class="timer"
+  id="timer"
+>
+60
+</div>
+
+</div>
+
+
+<div class="bar">
+  <i id="bar"></i>
+</div>
+
+
+<div
+  id="question"
+  class="q"
+>
+</div>
+
+
+<div
+  id="answers"
+  class="answers"
+>
+</div>
+
+
+<p
+  id="feedback"
+  class="muted"
+>
+</p>
+
 </section>
 
-<section id="result" class="card hidden center">
-<span class="pill">RUSH COMPLETE</span>
-<div id="finalScore" class="big">0</div>
+
+
+<!-- RESULT -->
+<section
+  id="result"
+  class="card hidden center"
+>
+
+<span class="pill">
+  RUSH COMPLETE
+</span>
+
+
+<div
+  id="finalScore"
+  class="big"
+>
+0
+</div>
+
+
 <p id="stats"></p>
-<button class="primary" onclick="goHome()">Main Lagi</button>
-<button class="secondary" onclick="showLeaderboard()">Leaderboard</button>
+
+
+<button
+  class="primary"
+  onclick="goHome()"
+>
+  Main Lagi
+</button>
+
+
+<button
+  class="secondary"
+  onclick="showLeaderboard()"
+>
+  Leaderboard
+</button>
+
 </section>
 
-<section id="leaderboard" class="card hidden">
-<div class="top"><h2>🏆 Leaderboard</h2><button class="secondary" onclick="goHome()">Back</button></div>
-<table><thead><tr><th>#</th><th>Nama</th><th>Level</th><th>Score</th></tr></thead><tbody id="board"></tbody></table>
-</section>
+
+
+<!-- LEADERBOARD -->
+<section
+  id="leaderboard"
+  class="card hidden"
+>
+
+<div class="top">
+
+<h2>
+  🏆 Leaderboard
+</h2>
+
+<button
+  class="secondary"
+  onclick="goHome()"
+>
+  Back
+</button>
+
 </div>
+
+
+<table>
+
+<thead>
+
+<tr>
+  <th>#</th>
+  <th>Nama</th>
+  <th>Level</th>
+  <th>Score</th>
+</tr>
+
+</thead>
+
+
+<tbody id="board">
+</tbody>
+
+</table>
+
+</section>
+
+</div>
+
+
 
 <script>
-let BANK=[];
-let level="",questions=[],qIndex=0,score=0,correct=0,attempts=0,locked=false,endAt=0,timerId=null;
 
-fetch("questions.json").then(r=>r.json()).then(data=>BANK=data).catch(()=>alert("Bank soalan gagal dimuatkan. Pastikan folder data/questions.json turut di-upload."));
+/* =========================================
+   BANK SOALAN
+========================================= */
 
-function show(id){["home","game","result","leaderboard"].forEach(x=>document.getElementById(x).classList.add("hidden"));document.getElementById(id).classList.remove("hidden")}
-function goHome(){clearInterval(timerId);show("home")}
-function startGame(l){
- const pool=BANK.filter(q=>q.category===l);
- if(!pool.length){alert("Tiada soalan untuk kategori ini.");return}
- level=l;questions=[...pool].sort(()=>Math.random()-.5);qIndex=0;score=0;correct=0;attempts=0;locked=false;
- document.getElementById("level").textContent={easy:"EASY • SEKOLAH RENDAH",medium:"MEDIUM • SEKOLAH MENENGAH",hard:"HARD • DEWASA"}[l];
- show("game");renderQuestion();startTimer();
+let BANK = [];
+
+
+/* =========================================
+   GAME VARIABLES
+========================================= */
+
+let level = "";
+
+let playerName = "";
+
+let questions = [];
+
+let qIndex = 0;
+
+let score = 0;
+
+let correct = 0;
+
+let attempts = 0;
+
+let locked = false;
+
+let endAt = 0;
+
+let timerId = null;
+
+
+
+/* =========================================
+   LOAD QUESTIONS.JSON
+========================================= */
+
+fetch("questions.json")
+
+.then(response => {
+
+  if(!response.ok){
+
+    throw new Error(
+      "questions.json tidak dijumpai"
+    );
+
+  }
+
+  return response.json();
+
+})
+
+.then(data => {
+
+  BANK = data;
+
+  console.log(
+    "Bank soalan berjaya dimuatkan:",
+    BANK.length
+  );
+
+})
+
+.catch(error => {
+
+  console.error(error);
+
+  alert(
+    "Bank soalan gagal dimuatkan. " +
+    "Pastikan questions.json berada " +
+    "dalam folder yang sama dengan index.html."
+  );
+
+});
+
+
+
+/* =========================================
+   SHOW SCREEN
+========================================= */
+
+function show(id){
+
+  const screens = [
+    "home",
+    "name",
+    "game",
+    "result",
+    "leaderboard"
+  ];
+
+  screens.forEach(screen => {
+
+    document
+      .getElementById(screen)
+      .classList.add("hidden");
+
+  });
+
+
+  document
+    .getElementById(id)
+    .classList.remove("hidden");
+
 }
+
+
+
+/* =========================================
+   HOME
+========================================= */
+
+function goHome(){
+
+  clearInterval(timerId);
+
+  show("home");
+
+}
+
+
+
+/* =========================================
+   SELECT CATEGORY
+========================================= */
+
+function chooseLevel(selectedLevel){
+
+  const pool = BANK.filter(
+    q => q.category === selectedLevel
+  );
+
+
+  if(pool.length === 0){
+
+    alert(
+      "Tiada soalan untuk kategori ini."
+    );
+
+    return;
+
+  }
+
+
+  level = selectedLevel;
+
+
+  document
+    .getElementById("playerName")
+    .value = "";
+
+
+  show("name");
+
+
+  setTimeout(() => {
+
+    document
+      .getElementById("playerName")
+      .focus();
+
+  },100);
+
+}
+
+
+
+/* =========================================
+   START GAME
+========================================= */
+
+function beginGame(){
+
+  playerName =
+    document
+      .getElementById("playerName")
+      .value
+      .trim();
+
+
+  if(playerName === ""){
+
+    playerName = "Player";
+
+  }
+
+
+  const pool = BANK.filter(
+    q => q.category === level
+  );
+
+
+  questions = [...pool].sort(
+    () => Math.random() - 0.5
+  );
+
+
+  qIndex = 0;
+
+  score = 0;
+
+  correct = 0;
+
+  attempts = 0;
+
+  locked = false;
+
+
+  document
+    .getElementById("level")
+    .textContent =
+    {
+      easy:
+        "EASY • SEKOLAH RENDAH",
+
+      medium:
+        "MEDIUM • SEKOLAH MENENGAH",
+
+      hard:
+        "HARD • DEWASA"
+
+    }[level];
+
+
+  show("game");
+
+
+  /*
+    PENTING:
+    TIMER START DAHULU
+    BARU RENDER SOALAN
+  */
+
+  startTimer();
+
+  renderQuestion();
+
+}
+
+
+
+/* =========================================
+   TIMER 60 SECONDS
+========================================= */
+
 function startTimer(){
- clearInterval(timerId);endAt=Date.now()+60000;
- timerId=setInterval(()=>{
-  const left=Math.max(0,endAt-Date.now());
-  document.getElementById("timer").textContent=Math.ceil(left/1000);
-  document.getElementById("bar").style.width=(left/600)+"%";
-  if(left<=0){clearInterval(timerId);finishGame()}
- },50);
+
+  clearInterval(timerId);
+
+
+  endAt =
+    Date.now() + 60000;
+
+
+  document
+    .getElementById("timer")
+    .textContent = "60";
+
+
+  document
+    .getElementById("bar")
+    .style.width = "100%";
+
+
+  timerId = setInterval(() => {
+
+    const left =
+      Math.max(
+        0,
+        endAt - Date.now()
+      );
+
+
+    document
+      .getElementById("timer")
+      .textContent =
+      Math.ceil(left / 1000);
+
+
+    document
+      .getElementById("bar")
+      .style.width =
+      (left / 600) + "%";
+
+
+    if(left <= 0){
+
+      clearInterval(timerId);
+
+      finishGame();
+
+    }
+
+  },50);
+
 }
+
+
+
+/* =========================================
+   DISPLAY QUESTION
+========================================= */
+
 function renderQuestion(){
- if(Date.now()>=endAt){finishGame();return}
- locked=false;const q=questions[qIndex%questions.length];
- document.getElementById("question").textContent=q.question;
- document.getElementById("score").textContent=score.toLocaleString();
- document.getElementById("feedback").textContent="";
- const box=document.getElementById("answers");box.innerHTML="";
- q.options.forEach((option,i)=>{const b=document.createElement("button");b.className="answer";b.textContent=option;b.onclick=()=>answer(i,b);box.appendChild(b)});
+
+  if(Date.now() >= endAt){
+
+    finishGame();
+
+    return;
+
+  }
+
+
+  locked = false;
+
+
+  const question =
+    questions[
+      qIndex % questions.length
+    ];
+
+
+  document
+    .getElementById("question")
+    .textContent =
+    question.question;
+
+
+  document
+    .getElementById("score")
+    .textContent =
+    score.toLocaleString();
+
+
+  document
+    .getElementById("feedback")
+    .textContent = "";
+
+
+  const answerBox =
+    document.getElementById("answers");
+
+
+  answerBox.innerHTML = "";
+
+
+  question.options.forEach(
+    (option,index) => {
+
+      const button =
+        document.createElement("button");
+
+
+      button.className =
+        "answer";
+
+
+      button.textContent =
+        option;
+
+
+      button.onclick =
+        () => answerQuestion(
+          index,
+          button
+        );
+
+
+      answerBox.appendChild(
+        button
+      );
+
+    }
+  );
+
 }
-function answer(choice,btn){
- if(locked)return;locked=true;attempts++;
- const q=questions[qIndex%questions.length];
- document.querySelectorAll(".answer").forEach(b=>b.disabled=true);
- if(choice===q.answer){
-  btn.classList.add("correct");correct++;
-  const elapsed=(Date.now()-(endAt-60000))/1000;
-  const speed=Math.max(0,Math.min(100,Math.round(100*(1-elapsed/10))));
-  const gained=100+speed;score+=gained;
-  document.getElementById("feedback").textContent=`+${gained} points`;
- }else{btn.classList.add("wrong");document.getElementById("feedback").textContent="❌ Salah — 0 points";}
- setTimeout(()=>{qIndex++;renderQuestion()},150);
+
+
+
+/* =========================================
+   ANSWER
+========================================= */
+
+function answerQuestion(
+  selectedAnswer,
+  button
+){
+
+  if(locked){
+
+    return;
+
+  }
+
+
+  locked = true;
+
+  attempts++;
+
+
+  const question =
+    questions[
+      qIndex % questions.length
+    ];
+
+
+  document
+    .querySelectorAll(".answer")
+    .forEach(button => {
+
+      button.disabled = true;
+
+    });
+
+
+  /*
+    CHECK BETUL
+  */
+
+  if(
+    selectedAnswer ===
+    question.answer
+  ){
+
+    button.classList.add(
+      "correct"
+    );
+
+
+    correct++;
+
+
+    /*
+      KIRA MASA YANG TELAH DIGUNAKAN
+    */
+
+    const elapsed =
+      (Date.now() -
+      (endAt - 60000)) / 1000;
+
+
+    /*
+      SPEED BONUS:
+      0 saat = 100 bonus
+      10 saat atau lebih = 0 bonus
+    */
+
+    const speedBonus =
+      Math.max(
+        0,
+        Math.min(
+          100,
+          Math.round(
+            100 *
+            (1 - elapsed / 10)
+          )
+        )
+      );
+
+
+    const gained =
+      100 + speedBonus;
+
+
+    score += gained;
+
+
+    document
+      .getElementById("feedback")
+      .textContent =
+      `+${gained} points`;
+
+  }
+
+
+  /*
+    JAWAPAN SALAH
+  */
+
+  else{
+
+    button.classList.add(
+      "wrong"
+    );
+
+
+    document
+      .getElementById("feedback")
+      .textContent =
+      "❌ Salah — 0 points";
+
+  }
+
+
+  /*
+    NEXT QUESTION
+  */
+
+  setTimeout(() => {
+
+    if(Date.now() < endAt){
+
+      qIndex++;
+
+      renderQuestion();
+
+    }
+
+  },150);
+
 }
+
+
+
+/* =========================================
+   FINISH GAME
+========================================= */
+
 function finishGame(){
- clearInterval(timerId);
- document.getElementById("finalScore").textContent=score.toLocaleString();
- const accuracy=attempts?Math.round(correct/attempts*100):0;
- document.getElementById("stats").textContent=`${correct} betul • ${accuracy}% accuracy • ${attempts} soalan`;
- let name=prompt("Masukkan nama untuk leaderboard:","Player")||"Player";
- let board=JSON.parse(localStorage.getItem("bwr_leaderboard")||"[]");
- board.push({name,level,score});board.sort((a,b)=>b.score-a.score);board=board.slice(0,100);
- localStorage.setItem("bwr_leaderboard",JSON.stringify(board));show("result");
+
+  clearInterval(timerId);
+
+
+  /*
+    Elak finishGame dipanggil
+    banyak kali
+  */
+
+  if(
+    !document
+      .getElementById("game")
+      .classList
+      .contains("hidden")
+  ){
+
+    const accuracy =
+      attempts > 0
+      ? Math.round(
+          correct /
+          attempts *
+          100
+        )
+      : 0;
+
+
+    document
+      .getElementById("finalScore")
+      .textContent =
+      score.toLocaleString();
+
+
+    document
+      .getElementById("stats")
+      .textContent =
+      `${correct} betul • ` +
+      `${accuracy}% accuracy • ` +
+      `${attempts} soalan`;
+
+
+    /*
+      SIMPAN SCORE
+    */
+
+    let leaderboard =
+      JSON.parse(
+        localStorage.getItem(
+          "bwr_leaderboard"
+        ) || "[]"
+      );
+
+
+    leaderboard.push({
+
+      name:
+        playerName,
+
+      level:
+        level,
+
+      score:
+        score
+
+    });
+
+
+    leaderboard.sort(
+      (a,b) =>
+        b.score - a.score
+    );
+
+
+    leaderboard =
+      leaderboard.slice(
+        0,
+        100
+      );
+
+
+    localStorage.setItem(
+      "bwr_leaderboard",
+      JSON.stringify(
+        leaderboard
+      )
+    );
+
+
+    show("result");
+
+  }
+
 }
+
+
+
+/* =========================================
+   LEADERBOARD
+========================================= */
+
 function showLeaderboard(){
- show("leaderboard");let board=JSON.parse(localStorage.getItem("bwr_leaderboard")||"[]");
- document.getElementById("board").innerHTML=board.length?board.map((x,i)=>`<tr><td>${i+1}</td><td>${safe(x.name)}</td><td>${x.level}</td><td>${x.score.toLocaleString()}</td></tr>`).join(""):'<tr><td colspan="4">Belum ada score.</td></tr>';
+
+  show("leaderboard");
+
+
+  const leaderboard =
+    JSON.parse(
+      localStorage.getItem(
+        "bwr_leaderboard"
+      ) || "[]"
+    );
+
+
+  const board =
+    document.getElementById(
+      "board"
+    );
+
+
+  if(
+    leaderboard.length === 0
+  ){
+
+    board.innerHTML =
+      `
+      <tr>
+        <td colspan="4">
+          Belum ada score.
+        </td>
+      </tr>
+      `;
+
+    return;
+
+  }
+
+
+  board.innerHTML =
+    leaderboard
+      .map(
+        (player,index) => `
+
+        <tr>
+
+          <td>
+            ${index + 1}
+          </td>
+
+          <td>
+            ${escapeHTML(
+              player.name
+            )}
+          </td>
+
+          <td>
+            ${player.level}
+          </td>
+
+          <td>
+            ${player.score.toLocaleString()}
+          </td>
+
+        </tr>
+
+        `
+      )
+      .join("");
+
 }
-function safe(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+
+
+
+/* =========================================
+   SECURITY
+========================================= */
+
+function escapeHTML(text){
+
+  return String(text)
+    .replace(
+      /[&<>"']/g,
+      character => {
+
+        const map = {
+
+          "&":"&amp;",
+          "<":"&lt;",
+          ">":"&gt;",
+          '"':"&quot;",
+          "'":"&#039;"
+
+        };
+
+        return map[
+          character
+        ];
+
+      }
+    );
+
+}
+
 </script>
+
 </body>
 </html>
