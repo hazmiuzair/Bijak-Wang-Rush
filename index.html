@@ -1,2123 +1,1509 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ms">
-
 <head>
-
-<meta charset="utf-8">
-
-<meta
-  name="viewport"
-  content="width=device-width,initial-scale=1"
->
-
-<title>BijakWang Rush</title>
-
-<style>
-
-*{
-  box-sizing:border-box;
-}
-
-body{
-  margin:0;
-  min-height:100vh;
-
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  background:#071a17;
-  color:#f5f7f2;
-}
-
-button,
-input{
-  font-family:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-
-/* =====================================
-   WRAPPER
-===================================== */
-
-.wrap{
-  width:100%;
-  max-width:720px;
-  margin:auto;
-  padding:20px;
-}
-
-
-/* =====================================
-   BRAND
-===================================== */
-
-.brand{
-  font-size:28px;
-  font-weight:900;
-}
-
-.brand span{
-  color:#ffd447;
-}
-
-
-/* =====================================
-   CARD
-===================================== */
-
-.card{
-  background:#0d2924;
-
-  border:1px solid #1d4a41;
-
-  border-radius:24px;
-
-  padding:24px;
-
-  margin-top:18px;
-}
-
-
-/* =====================================
-   TEXT
-===================================== */
-
-h1{
-  font-size:40px;
-  line-height:1.05;
-  margin:14px 0;
-}
-
-h2{
-  margin-top:0;
-}
-
-.muted{
-  color:#a9c0b9;
-}
-
-.note{
-  font-size:13px;
-  color:#86a39b;
-}
-
-
-/* =====================================
-   PILL
-===================================== */
-
-.pill{
-  display:inline-block;
-
-  background:#173c35;
-  color:#b7ccc6;
-
-  padding:7px 11px;
-
-  border-radius:999px;
-
-  font-size:12px;
-  font-weight:800;
-}
-
-
-/* =====================================
-   CATEGORY
-===================================== */
-
-.grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:12px;
-}
-
-.cat{
-  width:100%;
-
-  background:#123a33;
-  color:#fff;
-
-  text-align:left;
-
-  border:1px solid #28574e;
-
-  border-radius:14px;
-
-  padding:16px;
-
-  font-size:16px;
-  font-weight:800;
-}
-
-.cat:hover{
-  background:#19483f;
-}
-
-.cat b{
-  display:block;
-
-  font-size:18px;
-
-  margin-top:5px;
-}
-
-.cat small{
-  display:block;
-
-  color:#a9c0b9;
-
-  margin-top:4px;
-}
-
-
-/* =====================================
-   BUTTONS
-===================================== */
-
-.primary{
-  width:100%;
-
-  background:#ffd447;
-  color:#17200e;
-
-  border:0;
-
-  border-radius:14px;
-
-  padding:15px;
-
-  font-size:16px;
-  font-weight:900;
-}
-
-.primary:hover{
-  background:#ffe071;
-}
-
-.secondary{
-  width:100%;
-
-  background:#173c35;
-  color:#fff;
-
-  border:0;
-
-  border-radius:14px;
-
-  padding:15px;
-
-  font-size:16px;
-  font-weight:800;
-}
-
-.secondary:hover{
-  background:#205047;
-}
-
-
-/* =====================================
-   NAME
-===================================== */
-
-.namebox{
-  width:100%;
-
-  padding:15px;
-
-  margin:12px 0 15px;
-
-  border-radius:12px;
-
-  border:1px solid #28574e;
-
-  background:#09211d;
-
-  color:#fff;
-
-  font-size:17px;
-
-  outline:none;
-}
-
-.namebox:focus{
-  border-color:#ffd447;
-}
-
-
-/* =====================================
-   GAME TOP
-===================================== */
-
-.top{
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  gap:15px;
-}
-
-.score{
-  font-size:20px;
-
-  font-weight:900;
-
-  margin-top:7px;
-}
-
-.game-timer{
-  font-size:44px;
-
-  font-weight:900;
-
-  color:#ffd447;
-
-  text-align:right;
-}
-
-
-/* =====================================
-   TOTAL TIMER
-===================================== */
-
-.bar{
-  width:100%;
-
-  height:8px;
-
-  background:#173c35;
-
-  border-radius:999px;
-
-  overflow:hidden;
-
-  margin-top:15px;
-}
-
-.bar i{
-  display:block;
-
-  width:100%;
-
-  height:100%;
-
-  background:#ffd447;
-}
-
-
-/* =====================================
-   QUESTION TIMER / SCORE
-===================================== */
-
-.question-panel{
-  margin-top:20px;
-
-  padding:15px;
-
-  background:#09211d;
-
-  border:1px solid #1d4a41;
-
-  border-radius:16px;
-}
-
-.question-top{
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  gap:10px;
-}
-
-.question-label{
-  color:#86a39b;
-
-  font-size:13px;
-
-  font-weight:800;
-}
-
-.question-score{
-  font-size:24px;
-
-  font-weight:900;
-
-  color:#ffd447;
-}
-
-.question-timer{
-  margin-top:10px;
-
-  height:7px;
-
-  background:#173c35;
-
-  border-radius:99px;
-
-  overflow:hidden;
-}
-
-.question-timer i{
-  display:block;
-
-  width:100%;
-
-  height:100%;
-
-  background:#ffd447;
-}
-
-
-/* =====================================
-   QUESTION
-===================================== */
-
-.q{
-  font-size:25px;
-
-  line-height:1.3;
-
-  font-weight:800;
-
-  margin:22px 0 24px;
-}
-
-
-/* =====================================
-   ANSWERS
-===================================== */
-
-.answers{
-  display:grid;
-
-  gap:11px;
-}
-
-.answer{
-  width:100%;
-
-  background:#143a33;
-
-  color:#fff;
-
-  text-align:left;
-
-  border:1px solid #28574e;
-
-  border-radius:14px;
-
-  padding:16px;
-
-  min-height:58px;
-
-  font-size:16px;
-
-  font-weight:700;
-}
-
-.answer:hover:not(:disabled){
-  background:#1b4b42;
-}
-
-.answer:disabled{
-  cursor:default;
-}
-
-.correct{
-  background:#18583f !important;
-
-  border-color:#2c8b66 !important;
-}
-
-.wrong{
-  background:#632f35 !important;
-
-  border-color:#8c4a52 !important;
-}
-
-
-/* =====================================
-   FEEDBACK
-===================================== */
-
-.feedback{
-  min-height:25px;
-
-  margin-top:15px;
-
-  font-weight:900;
-}
-
-.good{
-  color:#6ee7a8;
-}
-
-.bad{
-  color:#ff8f99;
-}
-
-
-/* =====================================
-   RESULT
-===================================== */
-
-.center{
-  text-align:center;
-}
-
-.big{
-  font-size:64px;
-
-  font-weight:900;
-
-  color:#ffd447;
-
-  margin:15px 0;
-}
-
-.result-message{
-  font-size:21px;
-
-  font-weight:900;
-}
-
-.result-details{
-  color:#a9c0b9;
-
-  margin-bottom:22px;
-}
-
-
-/* =====================================
-   LEADERBOARD
-===================================== */
-
-table{
-  width:100%;
-
-  border-collapse:collapse;
-}
-
-th,
-td{
-  padding:11px 7px;
-
-  text-align:left;
-
-  border-bottom:1px solid #21483f;
-}
-
-th{
-  color:#86a39b;
-
-  font-size:13px;
-}
-
-.rank{
-  color:#ffd447;
-
-  font-weight:900;
-}
-
-
-/* =====================================
-   STATUS
-===================================== */
-
-.status{
-  margin-top:15px;
-
-  padding:12px;
-
-  border-radius:12px;
-
-  background:#09211d;
-
-  color:#86a39b;
-
-  font-size:13px;
-
-  text-align:center;
-}
-
-
-/* =====================================
-   HIDDEN
-===================================== */
-
-.hidden{
-  display:none !important;
-}
-
-
-/* =====================================
-   MOBILE
-===================================== */
-
-@media(max-width:600px){
-
-  .wrap{
-    padding:14px;
-  }
-
-  .card{
-    padding:19px;
-
-    border-radius:20px;
-  }
-
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  h1{
-    font-size:34px;
-  }
-
-  .q{
-    font-size:22px;
-  }
-
-  .game-timer{
-    font-size:38px;
-  }
-
-  .question-score{
-    font-size:22px;
-  }
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BijakWang Rush</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #031f1b;
+      color: #f4f7f6;
+      min-height: 100vh;
+    }
+
+    button,
+    input {
+      font-family: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 720px;
+      margin: auto;
+      padding: 24px 18px 40px;
+    }
+
+    .screen {
+      display: none;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    /* =========================
+       HOME
+    ========================= */
+
+    .hero {
+      padding: 20px 0 28px;
+    }
+
+    .eyebrow {
+      color: #a9c3bd;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 9vw, 68px);
+      line-height: 1.02;
+      margin-bottom: 28px;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      display: inline-block;
+    }
+
+    .hero p {
+      color: #a8c0bb;
+      font-size: 20px;
+      line-height: 1.35;
+      margin-bottom: 30px;
+    }
+
+    .level-card {
+      width: 100%;
+      background: #103c34;
+      border: 1px solid #285d53;
+      border-radius: 26px;
+      padding: 27px 28px;
+      margin-bottom: 20px;
+      color: white;
+      text-align: left;
+      cursor: pointer;
+      transition: transform 0.15s ease,
+                  background 0.15s ease,
+                  border-color 0.15s ease;
+    }
+
+    .level-card:hover {
+      background: #14483f;
+      border-color: #3a7569;
+      transform: translateY(-2px);
+    }
+
+    .level-card:active {
+      transform: scale(0.99);
+    }
+
+    .level-icon {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .level-title {
+      font-size: 30px;
+      font-weight: 900;
+    }
+
+    .leaderboard-button {
+      width: 100%;
+      border: 0;
+      border-radius: 24px;
+      padding: 22px;
+      background: #103c34;
+      color: white;
+      font-size: 24px;
+      font-weight: 900;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    .leaderboard-button:hover {
+      background: #14483f;
+    }
+
+    .home-note {
+      margin-top: 26px;
+      color: #91aca6;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    /* =========================
+       NAME SCREEN
+    ========================= */
+
+    .panel {
+      background: #082b25;
+      border: 1px solid #285d53;
+      border-radius: 28px;
+      padding: 28px;
+      margin-top: 30px;
+    }
+
+    .panel h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .panel p {
+      color: #9db6b0;
+      font-size: 17px;
+      line-height: 1.4;
+      margin-bottom: 25px;
+    }
+
+    .selected-level {
+      display: inline-block;
+      background: #16483f;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+
+    .name-input {
+      width: 100%;
+      border: 1px solid #37685f;
+      background: #06241f;
+      color: white;
+      border-radius: 16px;
+      padding: 18px;
+      font-size: 20px;
+      outline: none;
+      margin-bottom: 15px;
+    }
+
+    .name-input:focus {
+      border-color: #66d6bd;
+    }
+
+    .primary {
+      width: 100%;
+      border: 0;
+      border-radius: 16px;
+      padding: 18px;
+      background: #ffd447;
+      color: #172018;
+      font-size: 21px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .primary:hover {
+      filter: brightness(1.04);
+    }
+
+    .secondary {
+      width: 100%;
+      border: 1px solid #37685f;
+      border-radius: 16px;
+      padding: 16px;
+      background: transparent;
+      color: #d6e3e0;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    /* =========================
+       GAME
+    ========================= */
+
+    .game-top {
+      background: #082b25;
+      border: 1px solid #285d53;
+      border-radius: 28px;
+      padding: 25px;
+      margin-top: 10px;
+    }
+
+    .game-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .level-badge {
+      display: inline-block;
+      background: #16483f;
+      color: #c9dcd8;
+      border-radius: 999px;
+      padding: 10px 17px;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .game-score {
+      font-size: 25px;
+      font-weight: 900;
+      margin-top: 16px;
+    }
+
+    .main-timer {
+      font-size: 64px;
+      line-height: 1;
+      font-weight: 900;
+      color: #ffd447;
+    }
+
+    .timer-bar {
+      height: 14px;
+      background: #123e36;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .timer-fill {
+      height: 100%;
+      width: 100%;
+      background: #ffd447;
+      transition: width 0.05s linear;
+    }
+
+    .question-card {
+      background: #06241f;
+      border: 1px solid #285d53;
+      border-radius: 28px;
+      padding: 28px;
+      margin-top: 18px;
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .question-number {
+      color: #9bb4ae;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .question-points {
+      color: #ffd447;
+      font-size: 34px;
+      font-weight: 900;
+    }
+
+    .question-score-bar {
+      width: 100%;
+      height: 12px;
+      background: #123e36;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+
+    .question-score-fill {
+      width: 100%;
+      height: 100%;
+      background: #ffd447;
+    }
+
+    .question-text {
+      font-size: clamp(28px, 6vw, 40px);
+      line-height: 1.2;
+      font-weight: 900;
+      margin-bottom: 28px;
+    }
+
+    .answers {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .answer-button {
+      width: 100%;
+      border: 1px solid #285d53;
+      background: #103c34;
+      color: white;
+      border-radius: 18px;
+      padding: 20px;
+      text-align: left;
+      font-size: 20px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.15s ease,
+                  transform 0.1s ease;
+    }
+
+    .answer-button:hover {
+      background: #16483f;
+    }
+
+    .answer-button:active {
+      transform: scale(0.99);
+    }
+
+    .answer-button.correct {
+      background: #176b4f;
+      border-color: #4de0aa;
+    }
+
+    .answer-button.wrong {
+      background: #6c2632;
+      border-color: #ff7082;
+    }
+
+    .answer-button.disabled {
+      pointer-events: none;
+    }
+
+    .feedback {
+      min-height: 30px;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #b9d2cc;
+    }
+
+    /* =========================
+       RESULT
+    ========================= */
+
+    .result-score {
+      font-size: 72px;
+      font-weight: 900;
+      color: #ffd447;
+      margin: 20px 0;
+    }
+
+    .result-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .stat {
+      background: #103c34;
+      border: 1px solid #285d53;
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .stat-label {
+      color: #94afa9;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    /* =========================
+       LEADERBOARD
+    ========================= */
+
+    .leaderboard-list {
+      margin-top: 20px;
+    }
+
+    .leaderboard-row {
+      display: grid;
+      grid-template-columns: 45px 1fr 90px;
+      align-items: center;
+      gap: 10px;
+      background: #103c34;
+      border: 1px solid #285d53;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 10px;
+    }
+
+    .rank {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .player-name {
+      font-weight: 900;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .player-level {
+      color: #8fa9a3;
+      font-size: 12px;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    .player-score {
+      text-align: right;
+      color: #ffd447;
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .empty {
+      color: #91aaa4;
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 18px 14px 30px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .level-card {
+        padding: 23px;
+      }
+
+      .level-title {
+        font-size: 27px;
+      }
+
+      .main-timer {
+        font-size: 52px;
+      }
+
+      .question-card {
+        padding: 22px;
+      }
+
+      .question-text {
+        font-size: 28px;
+      }
+
+      .answer-button {
+        padding: 18px;
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+<div class="container">
 
-<div class="wrap">
+  <!-- =========================
+       HOME
+  ========================= -->
+
+  <section id="homeScreen" class="screen active">
+
+    <div class="hero">
+      <div class="eyebrow">60 SECOND SPEED QUIZ</div>
+
+      <h1>
+        Jawab cepat.<br>
+        Score tinggi. 🔥
+      </h1>
+
+      <p>
+        Lagi cepat jawab dengan betul, lagi tinggi markah kau.
+      </p>
+
+      <!-- EASY -->
+      <button
+        type="button"
+        class="level-card"
+        onclick="chooseLevel('easy')"
+      >
+        <div class="level-icon">🟢</div>
+        <div class="level-title">Easy</div>
+      </button>
+
+      <!-- MEDIUM -->
+      <button
+        type="button"
+        class="level-card"
+        onclick="chooseLevel('medium')"
+      >
+        <div class="level-icon">🟡</div>
+        <div class="level-title">Medium</div>
+      </button>
+
+      <!-- HARD -->
+      <button
+        type="button"
+        class="level-card"
+        onclick="chooseLevel('hard')"
+      >
+        <div class="level-icon">🔴</div>
+        <div class="level-title">Hard</div>
+      </button>
+
+      <button
+        type="button"
+        class="leaderboard-button"
+        onclick="showLeaderboard()"
+      >
+        🏆 Leaderboard
+      </button>
+
+      <div class="home-note">
+        Setiap soalan maksimum 100 points.
+        Markah berkurang setiap saat.
+      </div>
+    </div>
+
+  </section>
 
 
-<!-- =====================================
-     BRAND
-===================================== -->
+  <!-- =========================
+       NAME SCREEN
+  ========================= -->
 
-<div class="brand">
+  <section id="nameScreen" class="screen">
 
-  BijakWang <span>RUSH</span>
+    <div class="panel">
+
+      <div id="selectedLevelLabel" class="selected-level">
+        EASY
+      </div>
+
+      <h2>Siapa nama kau?</h2>
+
+      <p>
+        Masukkan nama sebelum mula Rush.
+      </p>
+
+      <input
+        id="playerName"
+        class="name-input"
+        type="text"
+        maxlength="20"
+        placeholder="Nama kau..."
+        autocomplete="off"
+      >
+
+      <button
+        type="button"
+        class="primary"
+        onclick="beginGame()"
+      >
+        🔥 START RUSH
+      </button>
+
+      <button
+        type="button"
+        class="secondary"
+        onclick="goHome()"
+      >
+        ← Kembali
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       GAME SCREEN
+  ========================= -->
+
+  <section id="gameScreen" class="screen">
+
+    <div class="game-top">
+
+      <div class="game-row">
+
+        <div>
+          <div id="levelBadge" class="level-badge">
+            EASY
+          </div>
+
+          <div class="game-score">
+            Score: <span id="score">0</span>
+          </div>
+        </div>
+
+        <div id="gameTimer" class="main-timer">
+          60
+        </div>
+
+      </div>
+
+      <div class="timer-bar">
+        <div
+          id="gameTimerBar"
+          class="timer-fill"
+        ></div>
+      </div>
+
+    </div>
+
+
+    <div class="question-card">
+
+      <div class="question-header">
+
+        <div
+          id="questionNumber"
+          class="question-number"
+        >
+          Soalan 1
+        </div>
+
+        <div
+          id="questionPoints"
+          class="question-points"
+        >
+          100
+        </div>
+
+      </div>
+
+      <div class="question-score-bar">
+        <div
+          id="questionScoreBar"
+          class="question-score-fill"
+        ></div>
+      </div>
+
+      <div
+        id="questionText"
+        class="question-text"
+      >
+        Soalan
+      </div>
+
+      <div
+        id="answers"
+        class="answers"
+      ></div>
+
+      <div
+        id="feedback"
+        class="feedback"
+      ></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       RESULT SCREEN
+  ========================= -->
+
+  <section id="resultScreen" class="screen">
+
+    <div class="panel">
+
+      <div class="selected-level">
+        RUSH COMPLETE
+      </div>
+
+      <h2 id="resultTitle">
+        Nice!
+      </h2>
+
+      <div
+        id="resultScore"
+        class="result-score"
+      >
+        0
+      </div>
+
+      <div class="result-stats">
+
+        <div class="stat">
+          <div class="stat-label">
+            Betul
+          </div>
+
+          <div
+            id="resultCorrect"
+            class="stat-value"
+          >
+            0
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-label">
+            Percubaan
+          </div>
+
+          <div
+            id="resultAttempts"
+            class="stat-value"
+          >
+            0
+          </div>
+        </div>
+
+      </div>
+
+      <button
+        type="button"
+        class="primary"
+        onclick="showLeaderboard()"
+      >
+        🏆 Lihat Leaderboard
+      </button>
+
+      <button
+        type="button"
+        class="secondary"
+        onclick="goHome()"
+      >
+        🏠 Main Lagi
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       LEADERBOARD SCREEN
+  ========================= -->
+
+  <section id="leaderboardScreen" class="screen">
+
+    <div class="panel">
+
+      <div class="selected-level">
+        TOP SCORES
+      </div>
+
+      <h2>🏆 Leaderboard</h2>
+
+      <p>
+        Rekod terbaik pada device ini.
+      </p>
+
+      <div
+        id="leaderboardList"
+        class="leaderboard-list"
+      ></div>
+
+      <button
+        type="button"
+        class="secondary"
+        onclick="clearLeaderboard()"
+      >
+        🗑️ Clear Leaderboard
+      </button>
+
+      <button
+        type="button"
+        class="secondary"
+        onclick="goHome()"
+      >
+        🏠 Kembali
+      </button>
+
+    </div>
+
+  </section>
 
 </div>
-
-
-
-<!-- =====================================
-     HOME
-===================================== -->
-
-<section
-  id="home"
-  class="card"
->
-
-<span class="pill">
-  60 SECOND SPEED QUIZ
-</span>
-
-
-<h1>
-
-  Jawab cepat.<br>
-  Score tinggi. 🔥
-
-</h1>
-
-
-<p class="muted">
-
-  Lagi cepat jawab dengan betul,
-  lagi tinggi markah kau.
-
-</p>
-
-
-<div class="grid">
-
-
-<button
-  type="button"
-  class="cat"
-  onclick="chooseLevel('easy')"
->
-
-  🟢
-
-  <b>
-    Easy
-  </b>
-
-  <small>
-    Sekolah Rendah
-  </small>
-
-</button>
-
-
-
-<button
-  type="button"
-  class="cat"
-  onclick="chooseLevel('medium')"
->
-
-  🟡
-
-  <b>
-    Medium
-  </b>
-
-  <small>
-    Sekolah Menengah
-  </small>
-
-</button>
-
-
-
-<button
-  type="button"
-  class="cat"
-  onclick="chooseLevel('hard')"
->
-
-  🔴
-
-  <b>
-    Hard
-  </b>
-
-  <small>
-    Dewasa
-  </small>
-
-</button>
-
-
-</div>
-
-
-<button
-  type="button"
-  class="secondary"
-  style="margin-top:14px"
-  onclick="showLeaderboard()"
->
-
-  🏆 Leaderboard
-
-</button>
-
-
-<div
-  id="bankStatus"
-  class="status"
->
-
-  ⏳ Loading question bank...
-
-</div>
-
-
-<p class="note">
-
-  Setiap soalan maksimum 100 points.
-  Markah berkurang setiap saat.
-
-</p>
-
-</section>
-
-
-
-<!-- =====================================
-     NAME
-===================================== -->
-
-<section
-  id="name"
-  class="card hidden"
->
-
-<span
-  id="selectedLevel"
-  class="pill"
->
-</span>
-
-
-<h2 style="margin-top:15px">
-
-  Masukkan nama
-
-</h2>
-
-
-<p class="muted">
-
-  Nama ini akan digunakan
-  untuk leaderboard.
-
-</p>
-
-
-<input
-  id="playerName"
-  class="namebox"
-  type="text"
-  maxlength="30"
-  autocomplete="off"
-  placeholder="Nama anda"
->
-
-
-<button
-  type="button"
-  class="primary"
-  onclick="beginGame()"
->
-
-  START RUSH 🚀
-
-</button>
-
-
-<button
-  type="button"
-  class="secondary"
-  style="margin-top:10px"
-  onclick="goHome()"
->
-
-  Back
-
-</button>
-
-</section>
-
-
-
-<!-- =====================================
-     GAME
-===================================== -->
-
-<section
-  id="game"
-  class="card hidden"
->
-
-
-<div class="top">
-
-
-<div>
-
-<span
-  id="level"
-  class="pill"
->
-</span>
-
-
-<div class="score">
-
-  Score:
-  <span id="score">
-    0
-  </span>
-
-</div>
-
-</div>
-
-
-<div
-  id="gameTimer"
-  class="game-timer"
->
-
-  60
-
-</div>
-
-
-</div>
-
-
-<!-- TOTAL 60 SECOND BAR -->
-
-<div class="bar">
-
-  <i id="bar"></i>
-
-</div>
-
-
-
-<!-- QUESTION TIMER + SCORE -->
-
-<div class="question-panel">
-
-
-<div class="question-top">
-
-
-<span
-  id="questionNumber"
-  class="question-label"
->
-
-  Soalan
-
-</span>
-
-
-<span
-  id="questionScore"
-  class="question-score"
->
-
-  100
-
-</span>
-
-
-</div>
-
-
-<div class="question-timer">
-
-  <i id="questionBar"></i>
-
-</div>
-
-
-</div>
-
-
-
-<!-- QUESTION -->
-
-<div
-  id="question"
-  class="q"
->
-</div>
-
-
-
-<!-- ANSWERS -->
-
-<div
-  id="answers"
-  class="answers"
->
-</div>
-
-
-
-<!-- FEEDBACK -->
-
-<p
-  id="feedback"
-  class="feedback"
->
-</p>
-
-
-</section>
-
-
-
-<!-- =====================================
-     RESULT
-===================================== -->
-
-<section
-  id="result"
-  class="card hidden center"
->
-
-<span class="pill">
-  RUSH COMPLETE
-</span>
-
-
-<div
-  id="finalScore"
-  class="big"
->
-
-  0
-
-</div>
-
-
-<div
-  id="resultMessage"
-  class="result-message"
->
-
-  Nice!
-
-</div>
-
-
-<p
-  id="stats"
-  class="result-details"
->
-</p>
-
-
-<button
-  type="button"
-  class="primary"
-  onclick="goHome()"
->
-
-  Main Lagi
-
-</button>
-
-
-<button
-  type="button"
-  class="secondary"
-  style="margin-top:10px"
-  onclick="showLeaderboard()"
->
-
-  🏆 Leaderboard
-
-</button>
-
-</section>
-
-
-
-<!-- =====================================
-     LEADERBOARD
-===================================== -->
-
-<section
-  id="leaderboard"
-  class="card hidden"
->
-
-
-<div class="top">
-
-<h2>
-  🏆 Leaderboard
-</h2>
-
-
-<button
-  type="button"
-  class="secondary"
-  style="width:auto;padding:10px 14px"
-  onclick="goHome()"
->
-
-  Back
-
-</button>
-
-</div>
-
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>#</th>
-
-<th>Nama</th>
-
-<th>Level</th>
-
-<th>Score</th>
-
-</tr>
-
-</thead>
-
-
-<tbody id="board">
-</tbody>
-
-
-</table>
-
-
-<p class="note">
-
-  Leaderboard ini disimpan
-  pada browser/peranti ini sahaja.
-
-</p>
-
-</section>
-
-
-</div>
-
 
 
 <script>
 
+  /* ==========================================
+     VARIABLES
+  ========================================== */
 
-/* ==================================================
-   GAME VARIABLES
-================================================== */
+  let BANK = [];
+  let bankLoaded = false;
 
-let BANK = [];
+  let selectedLevel = "";
+  let playerName = "";
 
-let bankLoaded = false;
+  let questions = [];
+  let questionIndex = 0;
 
-let selectedLevel = "";
+  let score = 0;
+  let correct = 0;
+  let attempts = 0;
 
-let playerName = "";
+  let locked = false;
+  let gameFinished = false;
 
-let questions = [];
+  let gameEndTime = 0;
+  let questionEndTime = 0;
 
-let questionIndex = 0;
-
-let score = 0;
-
-let correct = 0;
-
-let attempts = 0;
-
-let locked = false;
-
-let gameFinished = false;
-
-
-/*
-   60 SECOND GAME TIMER
-*/
-
-let gameTimerId = null;
-
-let gameEndTime = 0;
+  let gameTimerId = null;
+  let questionTimerId = null;
 
 
-/*
-   10 SECOND QUESTION TIMER
-*/
+  /* ==========================================
+     ELEMENTS
+  ========================================== */
 
-let questionTimerId = null;
+  const scoreEl =
+    document.getElementById("score");
 
-let questionEndTime = 0;
+  const gameTimerEl =
+    document.getElementById("gameTimer");
+
+  const gameTimerBarEl =
+    document.getElementById("gameTimerBar");
+
+  const questionNumberEl =
+    document.getElementById("questionNumber");
+
+  const questionPointsEl =
+    document.getElementById("questionPoints");
+
+  const questionScoreBarEl =
+    document.getElementById("questionScoreBar");
+
+  const questionTextEl =
+    document.getElementById("questionText");
+
+  const answersEl =
+    document.getElementById("answers");
+
+  const feedbackEl =
+    document.getElementById("feedback");
+
+  const playerNameEl =
+    document.getElementById("playerName");
 
 
-/* ==================================================
-   SCREEN
-================================================== */
+  /* ==========================================
+     LOAD QUESTION BANK
+  ========================================== */
 
-function showScreen(id){
+  function loadQuestions() {
 
-  const screens = [
-    "home",
-    "name",
-    "game",
-    "result",
-    "leaderboard"
-  ];
+    fetch("questions.json")
+      .then(response => {
+
+        if (!response.ok) {
+          throw new Error(
+            "questions.json HTTP " + response.status
+          );
+        }
+
+        return response.json();
+
+      })
+      .then(data => {
+
+        if (!Array.isArray(data)) {
+          throw new Error(
+            "questions.json bukan array"
+          );
+        }
+
+        BANK = data;
+        bankLoaded = true;
+
+        console.log(
+          "Question bank loaded:",
+          BANK.length
+        );
+
+      })
+      .catch(error => {
+
+        console.error(
+          "Question bank gagal dimuatkan:",
+          error
+        );
+
+        bankLoaded = false;
+
+      });
+
+  }
 
 
-  screens.forEach(function(screen){
+  /* ==========================================
+     SCREEN CONTROL
+  ========================================== */
+
+  function showScreen(screenName) {
 
     document
-      .getElementById(screen)
-      .classList.add("hidden");
+      .querySelectorAll(".screen")
+      .forEach(screen => {
+        screen.classList.remove("active");
+      });
 
-  });
-
-
-  document
-    .getElementById(id)
-    .classList.remove("hidden");
-
-}
-
-
-
-/* ==================================================
-   LOAD QUESTIONS
-================================================== */
-
-function loadQuestions(){
-
-  fetch("questions.json")
-
-  .then(function(response){
-
-    if(!response.ok){
-
-      throw new Error(
-        "questions.json HTTP " +
-        response.status
+    const target =
+      document.getElementById(
+        screenName + "Screen"
       );
 
+    if (target) {
+      target.classList.add("active");
     }
 
-    return response.json();
-
-  })
-
-  .then(function(data){
-
-    if(!Array.isArray(data)){
-
-      throw new Error(
-        "questions.json bukan array"
-      );
-
-    }
-
-
-    BANK = data;
-
-    bankLoaded = true;
-
-
-    document
-      .getElementById(
-        "bankStatus"
-      )
-      .textContent =
-      "✅ " +
-      BANK.length +
-      " soalan berjaya dimuatkan";
-
-
-    console.log(
-      "Question bank loaded:",
-      BANK.length
-    );
-
-  })
-
-  .catch(function(error){
-
-    console.error(
-      "Question bank error:",
-      error
-    );
-
-
-    bankLoaded = false;
-
-
-    document
-      .getElementById(
-        "bankStatus"
-      )
-      .textContent =
-      "❌ Question bank gagal dimuatkan";
-
-  });
-
-}
-
-
-
-/* ==================================================
-   CATEGORY
-================================================== */
-
-function chooseLevel(level){
-
-  /*
-     TERUS BUKA NAME SCREEN
-  */
-
-  selectedLevel = level;
-
-
-  let label = "";
-
-
-  if(level === "easy"){
-
-    label =
-      "🟢 EASY • SEKOLAH RENDAH";
-
-  }
-
-  else if(level === "medium"){
-
-    label =
-      "🟡 MEDIUM • SEKOLAH MENENGAH";
-
-  }
-
-  else{
-
-    label =
-      "🔴 HARD • DEWASA";
-
-  }
-
-
-  document
-    .getElementById(
-      "selectedLevel"
-    )
-    .textContent =
-    label;
-
-
-  document
-    .getElementById(
-      "playerName"
-    )
-    .value = "";
-
-
-  showScreen("name");
-
-
-  setTimeout(function(){
-
-    document
-      .getElementById(
-        "playerName"
-      )
-      .focus();
-
-  },100);
-
-}
-
-
-
-/* ==================================================
-   START GAME
-================================================== */
-
-function beginGame(){
-
-  /*
-     CHECK BANK
-  */
-
-  if(!bankLoaded){
-
-    alert(
-      "Soalan masih belum siap dimuatkan.\n\n" +
-      "Sila tunggu sekejap dan cuba lagi."
-    );
-
-    return;
-
-  }
-
-
-  /*
-     NAME
-  */
-
-  playerName =
-    document
-      .getElementById(
-        "playerName"
-      )
-      .value
-      .trim();
-
-
-  if(playerName === ""){
-
-    playerName =
-      "Player";
-
-  }
-
-
-  /*
-     FILTER CATEGORY
-  */
-
-  const pool =
-    BANK.filter(function(question){
-
-      return String(
-        question.category
-      ).toLowerCase()
-      ===
-      selectedLevel;
-
+    window.scrollTo({
+      top: 0,
+      behavior: "instant"
     });
 
+  }
 
-  if(pool.length === 0){
 
-    alert(
-      "Tiada soalan untuk kategori " +
-      selectedLevel +
-      "."
-    );
+  /* ==========================================
+     LEVEL
+  ========================================== */
 
-    return;
+  function chooseLevel(level) {
+
+    selectedLevel = level;
+
+    document.getElementById(
+      "selectedLevelLabel"
+    ).textContent = level.toUpperCase();
+
+    playerNameEl.value = "";
+
+    showScreen("name");
+
+    setTimeout(() => {
+      playerNameEl.focus();
+    }, 100);
 
   }
 
 
-  /*
-     RANDOMIZE
-  */
+  /* ==========================================
+     SHUFFLE
+  ========================================== */
 
-  questions =
-    shuffle(
-      pool.slice()
-    );
+  function shuffle(array) {
 
+    const arr = array.slice();
 
-  /*
-     RESET
-  */
+    for (
+      let i = arr.length - 1;
+      i > 0;
+      i--
+    ) {
 
-  questionIndex = 0;
+      const j =
+        Math.floor(Math.random() * (i + 1));
 
-  score = 0;
+      [
+        arr[i],
+        arr[j]
+      ] = [
+        arr[j],
+        arr[i]
+      ];
 
-  correct = 0;
+    }
 
-  attempts = 0;
-
-  locked = false;
-
-  gameFinished = false;
-
-
-  /*
-     LEVEL LABEL
-  */
-
-  let levelLabel;
-
-
-  if(selectedLevel === "easy"){
-
-    levelLabel =
-      "EASY • SEKOLAH RENDAH";
-
-  }
-
-  else if(selectedLevel === "medium"){
-
-    levelLabel =
-      "MEDIUM • SEKOLAH MENENGAH";
-
-  }
-
-  else{
-
-    levelLabel =
-      "HARD • DEWASA";
+    return arr;
 
   }
 
 
-  document
-    .getElementById(
-      "level"
-    )
-    .textContent =
-    levelLabel;
+  /* ==========================================
+     START GAME
+  ========================================== */
+
+  function beginGame() {
+
+    if (!bankLoaded) {
+
+      alert(
+        "Question bank belum siap. Sila refresh page dan cuba lagi."
+      );
+
+      return;
+    }
+
+    playerName =
+      playerNameEl.value.trim();
+
+    if (!playerName) {
+
+      alert(
+        "Masukkan nama dulu."
+      );
+
+      playerNameEl.focus();
+
+      return;
+    }
 
 
-  /*
-     RESET SCORE
-  */
-
-  document
-    .getElementById(
-      "score"
-    )
-    .textContent =
-    "0";
-
-
-  /*
-     SHOW GAME
-  */
-
-  showScreen("game");
-
-
-  /*
-     START 60 SECOND TIMER
-  */
-
-  startGameTimer();
-
-
-  /*
-     FIRST QUESTION
-  */
-
-  showQuestion();
-
-}
-
-
-
-/* ==================================================
-   SHUFFLE
-================================================== */
-
-function shuffle(array){
-
-  for(
-    let i = array.length - 1;
-    i > 0;
-    i--
-  ){
-
-    const j =
-      Math.floor(
-        Math.random() *
-        (i + 1)
+    const pool =
+      BANK.filter(q =>
+        String(q.category)
+          .toLowerCase() === selectedLevel
       );
 
 
-    const temp =
-      array[i];
+    if (!pool.length) {
 
-    array[i] =
-      array[j];
+      alert(
+        "Tiada soalan untuk level ini."
+      );
 
-    array[j] =
-      temp;
-
-  }
+      return;
+    }
 
 
-  return array;
-
-}
-
-
-
-/* ==================================================
-   START GAME TIMER
-================================================== */
-
-function startGameTimer(){
-
-  clearInterval(
-    gameTimerId
-  );
-
-
-  gameEndTime =
-    Date.now() +
-    60000;
-
-
-  document
-    .getElementById(
-      "gameTimer"
-    )
-    .textContent =
-    "60";
-
-
-  document
-    .getElementById(
-      "bar"
-    )
-    .style.width =
-    "100%";
-
-
-  gameTimerId =
-    setInterval(function(){
-
-      const remaining =
-        Math.max(
-          0,
-          gameEndTime -
-          Date.now()
-        );
-
-
-      /*
-         GAME TIMER
-      */
-
-      document
-        .getElementById(
-          "gameTimer"
-        )
-        .textContent =
-        Math.ceil(
-          remaining /
-          1000
-        );
-
-
-      /*
-         GAME BAR
-      */
-
-      document
-        .getElementById(
-          "bar"
-        )
-        .style.width =
-        (
-          remaining /
-          600
-        ) +
-        "%";
-
-
-      /*
-         TIME UP
-      */
-
-      if(remaining <= 0){
-
-        clearInterval(
-          gameTimerId
-        );
-
-
-        clearInterval(
-          questionTimerId
-        );
-
-
-        finishGame();
-
-      }
-
-    },50);
-
-}
-
-
-
-/* ==================================================
-   SHOW QUESTION
-================================================== */
-
-function showQuestion(){
-
-  /*
-     CHECK GAME TIME
-  */
-
-  if(
-    Date.now() >=
-    gameEndTime
-  ){
-
-    finishGame();
-
-    return;
-
-  }
-
-
-  /*
-     CLEAR OLD QUESTION TIMER
-  */
-
-  clearInterval(
-    questionTimerId
-  );
-
-
-  /*
-     UNLOCK
-  */
-
-  locked = false;
-
-
-  /*
-     IF ALL QUESTIONS USED
-     SHUFFLE AGAIN
-  */
-
-  if(
-    questionIndex >=
-    questions.length
-  ){
+    /*
+      Shuffle bank.
+      Bila habis, bank akan
+      shuffle semula secara senyap.
+    */
 
     questions =
-      shuffle(
-        questions.slice()
-      );
+      shuffle(pool.slice());
 
     questionIndex = 0;
 
+    score = 0;
+    correct = 0;
+    attempts = 0;
+
+    locked = false;
+    gameFinished = false;
+
+
+    document.getElementById(
+      "levelBadge"
+    ).textContent =
+      selectedLevel.toUpperCase();
+
+
+    scoreEl.textContent = "0";
+
+
+    showScreen("game");
+
+    startGameTimer();
+
+    showQuestion();
+
   }
 
 
-  const currentQuestion =
-    questions[
-      questionIndex
-    ];
+  /* ==========================================
+     GAME TIMER - 60 SECONDS
+  ========================================== */
+
+  function startGameTimer() {
+
+    clearInterval(gameTimerId);
+
+    gameEndTime =
+      Date.now() + 60000;
 
 
-  /*
-     QUESTION NUMBER
-  */
+    gameTimerId =
+      setInterval(() => {
 
-  document
-    .getElementById(
-      "questionNumber"
-    )
-    .textContent =
-    "Soalan " +
-    (
-      questionIndex + 1
-    ) +
-    " / " +
-    questions.length;
+        if (gameFinished) {
+
+          clearInterval(gameTimerId);
+
+          return;
+        }
 
 
-  /*
-     QUESTION
-  */
-
-  document
-    .getElementById(
-      "question"
-    )
-    .textContent =
-    currentQuestion.question;
-
-
-  /*
-     RESET SCORE DISPLAY
-  */
-
-  document
-    .getElementById(
-      "questionScore"
-    )
-    .textContent =
-    "100";
-
-
-  /*
-     RESET QUESTION BAR
-  */
-
-  document
-    .getElementById(
-      "questionBar"
-    )
-    .style.width =
-    "100%";
-
-
-  /*
-     CLEAR FEEDBACK
-  */
-
-  const feedback =
-    document.getElementById(
-      "feedback"
-    );
-
-
-  feedback.textContent = "";
-
-  feedback.className =
-    "feedback";
-
-
-  /*
-     CLEAR ANSWERS
-  */
-
-  const answerBox =
-    document.getElementById(
-      "answers"
-    );
-
-
-  answerBox.innerHTML = "";
-
-
-  /*
-     CREATE ANSWERS
-  */
-
-  currentQuestion.options.forEach(
-    function(option,index){
-
-      const button =
-        document.createElement(
-          "button"
-        );
-
-
-      button.type =
-        "button";
-
-
-      button.className =
-        "answer";
-
-
-      button.textContent =
-        option;
-
-
-      button.onclick =
-        function(){
-
-          answerQuestion(
-            index,
-            button
+        const remaining =
+          Math.max(
+            0,
+            gameEndTime - Date.now()
           );
 
-        };
+
+        gameTimerEl.textContent =
+          Math.ceil(
+            remaining / 1000
+          );
 
 
-      answerBox.appendChild(
-        button
-      );
+        gameTimerBarEl.style.width =
+          (remaining / 600) + "%";
+
+
+        if (remaining <= 0) {
+
+          clearInterval(gameTimerId);
+
+          finishGame();
+
+        }
+
+      }, 50);
+
+  }
+
+
+  /* ==========================================
+     SHOW QUESTION
+  ========================================== */
+
+  function showQuestion() {
+
+    if (gameFinished) {
+      return;
+    }
+
+
+    /*
+      Kalau semua soalan dalam bank
+      dah digunakan, shuffle semula.
+    */
+
+    if (
+      questionIndex >=
+      questions.length
+    ) {
+
+      questions =
+        shuffle(questions);
+
+      questionIndex = 0;
 
     }
-  );
 
 
-  /*
-     START 10 SECOND QUESTION TIMER
-  */
-
-  startQuestionTimer();
-
-}
+    const question =
+      questions[questionIndex];
 
 
-
-/* ==================================================
-   QUESTION TIMER
-================================================== */
-
-function startQuestionTimer(){
-
-  clearInterval(
-    questionTimerId
-  );
+    locked = false;
 
 
-  questionEndTime =
-    Date.now() +
-    10000;
+    /*
+      IMPORTANT:
+      Hanya tunjuk nombor soalan.
+      Tak tunjuk jumlah keseluruhan.
+    */
+
+    questionNumberEl.textContent =
+      "Soalan " +
+      (questionIndex + 1);
 
 
-  /*
-     INITIAL
-  */
-
-  updateQuestionScore();
+    questionTextEl.textContent =
+      question.question;
 
 
-  questionTimerId =
-    setInterval(function(){
-
-      /*
-         GAME FINISHED
-      */
-
-      if(gameFinished){
-
-        clearInterval(
-          questionTimerId
-        );
-
-        return;
-
-      }
+    feedbackEl.textContent =
+      "";
 
 
-      /*
-         TIME LEFT
-      */
-
-      const remaining =
-        Math.max(
-          0,
-          questionEndTime -
-          Date.now()
-        );
+    answersEl.innerHTML = "";
 
 
-      /*
-         UPDATE SCORE
-      */
-
-      updateQuestionScore();
+    question.question =
+      String(question.question);
 
 
-      /*
-         TIME UP
-      */
+    question.options.forEach(
+      (option, index) => {
 
-      if(remaining <= 0){
+        const button =
+          document.createElement("button");
 
-        clearInterval(
-          questionTimerId
-        );
+        button.type = "button";
 
+        button.className =
+          "answer-button";
 
-        timeOutQuestion();
+        button.textContent =
+          option;
+
+        button.onclick = () =>
+          answerQuestion(index);
+
+        answersEl.appendChild(button);
 
       }
-
-    },50);
-
-}
+    );
 
 
+    startQuestionTimer();
 
-/* ==================================================
-   CALCULATE CURRENT SCORE
-================================================== */
+  }
 
-function getCurrentQuestionScore(){
 
-  const remaining =
-    Math.max(
+  /* ==========================================
+     QUESTION TIMER - 10 SECONDS
+  ========================================== */
+
+  function startQuestionTimer() {
+
+    clearInterval(questionTimerId);
+
+    questionEndTime =
+      Date.now() + 10000;
+
+
+    updateQuestionScore();
+
+
+    questionTimerId =
+      setInterval(() => {
+
+        if (gameFinished) {
+
+          clearInterval(
+            questionTimerId
+          );
+
+          return;
+        }
+
+
+        const remaining =
+          Math.max(
+            0,
+            questionEndTime -
+            Date.now()
+          );
+
+
+        updateQuestionScore();
+
+
+        if (remaining <= 0) {
+
+          clearInterval(
+            questionTimerId
+          );
+
+          timeOutQuestion();
+
+        }
+
+      }, 50);
+
+  }
+
+
+  /* ==========================================
+     QUESTION SCORE
+  ========================================== */
+
+  function getCurrentQuestionScore() {
+
+    const remaining =
+      Math.max(
+        0,
+        questionEndTime -
+        Date.now()
+      );
+
+
+    const points =
+      Math.ceil(
+        remaining / 100
+      );
+
+
+    return Math.max(
       0,
-      questionEndTime -
-      Date.now()
+      Math.min(
+        100,
+        points
+      )
     );
-
-
-  /*
-     10 SEC = 100 POINTS
-     0 SEC = 0 POINTS
-
-     Linear countdown.
-  */
-
-  const points =
-    Math.ceil(
-      remaining /
-      100
-    );
-
-
-  return Math.max(
-    0,
-    Math.min(
-      100,
-      points
-    )
-  );
-
-}
-
-
-
-/* ==================================================
-   UPDATE QUESTION SCORE
-================================================== */
-
-function updateQuestionScore(){
-
-  const points =
-    getCurrentQuestionScore();
-
-
-  document
-    .getElementById(
-      "questionScore"
-    )
-    .textContent =
-    points;
-
-
-  document
-    .getElementById(
-      "questionBar"
-    )
-    .style.width =
-    points +
-    "%";
-
-}
-
-
-
-/* ==================================================
-   ANSWER
-================================================== */
-
-function answerQuestion(
-  selectedAnswer,
-  clickedButton
-){
-
-  /*
-     DOUBLE CLICK
-  */
-
-  if(locked){
-
-    return;
 
   }
 
 
-  locked = true;
+  function updateQuestionScore() {
+
+    const points =
+      getCurrentQuestionScore();
 
 
-  clearInterval(
-    questionTimerId
-  );
+    questionPointsEl.textContent =
+      points;
 
 
-  attempts++;
-
-
-  const currentQuestion =
-    questions[
-      questionIndex
-    ];
-
-
-  /*
-     GET CURRENT SCORE
-     SEBELUM CLICK
-  */
-
-  const points =
-    getCurrentQuestionScore();
-
-
-  /*
-     DISABLE ANSWERS
-  */
-
-  document
-    .querySelectorAll(
-      ".answer"
-    )
-    .forEach(function(button){
-
-      button.disabled =
-        true;
-
-    });
-
-
-  /*
-     CORRECT
-  */
-
-  if(
-    selectedAnswer ===
-    currentQuestion.answer
-  ){
-
-    clickedButton
-      .classList
-      .add("correct");
-
-
-    /*
-       ADD SCORE
-    */
-
-    score += points;
-
-    correct++;
-
-
-    document
-      .getElementById(
-        "feedback"
-      )
-      .textContent =
-      "✅ Betul! +" +
-      points +
-      " points";
-
-
-    document
-      .getElementById(
-        "feedback"
-      )
-      .className =
-      "feedback good";
+    questionScoreBarEl.style.width =
+      points + "%";
 
   }
 
 
-  /*
-     WRONG
-  */
+  /* ==========================================
+     ANSWER QUESTION
+  ========================================== */
 
-  else{
+  function answerQuestion(
+    selectedAnswer
+  ) {
 
-    clickedButton
-      .classList
-      .add("wrong");
+    if (
+      locked ||
+      gameFinished
+    ) {
+      return;
+    }
 
 
-    /*
-       HIGHLIGHT CORRECT
-    */
+    locked = true;
+
+    clearInterval(
+      questionTimerId
+    );
+
+
+    attempts++;
+
+
+    const question =
+      questions[questionIndex];
+
 
     const buttons =
       document.querySelectorAll(
-        ".answer"
+        ".answer-button"
+      );
+
+
+    const correctAnswer =
+      Number(question.answer);
+
+
+    buttons.forEach(
+      (button, index) => {
+
+        button.classList.add(
+          "disabled"
+        );
+
+
+        if (
+          index ===
+          correctAnswer
+        ) {
+
+          button.classList.add(
+            "correct"
+          );
+
+        }
+
+      }
+    );
+
+
+    if (
+      selectedAnswer ===
+      correctAnswer
+    ) {
+
+      const points =
+        getCurrentQuestionScore();
+
+
+      score += points;
+
+      correct++;
+
+
+      scoreEl.textContent =
+        score;
+
+
+      feedbackEl.textContent =
+        "✅ Betul! +" +
+        points +
+        " points";
+
+    } else {
+
+      buttons[
+        selectedAnswer
+      ].classList.add(
+        "wrong"
+      );
+
+
+      feedbackEl.textContent =
+        "❌ Salah!";
+
+    }
+
+
+    setTimeout(() => {
+
+      if (!gameFinished) {
+
+        questionIndex++;
+
+        showQuestion();
+
+      }
+
+    }, 450);
+
+  }
+
+
+  /* ==========================================
+     TIME OUT
+  ========================================== */
+
+  function timeOutQuestion() {
+
+    if (
+      locked ||
+      gameFinished
+    ) {
+      return;
+    }
+
+
+    locked = true;
+
+    attempts++;
+
+
+    const question =
+      questions[questionIndex];
+
+
+    const buttons =
+      document.querySelectorAll(
+        ".answer-button"
       );
 
 
     buttons.forEach(
-      function(button,index){
+      (button, index) => {
 
-        if(
+        button.classList.add(
+          "disabled"
+        );
+
+
+        if (
           index ===
-          currentQuestion.answer
-        ){
+          Number(question.answer)
+        ) {
 
-          button
-            .classList
-            .add("correct");
+          button.classList.add(
+            "correct"
+          );
 
         }
 
@@ -2125,597 +1511,382 @@ function answerQuestion(
     );
 
 
-    document
-      .getElementById(
-        "feedback"
-      )
-      .textContent =
-      "❌ Salah — 0 points";
+    questionPointsEl.textContent =
+      "0";
 
 
-    document
-      .getElementById(
-        "feedback"
-      )
-      .className =
-      "feedback bad";
+    questionScoreBarEl.style.width =
+      "0%";
+
+
+    feedbackEl.textContent =
+      "⏰ Masa habis!";
+
+
+    setTimeout(() => {
+
+      if (!gameFinished) {
+
+        questionIndex++;
+
+        showQuestion();
+
+      }
+
+    }, 450);
 
   }
 
 
-  /*
-     UPDATE TOTAL SCORE
-  */
+  /* ==========================================
+     FINISH GAME
+  ========================================== */
 
-  document
-    .getElementById(
-      "score"
-    )
-    .textContent =
-    score.toLocaleString();
+  function finishGame() {
 
-
-  /*
-     NEXT
-  */
-
-  setTimeout(function(){
-
-    if(
-      !gameFinished &&
-      Date.now() <
-      gameEndTime
-    ){
-
-      questionIndex++;
-
-      showQuestion();
-
+    if (gameFinished) {
+      return;
     }
 
-  },450);
 
-}
-
+    gameFinished = true;
 
 
-/* ==================================================
-   TIME OUT QUESTION
-================================================== */
+    clearInterval(
+      gameTimerId
+    );
 
-function timeOutQuestion(){
+    clearInterval(
+      questionTimerId
+    );
 
-  /*
-     LOCK
-  */
 
-  if(locked){
+    gameTimerEl.textContent =
+      "0";
 
-    return;
+
+    gameTimerBarEl.style.width =
+      "0%";
+
+
+    saveScore();
+
+
+    document.getElementById(
+      "resultScore"
+    ).textContent =
+      score;
+
+
+    document.getElementById(
+      "resultCorrect"
+    ).textContent =
+      correct;
+
+
+    document.getElementById(
+      "resultAttempts"
+    ).textContent =
+      attempts;
+
+
+    let message =
+      "Good game! 🔥";
+
+
+    if (score >= 1500) {
+      message = "Legend! 🔥🔥🔥";
+    } else if (score >= 1000) {
+      message = "Power! 🔥🔥";
+    } else if (score >= 500) {
+      message = "Nice! 🔥";
+    }
+
+
+    document.getElementById(
+      "resultTitle"
+    ).textContent =
+      message;
+
+
+    showScreen("result");
 
   }
 
 
-  locked = true;
+  /* ==========================================
+     SAVE SCORE
+  ========================================== */
+
+  function saveScore() {
+
+    let leaderboard =
+      JSON.parse(
+        localStorage.getItem(
+          "bwr_leaderboard"
+        ) || "[]"
+      );
 
 
-  attempts++;
-
-
-  const currentQuestion =
-    questions[
-      questionIndex
-    ];
-
-
-  /*
-     DISABLE BUTTONS
-  */
-
-  document
-    .querySelectorAll(
-      ".answer"
-    )
-    .forEach(function(button){
-
-      button.disabled =
-        true;
-
+    leaderboard.push({
+      name: playerName,
+      level: selectedLevel,
+      score: score
     });
 
 
-  /*
-     SHOW CORRECT ANSWER
-  */
-
-  const buttons =
-    document.querySelectorAll(
-      ".answer"
+    leaderboard.sort(
+      (a, b) =>
+        b.score - a.score
     );
 
 
-  buttons.forEach(
-    function(button,index){
-
-      if(
-        index ===
-        currentQuestion.answer
-      ){
-
-        button
-          .classList
-          .add("correct");
-
-      }
-
-    }
-  );
-
-
-  /*
-     FEEDBACK
-  */
-
-  document
-    .getElementById(
-      "feedback"
-    )
-    .textContent =
-    "⏰ Masa habis — 0 points";
-
-
-  document
-    .getElementById(
-      "feedback"
-    )
-    .className =
-    "feedback bad";
-
-
-  /*
-     NEXT QUESTION
-  */
-
-  setTimeout(function(){
-
-    if(
-      !gameFinished &&
-      Date.now() <
-      gameEndTime
-    ){
-
-      questionIndex++;
-
-      showQuestion();
-
-    }
-
-  },450);
-
-}
-
-
-
-/* ==================================================
-   FINISH GAME
-================================================== */
-
-function finishGame(){
-
-  if(gameFinished){
-
-    return;
-
-  }
-
-
-  gameFinished = true;
-
-
-  clearInterval(
-    gameTimerId
-  );
-
-
-  clearInterval(
-    questionTimerId
-  );
-
-
-  /*
-     ACCURACY
-  */
-
-  const accuracy =
-    attempts > 0
-    ? Math.round(
-        (
-          correct /
-          attempts
-        ) *
+    leaderboard =
+      leaderboard.slice(
+        0,
         100
-      )
-    : 0;
-
-
-  /*
-     FINAL SCORE
-  */
-
-  document
-    .getElementById(
-      "finalScore"
-    )
-    .textContent =
-    score.toLocaleString();
-
-
-  /*
-     MESSAGE
-  */
-
-  let message;
-
-
-  if(score >= 2000){
-
-    message =
-      "🔥 Luar biasa!";
-
-  }
-
-  else if(score >= 1000){
-
-    message =
-      "👏 Mantap!";
-
-  }
-
-  else if(score > 0){
-
-    message =
-      "💪 Good try!";
-
-  }
-
-  else{
-
-    message =
-      "🚀 Cuba lagi!";
-
-  }
-
-
-  document
-    .getElementById(
-      "resultMessage"
-    )
-    .textContent =
-    message;
-
-
-  /*
-     STATS
-  */
-
-  document
-    .getElementById(
-      "stats"
-    )
-    .textContent =
-    correct +
-    " betul • " +
-    accuracy +
-    "% accuracy • " +
-    attempts +
-    " soalan";
-
-
-  /*
-     GET LEADERBOARD
-  */
-
-  let leaderboard =
-    JSON.parse(
-      localStorage.getItem(
-        "bwr_leaderboard"
-      ) ||
-      "[]"
-    );
-
-
-  /*
-     SAVE RESULT
-  */
-
-  leaderboard.push({
-
-    name:
-      playerName,
-
-    level:
-      selectedLevel,
-
-    score:
-      score
-
-  });
-
-
-  /*
-     SORT
-  */
-
-  leaderboard.sort(
-    function(a,b){
-
-      return (
-        b.score -
-        a.score
       );
 
-    }
-  );
 
-
-  /*
-     TOP 100
-  */
-
-  leaderboard =
-    leaderboard.slice(
-      0,
-      100
+    localStorage.setItem(
+      "bwr_leaderboard",
+      JSON.stringify(
+        leaderboard
+      )
     );
-
-
-  /*
-     SAVE
-  */
-
-  localStorage.setItem(
-    "bwr_leaderboard",
-    JSON.stringify(
-      leaderboard
-    )
-  );
-
-
-  /*
-     SHOW RESULT
-  */
-
-  showScreen(
-    "result"
-  );
-
-}
-
-
-
-/* ==================================================
-   LEADERBOARD
-================================================== */
-
-function showLeaderboard(){
-
-  clearInterval(
-    gameTimerId
-  );
-
-
-  clearInterval(
-    questionTimerId
-  );
-
-
-  showScreen(
-    "leaderboard"
-  );
-
-
-  const leaderboard =
-    JSON.parse(
-      localStorage.getItem(
-        "bwr_leaderboard"
-      ) ||
-      "[]"
-    );
-
-
-  const board =
-    document.getElementById(
-      "board"
-    );
-
-
-  /*
-     EMPTY
-  */
-
-  if(
-    leaderboard.length === 0
-  ){
-
-    board.innerHTML = `
-
-      <tr>
-
-        <td colspan="4">
-
-          Belum ada score.
-
-        </td>
-
-      </tr>
-
-    `;
-
-    return;
 
   }
 
 
-  /*
-     DISPLAY
-  */
+  /* ==========================================
+     LEADERBOARD
+  ========================================== */
 
-  board.innerHTML =
-    leaderboard
-      .map(
-        function(player,index){
+  function showLeaderboard() {
 
-          let rank;
+    clearInterval(
+      gameTimerId
+    );
 
-
-          if(index === 0){
-
-            rank = "🥇";
-
-          }
-
-          else if(index === 1){
-
-            rank = "🥈";
-
-          }
-
-          else if(index === 2){
-
-            rank = "🥉";
-
-          }
-
-          else{
-
-            rank =
-              index + 1;
-
-          }
+    clearInterval(
+      questionTimerId
+    );
 
 
-          return `
+    const list =
+      document.getElementById(
+        "leaderboardList"
+      );
 
-            <tr>
 
-              <td class="rank">
-                ${rank}
-              </td>
+    let leaderboard =
+      JSON.parse(
+        localStorage.getItem(
+          "bwr_leaderboard"
+        ) || "[]"
+      );
 
-              <td>
-                ${escapeHTML(
-                  player.name
-                )}
-              </td>
 
-              <td>
-                ${String(
-                  player.level
-                ).toUpperCase()}
-              </td>
+    if (
+      !leaderboard.length
+    ) {
 
-              <td>
-                ${Number(
-                  player.score
-                ).toLocaleString()}
-              </td>
+      list.innerHTML =
+        '<div class="empty">' +
+        'Belum ada score lagi.' +
+        '</div>';
 
-            </tr>
+      showScreen(
+        "leaderboard"
+      );
 
-          `;
+      return;
+    }
 
+
+    list.innerHTML = "";
+
+
+    leaderboard.forEach(
+      (item, index) => {
+
+        const row =
+          document.createElement(
+            "div"
+          );
+
+
+        row.className =
+          "leaderboard-row";
+
+
+        const rank =
+          document.createElement(
+            "div"
+          );
+
+
+        rank.className =
+          "rank";
+
+
+        if (index === 0) {
+          rank.textContent = "🥇";
+        } else if (index === 1) {
+          rank.textContent = "🥈";
+        } else if (index === 2) {
+          rank.textContent = "🥉";
+        } else {
+          rank.textContent =
+            "#" + (index + 1);
         }
-      )
-      .join("");
-
-}
 
 
-
-/* ==================================================
-   GO HOME
-================================================== */
-
-function goHome(){
-
-  clearInterval(
-    gameTimerId
-  );
-
-  clearInterval(
-    questionTimerId
-  );
+        const player =
+          document.createElement(
+            "div"
+          );
 
 
-  gameFinished = true;
+        const name =
+          document.createElement(
+            "div"
+          );
 
 
-  showScreen(
-    "home"
-  );
-
-}
+        name.className =
+          "player-name";
 
 
-
-/* ==================================================
-   SECURITY
-================================================== */
-
-function escapeHTML(text){
-
-  return String(text)
-    .replace(
-      /[&<>"']/g,
-      function(character){
-
-        const map = {
-
-          "&":
-            "&amp;",
-
-          "<":
-            "&lt;",
-
-          ">":
-            "&gt;",
-
-          '"':
-            "&quot;",
-
-          "'":
-            "&#039;"
-
-        };
+        name.textContent =
+          item.name;
 
 
-        return map[
-          character
-        ];
+        const level =
+          document.createElement(
+            "div"
+          );
+
+
+        level.className =
+          "player-level";
+
+
+        level.textContent =
+          item.level;
+
+
+        player.appendChild(
+          name
+        );
+
+        player.appendChild(
+          level
+        );
+
+
+        const playerScore =
+          document.createElement(
+            "div"
+          );
+
+
+        playerScore.className =
+          "player-score";
+
+
+        playerScore.textContent =
+          item.score;
+
+
+        row.appendChild(
+          rank
+        );
+
+        row.appendChild(
+          player
+        );
+
+        row.appendChild(
+          playerScore
+        );
+
+
+        list.appendChild(
+          row
+        );
 
       }
     );
 
-}
+
+    showScreen(
+      "leaderboard"
+    );
+
+  }
 
 
+  /* ==========================================
+     CLEAR LEADERBOARD
+  ========================================== */
 
-/* ==================================================
-   ENTER KEY
-================================================== */
+  function clearLeaderboard() {
 
-document
-  .getElementById(
-    "playerName"
-  )
-  .addEventListener(
+    const confirmClear =
+      confirm(
+        "Clear semua leaderboard pada device ini?"
+      );
+
+
+    if (!confirmClear) {
+      return;
+    }
+
+
+    localStorage.removeItem(
+      "bwr_leaderboard"
+    );
+
+
+    showLeaderboard();
+
+  }
+
+
+  /* ==========================================
+     GO HOME
+  ========================================== */
+
+  function goHome() {
+
+    clearInterval(
+      gameTimerId
+    );
+
+    clearInterval(
+      questionTimerId
+    );
+
+
+    gameFinished = true;
+
+    showScreen("home");
+
+  }
+
+
+  /* ==========================================
+     ENTER KEY
+  ========================================== */
+
+  playerNameEl.addEventListener(
     "keydown",
-    function(event){
+    function(event) {
 
-      if(
-        event.key ===
-        "Enter"
-      ){
+      if (
+        event.key === "Enter"
+      ) {
 
         beginGame();
 
@@ -2725,16 +1896,13 @@ document
   );
 
 
+  /* ==========================================
+     START
+  ========================================== */
 
-/* ==================================================
-   LOAD BANK
-================================================== */
-
-loadQuestions();
+  loadQuestions();
 
 </script>
 
-
 </body>
-
-  </html>
+</html>
